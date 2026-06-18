@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Xcode（プロジェクト内のユーザー個別設定）
+appch.xcodeproj/project.xcworkspace/xcuserdata/
+appch.xcodeproj/xcuserdata/
+
+# Swift Package Manager（将来パッケージを使う場合）
+.build/
+.swiftpm/
+
+# 秘密情報（万一ファイルに置いた場合の保険。基本はコードに含めない）
+*.secret
+secrets.plist
