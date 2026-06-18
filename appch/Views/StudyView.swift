@@ -50,9 +50,7 @@ struct StudyView: View {
 
             if revealed {
                 VStack(spacing: 12) {
-                    Text(card.pinyin)
-                        .font(.title2)
-                        .foregroundStyle(.tint)
+                    PinyinText(pinyin: card.pinyin, font: .title2, weight: .semibold)
                     Text(card.meaning)
                         .font(.title3)
                     Divider().padding(.horizontal, 40)
@@ -142,6 +140,7 @@ struct StudyView: View {
     private func submit(_ grade: Grade, on card: Card) {
         card.apply(grade: grade)
         try? context.save()
+        StudyLog.record(context: context)
         withAnimation {
             revealed = false
             index += 1

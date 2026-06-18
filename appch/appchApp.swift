@@ -10,7 +10,7 @@ struct appchApp: App {
 
     init() {
         do {
-            container = try ModelContainer(for: Card.self)
+            container = try ModelContainer(for: Card.self, StudyLog.self)
         } catch {
             fatalError("ModelContainer の初期化に失敗: \(error)")
         }

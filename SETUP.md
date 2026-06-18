@@ -146,6 +146,12 @@ xcodes install 26.5       # macOSに合う版を指定（Apple IDサインイン
 - appchの使用モデル: `claude-haiku-4-5-20251001`（`appch/Services/AIService.swift` で変更可）。
 - 投稿系シークレットの取得手順は **[shorts/SETUP.md](shorts/SETUP.md)** に詳細あり。コードには絶対に書かない（`shorts/.gitignore` で `.env`/`token*.json` 等を除外済み）。
 
+### App Group（ホーム画面ウィジェット用）
+
+ウィジェット(`appchWidget/`)とアプリは **App Group `group.com.genrri.appch`** でデータ共有する（`appch/appch.entitlements`・`appchWidget/appchWidget.entitlements`）。
+- **シミュレータ**：そのまま動く（追加設定不要）。
+- **実機/App Store**：Apple Developer のApp IDで App Group `group.com.genrri.appch` を登録し、両ターゲットのSigning & Capabilitiesで有効化が必要。
+
 ---
 
 ## 6. バージョン管理と GitHub アカウント

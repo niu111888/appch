@@ -4,14 +4,31 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Card.dueDate, order: .forward) private var cards: [Card]
+    @Query private var logs: [StudyLog]
 
     @State private var showStudy = false
+    @State private var showQuiz = false
     @State private var showAdd = false
 
     /// 今復習すべきカード（期限切れ）。
     private var dueCards: [Card] {
         let now = Date.now
         return cards.filter { $0.isDue(asOf: now) }
+    }
+
+    /// クイズの出題元（期限切れ優先、無ければ全カード）。
+    private var quizPool: [Card] {
+        dueCards.isEmpty ? cards : dueCards
+    }
+
+    /// 連続学習日数。
+    private var streak: Int {
+        StudyLog.currentStreak(logs: logs)
+    }
+
+    /// ウィジェット用に共有データを更新する。
+    private func updateWidget() {
+        SharedStore.update(dueCount: dueCards.count, streak: streak, word: dueCards.first ?? cards.first)
     }
 
     var body: some View {
@@ -25,7 +42,16 @@ struct HomeView: View {
                 .padding()
             }
             .navigationTitle("中国語")
+            .onAppear { updateWidget() }
+            .onChange(of: dueCards.count) { updateWidget() }
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    if streak > 0 {
+                        Label("\(streak)", systemImage: "flame.fill")
+                            .font(.subheadline.bold())
+                            .foregroundStyle(.orange)
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showAdd = true
@@ -39,6 +65,9 @@ struct HomeView: View {
             }
             .fullScreenCover(isPresented: $showStudy) {
                 StudyView(cards: dueCards)
+            }
+            .fullScreenCover(isPresented: $showQuiz) {
+                QuizView(cards: quizPool)
             }
         }
     }
@@ -67,6 +96,17 @@ struct HomeView: View {
             }
             .buttonStyle(.borderedProminent)
             .disabled(dueCards.isEmpty)
+
+            Button {
+                showQuiz = true
+            } label: {
+                Label("4択クイズ", systemImage: "checklist")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+            }
+            .buttonStyle(.bordered)
+            .disabled(cards.count < 4)
         }
         .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
@@ -100,7 +140,7 @@ struct HomeView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(card.hanzi).font(.title3)
-                        Text(card.pinyin).font(.caption).foregroundStyle(.secondary)
+                        PinyinText(pinyin: card.pinyin, font: .caption)
                     }
                     Spacer()
                     Text(card.meaning)

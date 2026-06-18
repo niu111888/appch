@@ -1,13 +1,13 @@
 {
-  "hanzi": "那",
-  "pinyin": "nà",
-  "meaning": "それ・あれ",
-  "example": "那是我的书。",
-  "exampleMeaning": "あれは私の本です。",
-  "hook": "中国語で「それ・あれ」は？",
+  "hanzi": "老师",
+  "pinyin": "lǎoshī",
+  "meaning": "先生",
+  "example": "她是我的中文老师。",
+  "exampleMeaning": "彼女は私の中国語の先生です。",
+  "hook": "中国語で「先生」は？",
   "hanziAudio": "audio/hanzi.mp3",
   "exampleAudio": "audio/example.mp3",
-  "hanziDur": 1.411,
-  "exampleDur": 2.077,
-  "index": 72
+  "hanziDur": 1.675,
+  "exampleDur": 2.702,
+  "index": 30
 }
