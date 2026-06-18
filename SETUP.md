@@ -158,20 +158,20 @@ xcodes install 26.5       # macOSに合う版を指定（Apple IDサインイン
 - 切替: `gh auth switch` ／ 確認: `gh auth status`。
 - 新マシンでは `gh auth login` で **niu111888** にログインする。
 
-### ⚠️ git のグローバル名義が kage になっている（要注意の落とし穴）
+### git の名義は niu111888 に統一済み
 
-現状 `git config --global user.email` = `kage20251022@gmail.com`。
-**このフォルダだけはローカル設定で niu111888 に上書き済み**なので、このリポジトリのコミットは正しく niu111888 名義になる：
+- **グローバル名義を niu111888 に設定済み**（`user.name=niu111888` / `user.email=294673672+niu111888@users.noreply.github.com`）。新しく別フォルダで `git init` しても niu111888 名義になる。
+- このappchフォルダはローカル設定でも同じ名義に固定済み。
+
+**新マシンでは同じ設定を入れ直す**（`git config --global` は機械ごとの設定なので clone では引き継がれない）:
 
 ```bash
-# このフォルダで（clone直後に一度だけ。設定済みなら不要）
-git config user.name  "niu111888"
-git config user.email "294673672+niu111888@users.noreply.github.com"
-git config user.email   # ← niu111888... が出ればOK
+git config --global user.name  "niu111888"
+git config --global user.email "294673672+niu111888@users.noreply.github.com"
+git config --global user.email   # ← niu111888... が出ればOK
 ```
 
-> 新規に別フォルダで `git init` すると**グローバルの kage 名義が使われてしまう**点に注意。
-> 恒久対策が必要なら、グローバルを niu111888 に変える / `includeIf` でフォルダ別に自動切替する（→ 必要時に設定）。
+> kage20251022 名義は使わない方針。もし将来フォルダ別に名義を出し分けたくなったら `includeIf` を使う。
 
 ---
 
@@ -202,7 +202,7 @@ git config user.email   # ← niu111888... が出ればOK
 | xcodes | 2.0.2（ビルド済みバイナリを /opt/homebrew/bin に手動設置・brew管理外） |
 | mise / Node | mise 2026.5.18 / node 24.16.0 |
 | Python(shorts) | 3.14.5 venv + edge-tts 7.2.8 |
-| git | 2.50.1（Apple Git）／グローバル名義=kage(要注意)・本repoローカル=niu111888 |
+| git | 2.50.1（Apple Git）／名義=niu111888（グローバル・ローカルとも統一済み） |
 
 > ✅ **iPhone 17 シミュレータで appch のビルド・起動・動作確認まで完了**（HSK50語の投入、ホーム/単語一覧/通知許可ダイアログを確認）。
 > ✅ shorts は npm依存＋Python venv(edge-tts) を導入済み・動画生成可（投稿はSecrets登録待ち→ shorts/SETUP.md）。
