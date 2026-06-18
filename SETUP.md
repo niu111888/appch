@@ -51,10 +51,46 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -license accept
 xcodebuild -runFirstLaunch
 
-# 5) プロジェクトを開いて実行
+# 5) iOSプラットフォーム（SDK＋シミュレータ）を入れる
+#    最新Xcodeは本体にiOSを同梱しないため別途DLが必要（約8.5GB）
+xcodebuild -downloadPlatform iOS
+
+# 6) プロジェクトを開いて実行
 open appch.xcodeproj
 # Xcodeで iPhoneシミュレータを選んで ▶︎（Run）
 ```
+
+---
+
+## 3.5 ⭐ ビルド＆実行（実証済みコマンド・GUIなしでOK）
+
+`sudo` を使えない場合でも、`DEVELOPER_DIR` を指定すれば `xcode-select` を切り替えずにビルドできる。
+以下は 2026-06-18 にこの環境で実際に通った手順。
+
+```bash
+cd /path/to/appch
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+
+# ビルド（iPhone 17 シミュレータ向け）
+xcodebuild -project appch.xcodeproj -scheme appch -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 17' \
+  -derivedDataPath build -configuration Debug build
+
+# シミュレータ起動 → インストール → 起動
+xcrun simctl boot "iPhone 17"          # 既に起動済みならエラーになるが無視でOK
+xcrun simctl bootstatus "iPhone 17" -b # 起動完了まで待つ
+open -a Simulator                       # 画面を表示
+xcrun simctl install booted "build/Build/Products/Debug-iphonesimulator/appch.app"
+xcrun simctl launch booted com.genrri.appch
+
+# スクリーンショット（GUIなしで画面を画像保存）
+xcrun simctl io booted screenshot /tmp/appch.png
+```
+
+つまずきメモ：
+- `xcodebuild` が「iOS XX.X is not installed」と言ったら → `xcodebuild -downloadPlatform iOS`（約8.5GB）。
+- `Multiple commands produce ... Info.plist` は解決済み（空のInfo.plistを削除し `GENERATE_INFOPLIST_FILE=YES` に一本化）。同種が再発したら同じ方針で。
+- バンドルID: `com.genrri.appch`（`project.pbxproj` の `PRODUCT_BUNDLE_IDENTIFIER`）。
 
 ---
 
@@ -130,17 +166,19 @@ git commit -m "Initial commit"
 
 ---
 
-## 8. 現在の開発機スナップショット（記録: 2026-06-18）
+## 8. 現在の開発機スナップショット（記録: 2026-06-18 更新）
 
 | 項目 | 値 |
 |---|---|
 | 機種 | Apple M3（arm64） |
 | macOS | 14.5 (Sonoma, build 23F79) |
-| Xcode | **未インストール**（現状 Command Line Tools のみ） |
+| Xcode | **26.5 (17F42)** インストール済み（`/Applications/Xcode.app`、xcodes経由） |
+| iOSプラットフォーム | iOS 26.5 Simulator (23F77) 導入済み |
 | Swift | 6.0.3（Command Line Tools 同梱） |
 | Homebrew | 6.0.1（/opt/homebrew） |
+| xcodes | 2.0.2（ビルド済みバイナリを /opt/homebrew/bin に設置） |
 | git | 2.39.5（Apple Git） |
 | Node | v24.16.0（mise経由・このアプリには不要） |
 
-> 現状この機ではXcode未導入のため、まだ実機/シミュレータでのビルドはできていない。
-> macOS 14.5 なので Xcode 16.2 を §4 の方法で入れるのが次の一手。
+> ✅ **iPhone 17 シミュレータでビルド・起動・動作確認まで完了**（HSK50語の投入、ホーム/単語一覧/通知許可ダイアログを確認）。
+> 注: macOS 14.5 で Xcode 26.5 が動いている。今後 macOS をさらに上げる場合は §4 の対応表を再確認すること。
