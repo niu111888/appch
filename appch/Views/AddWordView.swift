@@ -10,6 +10,7 @@ struct AddWordView: View {
     @State private var meaning = ""
     @State private var example = ""
     @State private var exampleMeaning = ""
+    @State private var deck = Decks.myWords
 
     @State private var isCompleting = false
     @State private var errorMessage: String?
@@ -42,6 +43,14 @@ struct AddWordView: View {
                         }
                     }
                     .disabled(hanzi.trimmingCharacters(in: .whitespaces).isEmpty || isCompleting)
+                }
+
+                Section("保存先レッスン") {
+                    Picker("レッスン", selection: $deck) {
+                        ForEach(Decks.selectableForAdd, id: \.self) { d in
+                            Text(d).tag(d)
+                        }
+                    }
                 }
 
                 Section("内容（AI補完後に編集可）") {
@@ -90,6 +99,7 @@ struct AddWordView: View {
 
     private func save() {
         let card = Card(
+            deck: deck,
             hanzi: hanzi.trimmingCharacters(in: .whitespaces),
             pinyin: pinyin,
             meaning: meaning,

@@ -6,6 +6,8 @@ import SwiftData
 final class Card {
     /// 一意な識別子（通知からカードを特定するのに使う）。
     @Attribute(.unique) var id: UUID
+    /// 所属レッスン（デッキ）。例: "HSK1" / "旅行" / "マイ単語"
+    var deck: String = "HSK1"
     /// 漢字（簡体字）。例: 苹果
     var hanzi: String
     /// ピンイン（声調記号つき）。例: píngguǒ
@@ -34,6 +36,7 @@ final class Card {
 
     init(
         id: UUID = UUID(),
+        deck: String = "HSK1",
         hanzi: String,
         pinyin: String = "",
         meaning: String = "",
@@ -47,6 +50,7 @@ final class Card {
         createdAt: Date = .now
     ) {
         self.id = id
+        self.deck = deck
         self.hanzi = hanzi
         self.pinyin = pinyin
         self.meaning = meaning

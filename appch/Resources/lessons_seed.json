@@ -1,0 +1,1506 @@
+[
+  {
+    "deck": "HSK2",
+    "hanzi": "因为",
+    "pinyin": "yīnwèi",
+    "meaning": "〜だから・〜のために",
+    "example": "因为下雨，我没去公园。",
+    "exampleMeaning": "雨が降ったので、公園に行きませんでした。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "所以",
+    "pinyin": "suǒyǐ",
+    "meaning": "だから・それで",
+    "example": "他生病了，所以没来上课。",
+    "exampleMeaning": "彼は病気になったので、授業に来ませんでした。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "已经",
+    "pinyin": "yǐjīng",
+    "meaning": "すでに・もう",
+    "example": "我已经吃过饭了。",
+    "exampleMeaning": "私はもうご飯を食べました。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "觉得",
+    "pinyin": "juéde",
+    "meaning": "〜と思う・感じる",
+    "example": "我觉得这个电影很好看。",
+    "exampleMeaning": "この映画はとても面白いと思います。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "知道",
+    "pinyin": "zhīdao",
+    "meaning": "知っている・分かる",
+    "example": "我不知道他的名字。",
+    "exampleMeaning": "私は彼の名前を知りません。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "希望",
+    "pinyin": "xīwàng",
+    "meaning": "希望する・望む",
+    "example": "我希望明天是晴天。",
+    "exampleMeaning": "明日が晴れだといいなと思います。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "帮助",
+    "pinyin": "bāngzhù",
+    "meaning": "助ける・手伝い",
+    "example": "谢谢你的帮助。",
+    "exampleMeaning": "助けてくれてありがとう。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "介绍",
+    "pinyin": "jièshào",
+    "meaning": "紹介する",
+    "example": "我来介绍一下我的朋友。",
+    "exampleMeaning": "私の友達をちょっと紹介します。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "准备",
+    "pinyin": "zhǔnbèi",
+    "meaning": "準備する",
+    "example": "我在准备明天的考试。",
+    "exampleMeaning": "私は明日の試験の準備をしています。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "开始",
+    "pinyin": "kāishǐ",
+    "meaning": "始める・始まる",
+    "example": "电影八点开始。",
+    "exampleMeaning": "映画は8時に始まります。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "完成",
+    "pinyin": "wánchéng",
+    "meaning": "完成する・終える",
+    "example": "我已经完成了作业。",
+    "exampleMeaning": "私はもう宿題を終えました。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "考试",
+    "pinyin": "kǎoshì",
+    "meaning": "試験・テスト",
+    "example": "下个星期有考试。",
+    "exampleMeaning": "来週試験があります。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "问题",
+    "pinyin": "wèntí",
+    "meaning": "問題・質問",
+    "example": "我有一个问题想问你。",
+    "exampleMeaning": "あなたに聞きたい質問が一つあります。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "意思",
+    "pinyin": "yìsi",
+    "meaning": "意味",
+    "example": "这个词是什么意思？",
+    "exampleMeaning": "この単語はどういう意味ですか？"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "旅游",
+    "pinyin": "lǚyóu",
+    "meaning": "旅行する",
+    "example": "我打算暑假去日本旅游。",
+    "exampleMeaning": "夏休みに日本へ旅行に行くつもりです。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "宾馆",
+    "pinyin": "bīnguǎn",
+    "meaning": "ホテル",
+    "example": "我们住在这家宾馆。",
+    "exampleMeaning": "私たちはこのホテルに泊まっています。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "机场",
+    "pinyin": "jīchǎng",
+    "meaning": "空港",
+    "example": "我去机场接朋友。",
+    "exampleMeaning": "私は空港へ友達を迎えに行きます。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "火车站",
+    "pinyin": "huǒchēzhàn",
+    "meaning": "駅（鉄道）",
+    "example": "火车站离这里很远。",
+    "exampleMeaning": "駅はここから遠いです。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "公司",
+    "pinyin": "gōngsī",
+    "meaning": "会社",
+    "example": "他在一家大公司工作。",
+    "exampleMeaning": "彼は大きな会社で働いています。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "可能",
+    "pinyin": "kěnéng",
+    "meaning": "〜かもしれない・可能性",
+    "example": "他可能不来了。",
+    "exampleMeaning": "彼はもう来ないかもしれません。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "一起",
+    "pinyin": "yìqǐ",
+    "meaning": "一緒に",
+    "example": "我们一起去吃饭吧。",
+    "exampleMeaning": "一緒にご飯を食べに行きましょう。"
+  },
+  {
+    "deck": "HSK2",
+    "hanzi": "还是",
+    "pinyin": "háishi",
+    "meaning": "それとも・やはり",
+    "example": "你喝咖啡还是喝茶？",
+    "exampleMeaning": "コーヒーにしますか、それともお茶にしますか？"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "健康",
+    "pinyin": "jiàn kāng",
+    "meaning": "健康（な）",
+    "example": "多运动对身体健康很重要。",
+    "exampleMeaning": "よく運動することは体の健康にとても大切です。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "环境",
+    "pinyin": "huán jìng",
+    "meaning": "環境",
+    "example": "这里的学习环境很安静。",
+    "exampleMeaning": "ここの学習環境はとても静かです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "经常",
+    "pinyin": "jīng cháng",
+    "meaning": "よく、しょっちゅう",
+    "example": "我经常去图书馆看书。",
+    "exampleMeaning": "私はよく図書館へ本を読みに行きます。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "必须",
+    "pinyin": "bì xū",
+    "meaning": "必ず〜しなければならない",
+    "example": "我们必须按时完成作业。",
+    "exampleMeaning": "私たちは時間どおりに宿題を終えなければなりません。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "机会",
+    "pinyin": "jī huì",
+    "meaning": "機会、チャンス",
+    "example": "这是一个很好的工作机会。",
+    "exampleMeaning": "これはとても良い仕事のチャンスです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "特别",
+    "pinyin": "tè bié",
+    "meaning": "特に、特別な",
+    "example": "今天天气特别好。",
+    "exampleMeaning": "今日は天気が特に良いです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "决定",
+    "pinyin": "jué dìng",
+    "meaning": "決める、決定する",
+    "example": "我决定明天去上海。",
+    "exampleMeaning": "私は明日上海へ行くことに決めました。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "关心",
+    "pinyin": "guān xīn",
+    "meaning": "気にかける、関心を持つ",
+    "example": "妈妈很关心我的学习。",
+    "exampleMeaning": "母は私の勉強をとても気にかけています。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "习惯",
+    "pinyin": "xí guàn",
+    "meaning": "習慣、慣れる",
+    "example": "我已经习惯了这里的生活。",
+    "exampleMeaning": "私はもうここの生活に慣れました。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "提高",
+    "pinyin": "tí gāo",
+    "meaning": "高める、向上させる",
+    "example": "我想提高我的汉语水平。",
+    "exampleMeaning": "私は中国語のレベルを上げたいです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "解决",
+    "pinyin": "jiě jué",
+    "meaning": "解決する",
+    "example": "这个问题很容易解决。",
+    "exampleMeaning": "この問題は簡単に解決できます。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "了解",
+    "pinyin": "liǎo jiě",
+    "meaning": "よく知る、把握する",
+    "example": "我想多了解中国文化。",
+    "exampleMeaning": "私は中国の文化をもっと知りたいです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "愿意",
+    "pinyin": "yuàn yì",
+    "meaning": "〜したいと思う、喜んで〜する",
+    "example": "我愿意帮助你。",
+    "exampleMeaning": "私は喜んであなたを手伝います。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "应该",
+    "pinyin": "yīng gāi",
+    "meaning": "〜すべきだ、〜のはずだ",
+    "example": "你应该早点儿睡觉。",
+    "exampleMeaning": "あなたはもっと早く寝るべきです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "检查",
+    "pinyin": "jiǎn chá",
+    "meaning": "検査する、チェックする",
+    "example": "老师正在检查我们的作业。",
+    "exampleMeaning": "先生は私たちの宿題をチェックしています。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "满意",
+    "pinyin": "mǎn yì",
+    "meaning": "満足する",
+    "example": "我对这个结果很满意。",
+    "exampleMeaning": "私はこの結果にとても満足しています。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "重要",
+    "pinyin": "zhòng yào",
+    "meaning": "重要な",
+    "example": "这次考试很重要。",
+    "exampleMeaning": "今回の試験はとても重要です。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "方便",
+    "pinyin": "fāng biàn",
+    "meaning": "便利な",
+    "example": "网上购物很方便。",
+    "exampleMeaning": "ネットショッピングはとても便利です。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "完成",
+    "pinyin": "wán chéng",
+    "meaning": "完成する、やり遂げる",
+    "example": "我已经完成了今天的工作。",
+    "exampleMeaning": "私は今日の仕事をもう終えました。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "参加",
+    "pinyin": "cān jiā",
+    "meaning": "参加する",
+    "example": "我想参加这次比赛。",
+    "exampleMeaning": "私はこの試合に参加したいです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "难过",
+    "pinyin": "nán guò",
+    "meaning": "つらい、悲しい",
+    "example": "听到这个消息，我很难过。",
+    "exampleMeaning": "この知らせを聞いて、私はとても悲しいです。"
+  },
+  {
+    "deck": "HSK3",
+    "hanzi": "主意",
+    "pinyin": "zhǔ yi",
+    "meaning": "考え、アイデア",
+    "example": "这是个好主意。",
+    "exampleMeaning": "これは良いアイデアです。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "经验",
+    "pinyin": "jīng yàn",
+    "meaning": "経験",
+    "example": "他有很多工作经验。",
+    "exampleMeaning": "彼にはたくさんの仕事の経験がある。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "机会",
+    "pinyin": "jī huì",
+    "meaning": "機会、チャンス",
+    "example": "这是一个很好的机会。",
+    "exampleMeaning": "これはとても良いチャンスだ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "理解",
+    "pinyin": "lǐ jiě",
+    "meaning": "理解する",
+    "example": "我完全理解你的意思。",
+    "exampleMeaning": "あなたの言いたいことが完全に理解できる。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "提供",
+    "pinyin": "tí gōng",
+    "meaning": "提供する",
+    "example": "公司提供免费的午餐。",
+    "exampleMeaning": "会社は無料の昼食を提供している。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "经济",
+    "pinyin": "jīng jì",
+    "meaning": "経済",
+    "example": "这个国家的经济发展很快。",
+    "exampleMeaning": "この国の経済発展はとても速い。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "环境",
+    "pinyin": "huán jìng",
+    "meaning": "環境",
+    "example": "我们应该保护环境。",
+    "exampleMeaning": "私たちは環境を守るべきだ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "复杂",
+    "pinyin": "fù zá",
+    "meaning": "複雑である",
+    "example": "这个问题很复杂。",
+    "exampleMeaning": "この問題はとても複雑だ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "准确",
+    "pinyin": "zhǔn què",
+    "meaning": "正確である",
+    "example": "他的回答很准确。",
+    "exampleMeaning": "彼の答えはとても正確だ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "积极",
+    "pinyin": "jī jí",
+    "meaning": "積極的である",
+    "example": "她对工作很积极。",
+    "exampleMeaning": "彼女は仕事に対してとても積極的だ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "标准",
+    "pinyin": "biāo zhǔn",
+    "meaning": "基準、標準",
+    "example": "他的普通话很标准。",
+    "exampleMeaning": "彼の標準中国語の発音はとても正確だ。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "困难",
+    "pinyin": "kùn nan",
+    "meaning": "困難、難しい",
+    "example": "我们遇到了很大的困难。",
+    "exampleMeaning": "私たちは大きな困難に直面した。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "考虑",
+    "pinyin": "kǎo lǜ",
+    "meaning": "考慮する",
+    "example": "请认真考虑这件事。",
+    "exampleMeaning": "この件を真剣に考えてください。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "调查",
+    "pinyin": "diào chá",
+    "meaning": "調査する",
+    "example": "警察正在调查这个案子。",
+    "exampleMeaning": "警察はこの事件を調査している。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "专门",
+    "pinyin": "zhuān mén",
+    "meaning": "わざわざ、専門に",
+    "example": "我专门来看你。",
+    "exampleMeaning": "私はわざわざあなたに会いに来た。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "翻译",
+    "pinyin": "fān yì",
+    "meaning": "翻訳する、通訳する",
+    "example": "请帮我翻译这句话。",
+    "exampleMeaning": "この一文を翻訳するのを手伝ってください。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "误会",
+    "pinyin": "wù huì",
+    "meaning": "誤解する",
+    "example": "你误会我的意思了。",
+    "exampleMeaning": "あなたは私の言いたいことを誤解している。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "按时",
+    "pinyin": "àn shí",
+    "meaning": "時間どおりに",
+    "example": "请按时完成作业。",
+    "exampleMeaning": "時間どおりに宿題を終わらせてください。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "温度",
+    "pinyin": "wēn dù",
+    "meaning": "温度",
+    "example": "今天的温度很高。",
+    "exampleMeaning": "今日の気温はとても高い。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "举办",
+    "pinyin": "jǔ bàn",
+    "meaning": "開催する",
+    "example": "学校举办了一场比赛。",
+    "exampleMeaning": "学校は試合を一回開催した。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "详细",
+    "pinyin": "xiáng xì",
+    "meaning": "詳しい、詳細である",
+    "example": "请你详细说明一下。",
+    "exampleMeaning": "詳しく説明してください。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "逐渐",
+    "pinyin": "zhú jiàn",
+    "meaning": "次第に、徐々に",
+    "example": "天气逐渐变冷了。",
+    "exampleMeaning": "天気が次第に寒くなってきた。"
+  },
+  {
+    "deck": "HSK4",
+    "hanzi": "适应",
+    "pinyin": "shì yìng",
+    "meaning": "適応する、慣れる",
+    "example": "我已经适应了这里的生活。",
+    "exampleMeaning": "私はもうここの生活に慣れた。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "打交道",
+    "pinyin": "dǎ jiāodào",
+    "meaning": "付き合う、関わる",
+    "example": "我经常和外国人打交道。",
+    "exampleMeaning": "私はよく外国人と関わっています。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "出色",
+    "pinyin": "chūsè",
+    "meaning": "優れている、際立っている",
+    "example": "他的表现非常出色。",
+    "exampleMeaning": "彼の働きぶりは非常に優れている。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "果然",
+    "pinyin": "guǒrán",
+    "meaning": "案の定、思った通り",
+    "example": "天气预报说会下雨，果然下了。",
+    "exampleMeaning": "天気予報で雨が降ると言っていたが、案の定降った。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "承担",
+    "pinyin": "chéngdān",
+    "meaning": "引き受ける、負う",
+    "example": "这个责任由我来承担。",
+    "exampleMeaning": "この責任は私が引き受けます。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "灵活",
+    "pinyin": "línghuó",
+    "meaning": "柔軟である、機敏である",
+    "example": "他处理问题很灵活。",
+    "exampleMeaning": "彼は問題の対処が柔軟だ。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "日程",
+    "pinyin": "rìchéng",
+    "meaning": "日程、スケジュール",
+    "example": "请把这个会议安排进日程。",
+    "exampleMeaning": "この会議を日程に入れてください。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "佩服",
+    "pinyin": "pèifú",
+    "meaning": "感心する、敬服する",
+    "example": "我很佩服她的勇气。",
+    "exampleMeaning": "私は彼女の勇気にとても感心している。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "模糊",
+    "pinyin": "móhu",
+    "meaning": "あいまいである、ぼやけている",
+    "example": "这张照片有点模糊。",
+    "exampleMeaning": "この写真は少しぼやけている。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "忽视",
+    "pinyin": "hūshì",
+    "meaning": "軽視する、ないがしろにする",
+    "example": "我们不能忽视这个问题。",
+    "exampleMeaning": "私たちはこの問題を軽視してはいけない。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "妥协",
+    "pinyin": "tuǒxié",
+    "meaning": "妥協する",
+    "example": "在原则问题上不能妥协。",
+    "exampleMeaning": "原則的な問題で妥協してはいけない。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "踏实",
+    "pinyin": "tāshi",
+    "meaning": "着実である、地に足がついている",
+    "example": "他工作很踏实。",
+    "exampleMeaning": "彼は着実に仕事をする。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "夸张",
+    "pinyin": "kuāzhāng",
+    "meaning": "大げさである、誇張する",
+    "example": "你说得太夸张了。",
+    "exampleMeaning": "あなたの言い方は大げさすぎる。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "分布",
+    "pinyin": "fēnbù",
+    "meaning": "分布する",
+    "example": "这种植物主要分布在南方。",
+    "exampleMeaning": "この植物は主に南方に分布している。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "操心",
+    "pinyin": "cāoxīn",
+    "meaning": "気をもむ、心配する",
+    "example": "父母总是为孩子操心。",
+    "exampleMeaning": "親はいつも子供のことで気をもんでいる。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "陆续",
+    "pinyin": "lùxù",
+    "meaning": "次々と、続々と",
+    "example": "客人陆续到达了。",
+    "exampleMeaning": "客が次々と到着した。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "额外",
+    "pinyin": "éwài",
+    "meaning": "余分の、追加の",
+    "example": "这是额外的费用。",
+    "exampleMeaning": "これは追加の費用です。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "程度",
+    "pinyin": "chéngdù",
+    "meaning": "程度、レベル",
+    "example": "他的汉语达到了很高的程度。",
+    "exampleMeaning": "彼の中国語はかなり高いレベルに達した。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "急忙",
+    "pinyin": "jímáng",
+    "meaning": "急いで、慌てて",
+    "example": "他急忙跑出了门。",
+    "exampleMeaning": "彼は急いで家を飛び出した。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "亲切",
+    "pinyin": "qīnqiè",
+    "meaning": "親しみがある、心がこもっている",
+    "example": "她的态度很亲切。",
+    "exampleMeaning": "彼女の態度はとても親しみがある。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "舍不得",
+    "pinyin": "shěbude",
+    "meaning": "惜しい、手放しがたい",
+    "example": "我舍不得离开这里。",
+    "exampleMeaning": "私はここを離れるのが惜しい。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "针对",
+    "pinyin": "zhēnduì",
+    "meaning": "対象とする、的を絞る",
+    "example": "这个课程针对初学者。",
+    "exampleMeaning": "この講座は初心者を対象としている。"
+  },
+  {
+    "deck": "HSK5",
+    "hanzi": "曾经",
+    "pinyin": "céngjīng",
+    "meaning": "かつて、以前に",
+    "example": "我曾经去过北京。",
+    "exampleMeaning": "私はかつて北京に行ったことがある。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "贯彻",
+    "pinyin": "guàn chè",
+    "meaning": "（方針などを）貫徹する、徹底させる",
+    "example": "我们必须贯彻这项新政策。",
+    "exampleMeaning": "私たちはこの新しい政策を徹底しなければならない。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "渲染",
+    "pinyin": "xuàn rǎn",
+    "meaning": "誇張して描く、大げさに言いふらす",
+    "example": "媒体过度渲染了这起事件。",
+    "exampleMeaning": "メディアはこの事件を過度に誇張して報じた。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "瓶颈",
+    "pinyin": "píng jǐng",
+    "meaning": "ボトルネック、隘路",
+    "example": "资金不足是项目发展的瓶颈。",
+    "exampleMeaning": "資金不足がプロジェクト発展のボトルネックだ。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "潜移默化",
+    "pinyin": "qián yí mò huà",
+    "meaning": "知らず知らずのうちに感化される",
+    "example": "环境对人的影响是潜移默化的。",
+    "exampleMeaning": "環境が人に与える影響は知らず知らずのうちに及ぶものだ。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "妥协",
+    "pinyin": "tuǒ xié",
+    "meaning": "妥協する、譲歩する",
+    "example": "双方最终各自做出了妥协。",
+    "exampleMeaning": "双方は最終的にそれぞれ妥協した。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "颠覆",
+    "pinyin": "diān fù",
+    "meaning": "覆す、転覆させる",
+    "example": "这项技术彻底颠覆了传统行业。",
+    "exampleMeaning": "この技術は伝統的な業界を完全に覆した。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "急功近利",
+    "pinyin": "jí gōng jìn lì",
+    "meaning": "目先の成果や利益を焦って求める",
+    "example": "做学问不能急功近利。",
+    "exampleMeaning": "学問をするには目先の成果を焦ってはいけない。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "剖析",
+    "pinyin": "pōu xī",
+    "meaning": "（問題などを）深く分析する、解剖する",
+    "example": "专家详细剖析了失败的原因。",
+    "exampleMeaning": "専門家は失敗の原因を詳しく分析した。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "枢纽",
+    "pinyin": "shū niǔ",
+    "meaning": "要、要衝、ハブ",
+    "example": "这座城市是重要的交通枢纽。",
+    "exampleMeaning": "この都市は重要な交通の要衝だ。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "敷衍",
+    "pinyin": "fū yǎn",
+    "meaning": "いいかげんにあしらう、お茶を濁す",
+    "example": "他对工作总是敷衍了事。",
+    "exampleMeaning": "彼は仕事をいつもいいかげんに済ませる。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "潜力",
+    "pinyin": "qián lì",
+    "meaning": "潜在能力、ポテンシャル",
+    "example": "这个市场有巨大的发展潜力。",
+    "exampleMeaning": "この市場には巨大な発展の潜在力がある。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "约束",
+    "pinyin": "yuē shù",
+    "meaning": "束縛する、制約する",
+    "example": "法律对每个人都有约束力。",
+    "exampleMeaning": "法律はすべての人に拘束力を持つ。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "层出不穷",
+    "pinyin": "céng chū bù qióng",
+    "meaning": "次から次へと現れて尽きない",
+    "example": "新的科技产品层出不穷。",
+    "exampleMeaning": "新しいハイテク製品が次から次へと現れる。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "渗透",
+    "pinyin": "shèn tòu",
+    "meaning": "浸透する、染み込む",
+    "example": "互联网已经渗透到日常生活。",
+    "exampleMeaning": "インターネットはすでに日常生活に浸透している。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "取缔",
+    "pinyin": "qǔ dì",
+    "meaning": "取り締まる、禁止する",
+    "example": "政府下令取缔非法经营。",
+    "exampleMeaning": "政府は違法営業の取り締まりを命じた。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "恪守",
+    "pinyin": "kè shǒu",
+    "meaning": "（規則・約束を）固く守る",
+    "example": "他始终恪守职业道德。",
+    "exampleMeaning": "彼は終始職業道徳を固く守っている。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "扭转",
+    "pinyin": "niǔ zhuǎn",
+    "meaning": "（情勢を）立て直す、好転させる",
+    "example": "公司努力扭转了亏损的局面。",
+    "exampleMeaning": "会社は努力して赤字の状況を立て直した。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "举足轻重",
+    "pinyin": "jǔ zú qīng zhòng",
+    "meaning": "全体を左右するほど重要である",
+    "example": "他在团队中起着举足轻重的作用。",
+    "exampleMeaning": "彼はチームの中で全体を左右するほど重要な役割を果たしている。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "诠释",
+    "pinyin": "quán shì",
+    "meaning": "解釈する、（作品などを）表現する",
+    "example": "这首歌完美诠释了爱情的含义。",
+    "exampleMeaning": "この歌は愛の意味を完璧に表現している。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "凸显",
+    "pinyin": "tū xiǎn",
+    "meaning": "際立たせる、浮き彫りにする",
+    "example": "这次危机凸显了管理上的问题。",
+    "exampleMeaning": "今回の危機は管理上の問題を浮き彫りにした。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "夯实",
+    "pinyin": "hāng shí",
+    "meaning": "（基礎を）固める、しっかりさせる",
+    "example": "我们要先夯实基础再求发展。",
+    "exampleMeaning": "私たちはまず基礎を固めてから発展を目指すべきだ。"
+  },
+  {
+    "deck": "HSK6",
+    "hanzi": "得不偿失",
+    "pinyin": "dé bù cháng shī",
+    "meaning": "得るものより失うものが多い、割に合わない",
+    "example": "为了省钱而牺牲健康实在得不偿失。",
+    "exampleMeaning": "お金を節約するために健康を犠牲にするのは実に割に合わない。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "护照",
+    "pinyin": "hù zhào",
+    "meaning": "パスポート",
+    "example": "请出示您的护照。",
+    "exampleMeaning": "パスポートを見せてください。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "登机口",
+    "pinyin": "dēng jī kǒu",
+    "meaning": "搭乗ゲート",
+    "example": "登机口在哪里？",
+    "exampleMeaning": "搭乗ゲートはどこですか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "行李",
+    "pinyin": "xíng li",
+    "meaning": "荷物・スーツケース",
+    "example": "我的行李还没到。",
+    "exampleMeaning": "私の荷物がまだ届きません。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "办理入住",
+    "pinyin": "bàn lǐ rù zhù",
+    "meaning": "チェックイン（する）",
+    "example": "我想办理入住。",
+    "exampleMeaning": "チェックインをしたいです。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "预订",
+    "pinyin": "yù dìng",
+    "meaning": "予約（する）",
+    "example": "我预订了一个房间。",
+    "exampleMeaning": "部屋を一つ予約しました。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "充电",
+    "pinyin": "chōng diàn",
+    "meaning": "充電（する）",
+    "example": "这里可以充电吗？",
+    "exampleMeaning": "ここで充電できますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "地铁",
+    "pinyin": "dì tiě",
+    "meaning": "地下鉄",
+    "example": "坐地铁去机场吗？",
+    "exampleMeaning": "地下鉄で空港へ行きますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "出租车",
+    "pinyin": "chū zū chē",
+    "meaning": "タクシー",
+    "example": "我想坐出租车去酒店。",
+    "exampleMeaning": "タクシーでホテルへ行きたいです。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "车票",
+    "pinyin": "chē piào",
+    "meaning": "乗車券・切符",
+    "example": "在哪里买车票？",
+    "exampleMeaning": "どこで切符を買いますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "多少钱",
+    "pinyin": "duō shao qián",
+    "meaning": "いくらですか",
+    "example": "这个多少钱？",
+    "exampleMeaning": "これはいくらですか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "太贵了",
+    "pinyin": "tài guì le",
+    "meaning": "高すぎる",
+    "example": "太贵了，便宜一点吧。",
+    "exampleMeaning": "高すぎます、もう少し安くしてください。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "刷卡",
+    "pinyin": "shuā kǎ",
+    "meaning": "カードで払う",
+    "example": "可以刷卡吗？",
+    "exampleMeaning": "カードで払えますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "菜单",
+    "pinyin": "cài dān",
+    "meaning": "メニュー",
+    "example": "请给我看一下菜单。",
+    "exampleMeaning": "メニューを見せてください。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "点菜",
+    "pinyin": "diǎn cài",
+    "meaning": "料理を注文する",
+    "example": "我可以点菜吗？",
+    "exampleMeaning": "注文してもいいですか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "买单",
+    "pinyin": "mǎi dān",
+    "meaning": "会計する",
+    "example": "服务员，买单！",
+    "exampleMeaning": "店員さん、お会計お願いします！"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "不要辣",
+    "pinyin": "bú yào là",
+    "meaning": "辛くしないで",
+    "example": "我的菜不要辣。",
+    "exampleMeaning": "私の料理は辛くしないでください。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "洗手间",
+    "pinyin": "xǐ shǒu jiān",
+    "meaning": "トイレ・お手洗い",
+    "example": "洗手间在哪儿？",
+    "exampleMeaning": "トイレはどこですか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "怎么走",
+    "pinyin": "zěn me zǒu",
+    "meaning": "どう行くか",
+    "example": "去车站怎么走？",
+    "exampleMeaning": "駅へはどう行きますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "地图",
+    "pinyin": "dì tú",
+    "meaning": "地図",
+    "example": "可以给我一张地图吗？",
+    "exampleMeaning": "地図を一枚もらえますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "右拐",
+    "pinyin": "yòu guǎi",
+    "meaning": "右に曲がる",
+    "example": "在前面右拐就到了。",
+    "exampleMeaning": "この先を右に曲がれば着きます。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "迷路",
+    "pinyin": "mí lù",
+    "meaning": "道に迷う",
+    "example": "我迷路了，请帮帮我。",
+    "exampleMeaning": "道に迷いました、助けてください。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "丢了",
+    "pinyin": "diū le",
+    "meaning": "なくした",
+    "example": "我的钱包丢了。",
+    "exampleMeaning": "財布をなくしました。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "帮忙",
+    "pinyin": "bāng máng",
+    "meaning": "手伝う・助ける",
+    "example": "能帮我一个忙吗？",
+    "exampleMeaning": "ちょっと手伝ってもらえますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "医院",
+    "pinyin": "yī yuàn",
+    "meaning": "病院",
+    "example": "附近有医院吗？",
+    "exampleMeaning": "近くに病院はありますか？"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "听不懂",
+    "pinyin": "tīng bu dǒng",
+    "meaning": "聞き取れない・理解できない",
+    "example": "对不起，我听不懂。",
+    "exampleMeaning": "すみません、聞き取れません。"
+  },
+  {
+    "deck": "旅行",
+    "hanzi": "请再说一遍",
+    "pinyin": "qǐng zài shuō yí biàn",
+    "meaning": "もう一度言ってください",
+    "example": "请再说一遍，好吗？",
+    "exampleMeaning": "もう一度言ってもらえますか？"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "会议",
+    "pinyin": "huì yì",
+    "meaning": "会議",
+    "example": "明天上午我们开一个会议。",
+    "exampleMeaning": "明日の午前中に会議を開きます。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "名片",
+    "pinyin": "míng piàn",
+    "meaning": "名刺",
+    "example": "这是我的名片，请多关照。",
+    "exampleMeaning": "これが私の名刺です、どうぞよろしくお願いします。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "安排",
+    "pinyin": "ān pái",
+    "meaning": "手配する・段取りをつける",
+    "example": "下周的会议时间由我来安排。",
+    "exampleMeaning": "来週の会議の時間は私が手配します。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "合作",
+    "pinyin": "hé zuò",
+    "meaning": "協力する・提携する",
+    "example": "希望我们以后能长期合作。",
+    "exampleMeaning": "今後、長期的に提携できればと思います。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "报价",
+    "pinyin": "bào jià",
+    "meaning": "見積もり・価格を提示する",
+    "example": "请您给我们一份正式的报价。",
+    "exampleMeaning": "正式なお見積もりを一部いただけますか。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "客户",
+    "pinyin": "kè hù",
+    "meaning": "顧客・取引先",
+    "example": "这位是我们最重要的客户。",
+    "exampleMeaning": "こちらは当社の最も重要なお客様です。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "项目",
+    "pinyin": "xiàng mù",
+    "meaning": "プロジェクト・案件",
+    "example": "这个项目下个月就要启动了。",
+    "exampleMeaning": "このプロジェクトは来月始動します。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "负责",
+    "pinyin": "fù zé",
+    "meaning": "担当する・責任を負う",
+    "example": "这件事由我来负责。",
+    "exampleMeaning": "この件は私が担当します。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "确认",
+    "pinyin": "què rèn",
+    "meaning": "確認する",
+    "example": "请确认一下邮件里的信息。",
+    "exampleMeaning": "メールの内容をご確認ください。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "邮件",
+    "pinyin": "yóu jiàn",
+    "meaning": "メール",
+    "example": "详细内容我会发邮件给您。",
+    "exampleMeaning": "詳しい内容はメールでお送りします。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "附件",
+    "pinyin": "fù jiàn",
+    "meaning": "添付ファイル",
+    "example": "报告在附件里，请查收。",
+    "exampleMeaning": "報告書は添付してありますので、ご確認ください。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "回复",
+    "pinyin": "huí fù",
+    "meaning": "返信する・返事をする",
+    "example": "收到后请尽快回复。",
+    "exampleMeaning": "受け取りましたら、なるべく早くご返信ください。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "联系",
+    "pinyin": "lián xì",
+    "meaning": "連絡する",
+    "example": "有问题随时跟我联系。",
+    "exampleMeaning": "問題があればいつでもご連絡ください。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "通知",
+    "pinyin": "tōng zhī",
+    "meaning": "通知する・知らせ",
+    "example": "开会时间一定会提前通知大家。",
+    "exampleMeaning": "会議の時間は必ず事前に皆さんにお知らせします。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "日程",
+    "pinyin": "rì chéng",
+    "meaning": "スケジュール・日程",
+    "example": "我下周的日程已经排满了。",
+    "exampleMeaning": "来週の私の予定はすでに埋まっています。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "截止日期",
+    "pinyin": "jié zhǐ rì qī",
+    "meaning": "締め切り・期限",
+    "example": "这份报告的截止日期是周五。",
+    "exampleMeaning": "この報告書の締め切りは金曜日です。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "预约",
+    "pinyin": "yù yuē",
+    "meaning": "予約する・アポを取る",
+    "example": "我想预约明天下午的会议室。",
+    "exampleMeaning": "明日の午後の会議室を予約したいです。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "谈判",
+    "pinyin": "tán pàn",
+    "meaning": "交渉する・商談",
+    "example": "价格方面我们还需要再谈判。",
+    "exampleMeaning": "価格については、もう少し交渉が必要です。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "合同",
+    "pinyin": "hé tong",
+    "meaning": "契約・契約書",
+    "example": "我们明天签合同。",
+    "exampleMeaning": "私たちは明日契約を結びます。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "签字",
+    "pinyin": "qiān zì",
+    "meaning": "署名する・サインする",
+    "example": "请在这里签字确认。",
+    "exampleMeaning": "こちらにサインしてご確認ください。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "汇报",
+    "pinyin": "huì bào",
+    "meaning": "報告する",
+    "example": "我向经理汇报一下进度。",
+    "exampleMeaning": "マネージャーに進捗を報告します。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "方案",
+    "pinyin": "fāng àn",
+    "meaning": "プラン・提案",
+    "example": "我们准备了两个方案供您选择。",
+    "exampleMeaning": "ご選択いただけるよう二つの案を用意しました。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "预算",
+    "pinyin": "yù suàn",
+    "meaning": "予算",
+    "example": "这个项目的预算有限。",
+    "exampleMeaning": "このプロジェクトの予算は限られています。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "接电话",
+    "pinyin": "jiē diàn huà",
+    "meaning": "電話に出る",
+    "example": "他正在开会，现在不方便接电话。",
+    "exampleMeaning": "彼は会議中で、今は電話に出られません。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "转告",
+    "pinyin": "zhuǎn gào",
+    "meaning": "伝言を取り次ぐ",
+    "example": "他不在，有事我帮您转告。",
+    "exampleMeaning": "彼は不在ですので、ご用件があれば私が伝えておきます。"
+  },
+  {
+    "deck": "ビジネス",
+    "hanzi": "出差",
+    "pinyin": "chū chāi",
+    "meaning": "出張する",
+    "example": "我下周要去上海出差。",
+    "exampleMeaning": "来週、上海へ出張に行きます。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "早上好",
+    "pinyin": "zǎo shang hǎo",
+    "meaning": "おはよう",
+    "example": "早上好，今天天气真好。",
+    "exampleMeaning": "おはよう、今日は本当にいい天気だね。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "好久不见",
+    "pinyin": "hǎo jiǔ bú jiàn",
+    "meaning": "久しぶり",
+    "example": "好久不见，你最近怎么样？",
+    "exampleMeaning": "久しぶり、最近どう？"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "最近",
+    "pinyin": "zuì jìn",
+    "meaning": "最近",
+    "example": "我最近有点儿忙。",
+    "exampleMeaning": "私は最近ちょっと忙しい。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "天气",
+    "pinyin": "tiān qì",
+    "meaning": "天気",
+    "example": "今天的天气很暖和。",
+    "exampleMeaning": "今日の天気はとても暖かい。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "下雨",
+    "pinyin": "xià yǔ",
+    "meaning": "雨が降る",
+    "example": "外面下雨了，带把伞吧。",
+    "exampleMeaning": "外は雨が降ってきたよ、傘を持っていって。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "刮风",
+    "pinyin": "guā fēng",
+    "meaning": "風が吹く",
+    "example": "今天风刮得很大。",
+    "exampleMeaning": "今日は風がとても強く吹いている。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "冷",
+    "pinyin": "lěng",
+    "meaning": "寒い",
+    "example": "冬天太冷了，多穿点儿。",
+    "exampleMeaning": "冬は寒すぎるから、もっと着込んでね。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "热",
+    "pinyin": "rè",
+    "meaning": "暑い・熱い",
+    "example": "夏天很热，我想喝冰水。",
+    "exampleMeaning": "夏は暑いので、冷たい水が飲みたい。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "爱好",
+    "pinyin": "ài hào",
+    "meaning": "趣味",
+    "example": "你的爱好是什么？",
+    "exampleMeaning": "あなたの趣味は何ですか？"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "运动",
+    "pinyin": "yùn dòng",
+    "meaning": "運動・スポーツ",
+    "example": "我每天早上去运动。",
+    "exampleMeaning": "私は毎朝運動しに行きます。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "看电影",
+    "pinyin": "kàn diàn yǐng",
+    "meaning": "映画を見る",
+    "example": "周末我们一起去看电影吧。",
+    "exampleMeaning": "週末、一緒に映画を見に行こうよ。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "喜欢",
+    "pinyin": "xǐ huan",
+    "meaning": "好き",
+    "example": "我喜欢听中国音乐。",
+    "exampleMeaning": "私は中国の音楽を聞くのが好きです。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "家人",
+    "pinyin": "jiā rén",
+    "meaning": "家族",
+    "example": "我很想念我的家人。",
+    "exampleMeaning": "私は家族がとても恋しいです。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "爸爸",
+    "pinyin": "bà ba",
+    "meaning": "お父さん",
+    "example": "我爸爸是医生。",
+    "exampleMeaning": "私の父は医者です。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "妈妈",
+    "pinyin": "mā ma",
+    "meaning": "お母さん",
+    "example": "我妈妈做的菜很好吃。",
+    "exampleMeaning": "母の作る料理はとてもおいしい。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "孩子",
+    "pinyin": "hái zi",
+    "meaning": "子供",
+    "example": "他们有两个孩子。",
+    "exampleMeaning": "彼らには子供が二人います。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "多少钱",
+    "pinyin": "duō shao qián",
+    "meaning": "いくらですか",
+    "example": "这件衣服多少钱？",
+    "exampleMeaning": "この服はいくらですか？"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "太贵了",
+    "pinyin": "tài guì le",
+    "meaning": "高すぎる",
+    "example": "这个太贵了，能便宜点儿吗？",
+    "exampleMeaning": "これは高すぎます、少し安くできますか？"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "便宜",
+    "pinyin": "pián yi",
+    "meaning": "安い",
+    "example": "这家店的水果很便宜。",
+    "exampleMeaning": "この店の果物はとても安い。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "买",
+    "pinyin": "mǎi",
+    "meaning": "買う",
+    "example": "我想买一双鞋。",
+    "exampleMeaning": "私は靴を一足買いたいです。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "高兴",
+    "pinyin": "gāo xìng",
+    "meaning": "うれしい",
+    "example": "认识你我很高兴。",
+    "exampleMeaning": "あなたと知り合えてとてもうれしいです。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "累",
+    "pinyin": "lèi",
+    "meaning": "疲れている",
+    "example": "今天工作太累了。",
+    "exampleMeaning": "今日は仕事でとても疲れた。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "担心",
+    "pinyin": "dān xīn",
+    "meaning": "心配する",
+    "example": "别担心，一切都会好的。",
+    "exampleMeaning": "心配しないで、すべてうまくいくよ。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "生气",
+    "pinyin": "shēng qì",
+    "meaning": "怒る",
+    "example": "他为什么生气了？",
+    "exampleMeaning": "彼はどうして怒ったの？"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "没关系",
+    "pinyin": "méi guān xi",
+    "meaning": "大丈夫・気にしないで",
+    "example": "没关系，这不是你的错。",
+    "exampleMeaning": "気にしないで、これはあなたのせいじゃない。"
+  },
+  {
+    "deck": "日常会話",
+    "hanzi": "谢谢",
+    "pinyin": "xiè xie",
+    "meaning": "ありがとう",
+    "example": "谢谢你的帮助。",
+    "exampleMeaning": "助けてくれてありがとう。"
+  }
+]

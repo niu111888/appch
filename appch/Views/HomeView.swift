@@ -10,15 +10,28 @@ struct HomeView: View {
     @State private var showQuiz = false
     @State private var showAdd = false
 
-    /// 今復習すべきカード（期限切れ）。
-    private var dueCards: [Card] {
-        let now = Date.now
-        return cards.filter { $0.isDue(asOf: now) }
+    /// 選択中のレッスン（"すべて" or デッキ名）。端末に保存。
+    @AppStorage("selectedDeck") private var selectedDeck = Decks.all
+
+    /// 選べるレッスン一覧（先頭に「すべて」）。
+    private var availableDecks: [String] {
+        Decks.available(from: Set(cards.map(\.deck)))
     }
 
-    /// クイズの出題元（期限切れ優先、無ければ全カード）。
+    /// 選択レッスンに属するカード。
+    private var deckCards: [Card] {
+        selectedDeck == Decks.all ? cards : cards.filter { $0.deck == selectedDeck }
+    }
+
+    /// 今復習すべきカード（選択レッスン内の期限切れ）。
+    private var dueCards: [Card] {
+        let now = Date.now
+        return deckCards.filter { $0.isDue(asOf: now) }
+    }
+
+    /// クイズの出題元（期限切れ優先、無ければ選択レッスン全体）。
     private var quizPool: [Card] {
-        dueCards.isEmpty ? cards : dueCards
+        dueCards.isEmpty ? deckCards : dueCards
     }
 
     /// 連続学習日数。
@@ -35,6 +48,7 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
+                    lessonSelector
                     dueCard
                     statsRow
                     wordList
@@ -44,6 +58,7 @@ struct HomeView: View {
             .navigationTitle("中国語")
             .onAppear { updateWidget() }
             .onChange(of: dueCards.count) { updateWidget() }
+            .onChange(of: selectedDeck) { updateWidget() }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     if streak > 0 {
@@ -69,6 +84,32 @@ struct HomeView: View {
             .fullScreenCover(isPresented: $showQuiz) {
                 QuizView(cards: quizPool)
             }
+        }
+    }
+
+    // MARK: - レッスン選択
+
+    private var lessonSelector: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(availableDecks, id: \.self) { deck in
+                    let selected = deck == selectedDeck
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.15)) { selectedDeck = deck }
+                    } label: {
+                        Text(deck)
+                            .font(.subheadline.weight(selected ? .bold : .regular))
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(
+                                Capsule().fill(selected ? Color.accentColor : Color.gray.opacity(0.15))
+                            )
+                            .foregroundStyle(selected ? .white : .primary)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 2)
         }
     }
 
@@ -106,7 +147,7 @@ struct HomeView: View {
                     .padding(.vertical, 8)
             }
             .buttonStyle(.bordered)
-            .disabled(cards.count < 4)
+            .disabled(deckCards.count < 4)
         }
         .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
@@ -115,9 +156,9 @@ struct HomeView: View {
 
     private var statsRow: some View {
         HStack(spacing: 12) {
-            stat(title: "総単語", value: "\(cards.count)")
-            stat(title: "新規", value: "\(cards.filter { $0.isNew }.count)")
-            stat(title: "学習済", value: "\(cards.filter { !$0.isNew }.count)")
+            stat(title: "総単語", value: "\(deckCards.count)")
+            stat(title: "新規", value: "\(deckCards.filter { $0.isNew }.count)")
+            stat(title: "学習済", value: "\(deckCards.filter { !$0.isNew }.count)")
         }
     }
 
@@ -136,7 +177,7 @@ struct HomeView: View {
             Text("単語一覧")
                 .font(.headline)
                 .padding(.leading, 4)
-            ForEach(cards) { card in
+            ForEach(deckCards) { card in
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(card.hanzi).font(.title3)
