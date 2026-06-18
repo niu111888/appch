@@ -1,0 +1,59 @@
+name: Daily Chinese Short
+
+# 毎日 自動で1本作って投稿する。
+# cron は UTC。'0 0 * * *' = 毎日 09:00 JST（日本時間）。
+# 時刻を変えたいときは下の cron を編集（例: 21:00 JST → '0 12 * * *'）。
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch: {} # 手動でも実行できる（テスト用）
+
+jobs:
+  build-and-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Instagram 用に動画を Release に上げて公開URLを得るため
+    defaults:
+      run:
+        working-directory: shorts
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: edge-tts を入れる
+        run: pip install edge-tts
+
+      - name: 依存をインストール
+        run: npm ci
+
+      - name: 台本＋音声を生成
+        env:
+          EDGE_TTS: edge-tts
+        run: npm run build
+
+      - name: 動画をレンダリング
+        run: npm run render
+
+      - name: Instagram 用に動画を公開（Release にアップロード）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create daily-latest --notes "auto-generated daily short" || true
+          gh release upload daily-latest out/video.mp4 --clobber
+
+      - name: YouTube / Instagram に投稿
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PUBLIC_VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/daily-latest/video.mp4
+        run: npm run upload

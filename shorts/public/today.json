@@ -1,0 +1,13 @@
+{
+  "hanzi": "中国",
+  "pinyin": "Zhōngguó",
+  "meaning": "中国",
+  "example": "我想去中国。",
+  "exampleMeaning": "私は中国に行きたい。",
+  "hook": "中国語で「中国」は？",
+  "hanziAudio": "audio/hanzi.mp3",
+  "exampleAudio": "audio/example.mp3",
+  "hanziDur": 1.647,
+  "exampleDur": 2.202,
+  "index": 11
+}

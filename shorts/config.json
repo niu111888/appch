@@ -1,0 +1,6 @@
+{
+  "voice": "zh-CN-XiaoxiaoNeural",
+  "rate": "-10%",
+  "hookTemplate": "中国語で「{meaning}」は？",
+  "_note": "voice 候補: zh-CN-XiaoxiaoNeural(女性/標準), zh-CN-XiaoyiNeural(女性/明るい), zh-CN-YunxiNeural(男性), zh-CN-YunyangNeural(男性/ニュース). rate は読み上げ速度。"
+}

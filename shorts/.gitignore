@@ -1,0 +1,19 @@
+# 依存・ビルド成果物
+node_modules/
+.venv/
+out/
+
+# 生成される音声（毎回作り直すのでコミットしない）
+public/audio/
+
+# Remotion
+.remotion/
+
+# 秘密情報（トークン類は絶対にコミットしない）
+.env
+*.secret
+secrets.json
+client_secret*.json
+token*.json
+
+.DS_Store

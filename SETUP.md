@@ -1,64 +1,73 @@
 # SETUP — 開発環境の記録（新しいデバイスでもこれを見れば始められる）
 
-> このファイルは「環境の引き継ぎ書」です。**`appch` フォルダごと新しいMacにコピー** → この手順を上から実行すれば、同じ環境で開発を再開できます。
-> 何か新しいツールを入れたり設定を変えたら、**必ずこのファイルに追記**してください（末尾の「更新ルール」参照）。
+> このファイルは「環境の引き継ぎ書（マスター索引）」です。**リポジトリごと新しいMacにコピー（または `git clone`）** → この手順を上から実行すれば、同じ環境で開発を再開できます。
+> 何か新しいツールを入れたり設定を変えたら、**必ずこのファイルに追記**してください（§7 の「更新ルール」参照）。
 
 最終更新: 2026-06-18
 
 ---
 
-## 1. このプロジェクトは何か
+## 1. このプロジェクトは何か（2部構成）
 
-- **appch** — 中国語の単語暗記アプリ（iOS / SwiftUI）。
-- 詳細・機能・構成は [README.md](README.md) を参照。
-- 開発はすべて **Xcode + Swift**。外部パッケージ依存なし（Swift Package も未使用）。
+このリポジトリには2つのサブプロジェクトが入っています。
+
+| フォルダ | 中身 | 主な技術 | 個別ドキュメント |
+|---|---|---|---|
+| **`appch/`** | 中国語の単語暗記アプリ（iOS） | Xcode / SwiftUI / SwiftData | [README.md](README.md) |
+| **`shorts/`** | 単語から短尺動画を自動生成・毎日投稿 | Node + Remotion / Python(edge-tts) / GitHub Actions | [shorts/README.md](shorts/README.md), [shorts/SETUP.md](shorts/SETUP.md) |
+
+- iOSアプリ本体は外部パッケージ依存なし（Swift Package 未使用）。
+- `shorts/` は npm 依存（Remotion）＋ Python仮想環境（edge-tts）で動く。
 
 ---
 
-## 2. 必要なもの（ツール一覧）
+## 2. 必要なもの（ツール一覧・このマシンの実態）
 
-| ツール | 用途 | 必須? | 備考 |
+記録時点の `brew leaves`（明示インストール）＝ **gh / mise / jq / trash**。Xcode と xcodes は別管理。
+
+| ツール | 用途 | 使う対象 | 入れ方 |
 |---|---|---|---|
-| **Mac（Apple Silicon 推奨）** | 開発機 | ✅ | iOSアプリのビルドにはMacが必須 |
-| **macOS** | OS | ✅ | Xcodeのバージョン要件に直結（→ §4） |
-| **Xcode** | iOSアプリのビルド・実行・シミュレータ | ✅ | **これが本体。これさえ入れば開発できる** |
-| **Command Line Tools** | swift / git など | ✅ | Xcodeを入れると同梱される |
-| Homebrew | ツール導入の入口 | 推奨 | `xcodes` 等のインストールに使う |
-| xcodes | 特定バージョンのXcodeを入れる | 推奨 | App Storeが最新版しか出せない問題の回避（→ §4） |
-| git | バージョン管理 | 推奨 | まだこのプロジェクトはGit未初期化（→ §6） |
-
-> Node.js（mise経由）も現在の開発機には入っていますが、**このiOSアプリには不要**です。
+| **Mac（Apple Silicon）** | 開発機 | 両方 | — |
+| **macOS** | OS | 両方 | Xcodeのバージョン要件に直結（→ §4） |
+| **Xcode + iOSプラットフォーム** | iOSビルド・実行・シミュレータ | appch | `xcodes`（→ §3,§4）。iOS SDKは別DL |
+| **xcodes** | 特定版Xcodeの導入 | appch | **brew不可**・ビルド済みバイナリを手動設置（→ §4 / `bootstrap.sh`） |
+| **Homebrew** | ツール導入の入口 | 両方 | 公式インストーラ |
+| **gh** | GitHub操作・複数アカウント切替 | 両方 | `brew` |
+| **mise** | Node等のバージョン管理 | shorts | `brew` |
+| **Node**（mise経由） | Remotion 実行 | shorts | `mise install`（`shorts/.tool-versions` で版固定） |
+| **Python3 + edge-tts** | 音声合成 | shorts | `python3 -m venv .venv && pip install edge-tts` |
+| **jq / trash** | スクリプト補助・安全な削除 | 補助 | `brew` |
+| **git** | バージョン管理 | 両方 | CLT同梱（→ §6） |
 
 ---
 
 ## 3. 新しいMacでの再開手順（ブートストラップ）
 
+**いちばん簡単な方法：付属スクリプトを実行**（自動化できる所は自動、対話/sudoが要る所は手順を表示）。
+
 ```bash
-# 0) この appch フォルダを新しいMacにコピーする（USB / クラウド / git のいずれか）
-
-# 1) Homebrew を入れる（未導入なら）
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 2) このフォルダ内で、記録したツールを一括インストール
-cd /path/to/appch
-brew bundle            # Brewfile を読んで xcodes 等を入れる
-
-# 3) Xcode を入れる（§4 を必ず読む — macOSバージョンで入れる版が変わる）
-xcodes install --latest    # ただし macOSが古いと失敗する。その場合は §4 の方法で特定版を指定
-
-# 4) コマンドラインを Xcode 本体に向ける
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -license accept
-xcodebuild -runFirstLaunch
-
-# 5) iOSプラットフォーム（SDK＋シミュレータ）を入れる
-#    最新Xcodeは本体にiOSを同梱しないため別途DLが必要（約8.5GB）
-xcodebuild -downloadPlatform iOS
-
-# 6) プロジェクトを開いて実行
-open appch.xcodeproj
-# Xcodeで iPhoneシミュレータを選んで ▶︎（Run）
+git clone https://github.com/niu111888/appch.git   # または フォルダごとコピー
+cd appch
+bash bootstrap.sh        # Homebrew確認 / brew bundle / xcodes設置 / mise(Node) / shorts依存 を自動化
 ```
+
+`bootstrap.sh` 実行後に残る手動ステップ（スクリプトが最後に一覧表示します）:
+
+```bash
+# A) iOS開発の土台（Apple ID + sudo が必要）
+xcodes install 26.5                 # macOSに合う版を（→ §4）。約7GB
+sudo xcodebuild -license accept
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+xcodebuild -runFirstLaunch
+xcodebuild -downloadPlatform iOS    # iOS SDK+シミュレータ 約8.5GB
+
+# B) GitHub（→ §6。このプロジェクトは niu111888 を使う）
+gh auth login
+
+# C) アプリのAI補完キー / D) 自動投稿のSecrets → §5
+```
+
+> Homebrew が未導入なら先に: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 ---
 
@@ -99,58 +108,70 @@ xcrun simctl io booted screenshot /tmp/appch.png
 **Xcodeは「使っているmacOSのバージョン」によって入れられる最大版が決まります。**
 App Storeは常に*最新のXcode*しか出さないため、macOSが古いと「バージョンが低くてダウンロードできない」と弾かれます。**これは故障ではなく仕様です。**
 
-対応バージョン（2026-06 時点）:
+- **現在の開発機は macOS 26.5.1 → Xcode 26.5 を導入済み**（これで問題なくビルドできている）。
+- 新マシンの macOS に合う Xcode 版は毎回ここで確認 → [Apple Developer — Xcode Support](https://developer.apple.com/support/xcode/)。
+- macOSが古くて最新Xcodeが入らない場合は、`xcodes install <版>` で**そのmacOSに合う版**を指定する（例: macOS 14.5 なら Xcode 16.2 が上限だった）。
 
-| macOS | 入れられる最大Xcode |
-|---|---|
-| Sonoma 14.5 | **Xcode 16.2** |
-| Sequoia 15.5+ | Xcode 16.3 以降 |
+### ⚠️ xcodes は brew では入らない（このマシンの実績）
 
-出典: [Apple Developer — Xcode Support](https://developer.apple.com/support/xcode/)
+`brew install xcodes` は**ソースビルドに失敗**します（ビルドにXcodeが要る鶏卵問題）。
+そのため **GitHubのビルド済みバイナリを手動設置**しています（`bootstrap.sh` が自動化）。手動なら:
 
-### 古いmacOSで特定版のXcodeを入れる方法（App Storeを使わない）
-
-**方法A: xcodes CLI（おすすめ・Homebrewが必要）**
 ```bash
-brew install xcodes
-xcodes list                 # 入れられるバージョン一覧
-xcodes install 16.2         # macOS 14.5 ならこれ
+curl -fsSL -o /tmp/xcodes.zip \
+  https://github.com/XcodesOrg/xcodes/releases/download/2.0.2/xcodes.zip
+(cd /tmp && unzip -o xcodes.zip)
+install -m 755 /tmp/xcodes /opt/homebrew/bin/xcodes
+xcodes version            # 2.0.2 が出ればOK
 ```
-（無料のApple IDでのサインインを求められます）
 
-**方法B: 手動ダウンロード**
-1. <https://developer.apple.com/download/all/> にApple IDでログイン
-2. 該当バージョンのXcode（例: Xcode 16.2）の `.xip` を落とす
-3. ダブルクリックで展開 → `Applications` に移動
+### Xcode本体を入れる
 
-**方法C: macOSを上げる**
-- Apple Silicon機なら最新macOSへ更新できることが多い。更新後はApp Storeの最新Xcodeでよい。
-- ※OS更新は他アプリへの影響もあるので各自判断で。
+```bash
+xcodes list               # 入れられるバージョン一覧
+xcodes install 26.5       # macOSに合う版を指定（Apple IDサインイン + 約7GB）
+```
+別解：<https://developer.apple.com/download/all/> から `.xip` を手動DLしてもよい。
 
 ---
 
 ## 5. シークレット・設定（リポジトリには入れないもの）
 
-- **Claude APIキー**（AI補完機能用）
-  - コードには含めない。アプリの「設定」タブで入力 → 端末内（UserDefaults）に保存される。
-  - 新デバイスでは**入れ直しが必要**。発行: <https://console.anthropic.com/>
-  - 使用モデル: `claude-haiku-4-5-20251001`（`appch/Services/AIService.swift` で変更可）
+| シークレット | 用途 | 置き場所 | 新デバイスでの扱い |
+|---|---|---|---|
+| **Claude APIキー** | appchアプリのAI補完 | アプリ「設定」タブ → 端末内(UserDefaults) | 入れ直し。発行: <https://console.anthropic.com/> |
+| **YouTube**（CLIENT_ID/SECRET/REFRESH_TOKEN） | shorts 自動投稿 | **GitHub リポジトリ Secrets** | 一度登録すればクラウド側に残る |
+| **Instagram**（IG_USER_ID/ACCESS_TOKEN） | shorts 自動投稿 | **GitHub リポジトリ Secrets** | 同上。トークンは約60日で失効→再発行 |
+
+- appchの使用モデル: `claude-haiku-4-5-20251001`（`appch/Services/AIService.swift` で変更可）。
+- 投稿系シークレットの取得手順は **[shorts/SETUP.md](shorts/SETUP.md)** に詳細あり。コードには絶対に書かない（`shorts/.gitignore` で `.env`/`token*.json` 等を除外済み）。
 
 ---
 
-## 6. バージョン管理（まだ未設定 → 引っ越しを楽にするなら推奨）
+## 6. バージョン管理と GitHub アカウント
 
-このプロジェクトはまだGitリポジトリになっていません。デバイス間の移動を楽にするなら、Git化してGitHub等に置くのが最も確実です。
+このリポジトリは **Git管理済み**。GitHub: <https://github.com/niu111888/appch>（public）。新デバイスは `git clone` 一発で全部入る。
+
+### ⚠️ アカウントは niu111888 を使う（kage20251022 は使わない）
+
+- `gh` には2アカウント登録されている：**niu111888（アクティブ・これを使う）** と kage20251022（非アクティブ）。
+- 切替: `gh auth switch` ／ 確認: `gh auth status`。
+- 新マシンでは `gh auth login` で **niu111888** にログインする。
+
+### ⚠️ git のグローバル名義が kage になっている（要注意の落とし穴）
+
+現状 `git config --global user.email` = `kage20251022@gmail.com`。
+**このフォルダだけはローカル設定で niu111888 に上書き済み**なので、このリポジトリのコミットは正しく niu111888 名義になる：
 
 ```bash
-cd /path/to/appch
-git init
-git add .
-git commit -m "Initial commit"
-# 任意: GitHubにpush（gh CLI など）
+# このフォルダで（clone直後に一度だけ。設定済みなら不要）
+git config user.name  "niu111888"
+git config user.email "294673672+niu111888@users.noreply.github.com"
+git config user.email   # ← niu111888... が出ればOK
 ```
 
-→ こうすると新デバイスでは `git clone` 一発でこのファイル群（SETUP.md含む）が手に入ります。
+> 新規に別フォルダで `git init` すると**グローバルの kage 名義が使われてしまう**点に注意。
+> 恒久対策が必要なら、グローバルを niu111888 に変える / `includeIf` でフォルダ別に自動切替する（→ 必要時に設定）。
 
 ---
 
@@ -158,10 +179,11 @@ git commit -m "Initial commit"
 
 開発を進める中で以下が起きたら、**その都度ここに追記**してください。新デバイスでの再現性はこのファイルの鮮度で決まります。
 
-- 新しいツール／ライブラリを入れた → §2 の表 と `Brewfile` に追加
-- Swift Package など依存を追加した → ここに記載（パッケージ名・用途）
-- ビルド設定・必要なmacOS/Xcodeバージョンが変わった → §4 を更新
+- 新しい brew ツールを入れた → §2 の表・`Brewfile`・`bootstrap.sh` に追加
+- npm/Python/Swift Package など依存を追加した → ここ＋該当の `package.json`/`requirements`/`bootstrap.sh` に反映
+- ビルド設定・必要なmacOS/Xcodeバージョンが変わった → §4 と §8 を更新
 - 新しいAPIキーやサービスを使い始めた → §5 に追加（キー本体は書かない）
+- Node等のバージョンを上げた → `shorts/.tool-versions` を更新
 - 「最終更新」日付を更新
 
 ---
@@ -171,14 +193,16 @@ git commit -m "Initial commit"
 | 項目 | 値 |
 |---|---|
 | 機種 | Apple M3（arm64） |
-| macOS | 14.5 (Sonoma, build 23F79) |
-| Xcode | **26.5 (17F42)** インストール済み（`/Applications/Xcode.app`、xcodes経由） |
+| macOS | **26.5.1（build 25F80）** |
+| Xcode | **26.5 (17F42)**（`/Applications/Xcode.app`、xcodes経由） |
 | iOSプラットフォーム | iOS 26.5 Simulator (23F77) 導入済み |
-| Swift | 6.0.3（Command Line Tools 同梱） |
-| Homebrew | 6.0.1（/opt/homebrew） |
-| xcodes | 2.0.2（ビルド済みバイナリを /opt/homebrew/bin に設置） |
-| git | 2.39.5（Apple Git） |
-| Node | v24.16.0（mise経由・このアプリには不要） |
+| Swift | 6.3.2（Xcode同梱） |
+| Homebrew | 6.0.2（/opt/homebrew） |
+| brew leaves | gh, mise, jq, trash |
+| xcodes | 2.0.2（ビルド済みバイナリを /opt/homebrew/bin に手動設置・brew管理外） |
+| mise / Node | mise 2026.5.18 / node 24.16.0 |
+| Python(shorts) | 3.14.5 venv + edge-tts 7.2.8 |
+| git | 2.50.1（Apple Git）／グローバル名義=kage(要注意)・本repoローカル=niu111888 |
 
-> ✅ **iPhone 17 シミュレータでビルド・起動・動作確認まで完了**（HSK50語の投入、ホーム/単語一覧/通知許可ダイアログを確認）。
-> 注: macOS 14.5 で Xcode 26.5 が動いている。今後 macOS をさらに上げる場合は §4 の対応表を再確認すること。
+> ✅ **iPhone 17 シミュレータで appch のビルド・起動・動作確認まで完了**（HSK50語の投入、ホーム/単語一覧/通知許可ダイアログを確認）。
+> ✅ shorts は npm依存＋Python venv(edge-tts) を導入済み・動画生成可（投稿はSecrets登録待ち→ shorts/SETUP.md）。
