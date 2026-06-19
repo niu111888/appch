@@ -15,6 +15,8 @@ enum SharedStore {
         d.set(word?.hanzi ?? "", forKey: "hanzi")
         d.set(word?.pinyin ?? "", forKey: "pinyin")
         d.set(word?.meaning ?? "", forKey: "meaning")
+        d.set(word?.example ?? "", forKey: "example")
+        d.set(word?.deck ?? "", forKey: "deck")
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

@@ -13,18 +13,35 @@ struct HomeView: View {
     /// 選択中のレッスン（"すべて" or デッキ名）。端末に保存。
     @AppStorage("selectedDeck") private var selectedDeck = Decks.all
 
-    /// 選べるレッスン一覧（先頭に「すべて」）。
+    /// 間違えたことのある単語（苦手）。
+    private var weakCards: [Card] {
+        cards.filter { $0.lapses >= 1 }
+    }
+
+    /// 苦手レッスンを選んでいるか。
+    private var isWeakSelected: Bool { selectedDeck == Decks.weak }
+
+    /// 選べるレッスン一覧（先頭に「すべて」、苦手があれば2番目に「苦手」）。
     private var availableDecks: [String] {
-        Decks.available(from: Set(cards.map(\.deck)))
+        var list = Decks.available(from: Set(cards.map(\.deck)))
+        if !weakCards.isEmpty {
+            list.insert(Decks.weak, at: 1)
+        }
+        return list
     }
 
     /// 選択レッスンに属するカード。
     private var deckCards: [Card] {
-        selectedDeck == Decks.all ? cards : cards.filter { $0.deck == selectedDeck }
+        switch selectedDeck {
+        case Decks.all: return cards
+        case Decks.weak: return weakCards.sorted { $0.lapses > $1.lapses }
+        default: return cards.filter { $0.deck == selectedDeck }
+        }
     }
 
-    /// 今復習すべきカード（選択レッスン内の期限切れ）。
+    /// 復習対象。通常は期限切れ、苦手レッスンでは期限に関係なく全部。
     private var dueCards: [Card] {
+        if isWeakSelected { return deckCards }
         let now = Date.now
         return deckCards.filter { $0.isDue(asOf: now) }
     }
@@ -56,7 +73,11 @@ struct HomeView: View {
                 .padding()
             }
             .navigationTitle("中国語")
-            .onAppear { updateWidget() }
+            .onAppear {
+                // 選択レッスンが消えていたら「すべて」に戻す。
+                if !availableDecks.contains(selectedDeck) { selectedDeck = Decks.all }
+                updateWidget()
+            }
             .onChange(of: dueCards.count) { updateWidget() }
             .onChange(of: selectedDeck) { updateWidget() }
             .toolbar {
@@ -94,17 +115,25 @@ struct HomeView: View {
             HStack(spacing: 8) {
                 ForEach(availableDecks, id: \.self) { deck in
                     let selected = deck == selectedDeck
+                    let isWeak = deck == Decks.weak
                     Button {
                         withAnimation(.easeInOut(duration: 0.15)) { selectedDeck = deck }
                     } label: {
-                        Text(deck)
-                            .font(.subheadline.weight(selected ? .bold : .regular))
-                            .padding(.horizontal, 14)
-                            .padding(.vertical, 8)
-                            .background(
-                                Capsule().fill(selected ? Color.accentColor : Color.gray.opacity(0.15))
+                        HStack(spacing: 4) {
+                            if isWeak { Image(systemName: "exclamationmark.triangle.fill").font(.caption2) }
+                            Text(deck)
+                        }
+                        .font(.subheadline.weight(selected ? .bold : .regular))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 8)
+                        .background(
+                            Capsule().fill(
+                                selected
+                                    ? (isWeak ? Color.orange : Color.accentColor)
+                                    : (isWeak ? Color.orange.opacity(0.18) : Color.gray.opacity(0.15))
                             )
-                            .foregroundStyle(selected ? .white : .primary)
+                        )
+                        .foregroundStyle(selected ? .white : (isWeak ? Color.orange : Color.primary))
                     }
                     .buttonStyle(.plain)
                 }
@@ -117,7 +146,7 @@ struct HomeView: View {
 
     private var dueCard: some View {
         VStack(spacing: 16) {
-            Text("今日の復習")
+            Text(isWeakSelected ? "苦手を集中復習" : "今日の復習")
                 .font(.headline)
                 .foregroundStyle(.secondary)
             Text("\(dueCards.count)")
@@ -130,12 +159,15 @@ struct HomeView: View {
             Button {
                 showStudy = true
             } label: {
-                Text(dueCards.isEmpty ? "今日は完了！🎉" : "学習を始める")
+                Text(dueCards.isEmpty
+                     ? (isWeakSelected ? "苦手はありません！🎉" : "今日は完了！🎉")
+                     : (isWeakSelected ? "苦手を復習" : "学習を始める"))
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()
             }
             .buttonStyle(.borderedProminent)
+            .tint(isWeakSelected ? .orange : .accentColor)
             .disabled(dueCards.isEmpty)
 
             Button {
@@ -183,6 +215,14 @@ struct HomeView: View {
                         Text(card.hanzi).font(.title3)
                         PinyinText(pinyin: card.pinyin, font: .caption)
                     }
+                    if card.lapses >= 1 {
+                        Text("✕\(card.lapses)")
+                            .font(.caption2.bold())
+                            .foregroundStyle(.orange)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 1)
+                            .background(Color.orange.opacity(0.15), in: Capsule())
+                    }
                     Spacer()
                     Text(card.meaning)
                         .font(.subheadline)
@@ -204,5 +244,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-        .modelContainer(for: Card.self, inMemory: true)
+        .modelContainer(for: [Card.self, StudyLog.self], inMemory: true)
 }

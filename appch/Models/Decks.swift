@@ -4,6 +4,8 @@ import Foundation
 enum Decks {
     /// 仮想の「すべて」（全レッスン横断）。
     static let all = "すべて"
+    /// 仮想の「苦手」（間違えた単語を横断抽出）。
+    static let weak = "苦手"
     /// 自分で追加した単語・知らない単語の保管先。
     static let myWords = "マイ単語"
 
