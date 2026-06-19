@@ -2,5 +2,6 @@
   "voice": "zh-CN-XiaoxiaoNeural",
   "rate": "-10%",
   "hookTemplate": "中国語で「{meaning}」は？",
-  "_note": "voice 候補: zh-CN-XiaoxiaoNeural(女性/標準), zh-CN-XiaoyiNeural(女性/明るい), zh-CN-YunxiNeural(男性), zh-CN-YunyangNeural(男性/ニュース). rate は読み上げ速度。"
+  "sources": ["phrases_seed.json"],
+  "_note": "sources: 動画が使う単語データ（appch/Resources/ 内）。複数指定で結合。例: 教科書も混ぜるなら [\"phrases_seed.json\",\"hsk1_seed.json\"]. voice 候補: zh-CN-XiaoxiaoNeural(女性/標準), zh-CN-XiaoyiNeural(女性/明るい), zh-CN-YunxiNeural(男性), zh-CN-YunyangNeural(男性/ニュース)."
 }

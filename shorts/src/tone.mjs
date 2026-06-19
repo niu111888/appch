@@ -12,10 +12,13 @@ const SYLLABLE = new RegExp(
   "gi"
 );
 
-/** "xièxie" → ["xiè","xie"], "nǐ hǎo" → ["nǐ","hǎo"] */
+/** "xièxie" → ["xiè","xie"], "méi guān xi" → ["méi","guān","xi"] */
 export function splitPinyin(pinyin) {
-  const matched = pinyin.replace(/\s+/g, "").match(SYLLABLE);
-  return matched && matched.length ? matched : [pinyin];
+  const trimmed = pinyin.trim();
+  // データが既に音節ごとにスペース区切りなら、それを信頼する（最も確実）
+  if (/\s/.test(trimmed)) return trimmed.split(/\s+/);
+  const matched = trimmed.match(SYLLABLE);
+  return matched && matched.length ? matched : [trimmed];
 }
 
 /** 音節の声調番号（1〜4、無ければ0=軽声） */

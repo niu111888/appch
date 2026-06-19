@@ -1,12 +1,23 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { pinyin } from "pinyin-pro";
 import { synthesize } from "./tts.mjs";
+
+const isHan = (c) => /[一-鿿]/.test(c);
+
+/** 例文を「文字ごとのピンイン」に変換（句読点は空のまま、文脈つきで多音字を解決）。 */
+function examplePinyinArray(sentence) {
+  const han = [...sentence].filter(isHan).join("");
+  const pys = pinyin(han, { type: "array", toneType: "symbol" });
+  let k = 0;
+  return [...sentence].map((c) => ({ c, p: isHan(c) ? pys[k++] || "" : "" }));
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-// アプリと共有する単語データ（唯一のソース）
-const SEED = path.resolve(ROOT, "..", "appch", "Resources", "hsk1_seed.json");
+// 単語データの置き場（アプリと共有）。どのファイルを使うかは config.json の sources で指定。
+const RES = path.resolve(ROOT, "..", "appch", "Resources");
 const PUBLIC = path.join(ROOT, "public");
 const AUDIO = path.join(PUBLIC, "audio");
 
@@ -23,7 +34,11 @@ function pickIndex(count) {
 }
 
 const config = JSON.parse(await readFile(path.join(ROOT, "config.json"), "utf8"));
-const words = JSON.parse(await readFile(SEED, "utf8"));
+const sources = config.sources ?? ["phrases_seed.json"];
+let words = [];
+for (const f of sources) {
+  words = words.concat(JSON.parse(await readFile(path.join(RES, f), "utf8")));
+}
 const idx = pickIndex(words.length);
 const w = words[idx];
 
@@ -45,6 +60,9 @@ const scene = {
   example: w.example,
   exampleMeaning: w.exampleMeaning,
   hook: (config.hookTemplate ?? "中国語で「{meaning}」は？").replace("{meaning}", w.meaning),
+  examplePinyin: examplePinyinArray(w.example),
+  category: w.category ?? "",
+  note: w.note ?? "",
   hanziAudio: "audio/hanzi.mp3",
   exampleAudio: "audio/example.mp3",
   hanziDur: round(hanzi.duration),

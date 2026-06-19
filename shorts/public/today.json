@@ -1,13 +1,61 @@
 {
-  "hanzi": "老师",
-  "pinyin": "lǎoshī",
-  "meaning": "先生",
-  "example": "她是我的中文老师。",
-  "exampleMeaning": "彼女は私の中国語の先生です。",
-  "hook": "中国語で「先生」は？",
+  "hanzi": "磕到了",
+  "pinyin": "kē dào le",
+  "meaning": "尊い・カプ萌え",
+  "example": "这两个人互动我磕到了！",
+  "exampleMeaning": "この二人の絡み、尊すぎて萌えた！",
+  "hook": "中国語で「尊い・カプ萌え」は？",
+  "examplePinyin": [
+    {
+      "c": "这",
+      "p": "zhè"
+    },
+    {
+      "c": "两",
+      "p": "liǎng"
+    },
+    {
+      "c": "个",
+      "p": "gè"
+    },
+    {
+      "c": "人",
+      "p": "rén"
+    },
+    {
+      "c": "互",
+      "p": "hù"
+    },
+    {
+      "c": "动",
+      "p": "dòng"
+    },
+    {
+      "c": "我",
+      "p": "wǒ"
+    },
+    {
+      "c": "磕",
+      "p": "kē"
+    },
+    {
+      "c": "到",
+      "p": "dào"
+    },
+    {
+      "c": "了",
+      "p": "le"
+    },
+    {
+      "c": "！",
+      "p": ""
+    }
+  ],
+  "category": "推し活",
+  "note": "カップリングや関係性に萌える瞬間。「磕CP」から。",
   "hanziAudio": "audio/hanzi.mp3",
   "exampleAudio": "audio/example.mp3",
-  "hanziDur": 1.675,
-  "exampleDur": 2.702,
-  "index": 30
+  "hanziDur": 1.758,
+  "exampleDur": 3.091,
+  "index": 91
 }
