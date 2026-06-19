@@ -3,6 +3,8 @@ import UserNotifications
 import SwiftData
 
 /// ローカル通知のスケジューリングと、通知からの回答処理をまとめて担当する。
+/// 複数リマインダー（全単語/お気に入り/苦手/ストリーク）と、勉強/思い出し/4択クイズの
+/// 3モードに対応する。
 final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationManager()
 
@@ -11,11 +13,12 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
 
     private let center = UNUserNotificationCenter.current()
 
-    // カテゴリ／アクションの識別子。
-    private let categoryID = "WORD_REVIEW"
+    // 識別子。
+    private let reviewCategoryID = "WORD_REVIEW"
     private let actionGood = "ANSWER_GOOD"
     private let actionForgot = "ANSWER_FORGOT"
     private let cardIDKey = "cardID"
+    private let quizCorrectKey = "quizCorrect"
 
     // MARK: - 権限とカテゴリ
 
@@ -25,74 +28,123 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         _ = try? await center.requestAuthorization(options: [.alert, .sound, .badge])
     }
 
-    /// 通知に「覚えてた／忘れた」のボタンを付けるためのカテゴリ登録。
+    /// 基本の「覚えてた／忘れた」カテゴリを登録（起動時）。
     func registerCategories() {
+        center.setNotificationCategories([reviewCategory()])
+    }
+
+    private func reviewCategory() -> UNNotificationCategory {
         let good = UNNotificationAction(identifier: actionGood, title: "覚えてた 👍", options: [])
         let forgot = UNNotificationAction(identifier: actionForgot, title: "忘れた 🤔", options: [])
-        let category = UNNotificationCategory(
-            identifier: categoryID,
-            actions: [good, forgot],
-            intentIdentifiers: [],
-            options: []
-        )
-        center.setNotificationCategories([category])
+        return UNNotificationCategory(identifier: reviewCategoryID, actions: [good, forgot],
+                                      intentIdentifiers: [], options: [])
     }
 
     // MARK: - スケジューリング
 
-    /// 期限が近い／新規のカードを使って、設定された時刻に通知を組み直す。
+    /// 有効なリマインダーすべてに合わせて通知を組み直す。
     func reschedule(container: ModelContainer) async {
-        let settings = NotificationSettings.load()
         center.removeAllPendingNotificationRequests()
-        guard settings.enabled else { return }
+        let reminders = ReminderStore.load().filter { $0.enabled }
 
-        let granted = await center.notificationSettings().authorizationStatus
-        guard granted == .authorized || granted == .provisional else { return }
+        let status = await center.notificationSettings().authorizationStatus
+        guard status == .authorized || status == .provisional else { return }
+        guard !reminders.isEmpty else {
+            center.setNotificationCategories([reviewCategory()])
+            return
+        }
 
-        let cards = upcomingCards(container: container, limit: settings.remindersPerDay * 3)
-        guard !cards.isEmpty else { return }
+        let context = ModelContext(container)
+        let allCards = (try? context.fetch(FetchDescriptor<Card>())) ?? []
 
-        let fireDates = settings.upcomingFireDates(count: settings.remindersPerDay * 3)
+        var categories: Set<UNNotificationCategory> = [reviewCategory()]
+        var requests: [UNNotificationRequest] = []
 
-        for (index, date) in fireDates.enumerated() {
-            let card = cards[index % cards.count]
-            let content = UNMutableNotificationContent()
-            if settings.showAnswer {
-                // 勉強モード: 単語・ピンイン・意味・例文を通知に全部のせる（見るだけで学べる）。
-                content.title = card.pinyin.isEmpty ? card.hanzi : "\(card.hanzi)　\(card.pinyin)"
-                content.subtitle = card.meaning
-                if !card.example.isEmpty {
-                    content.body = card.exampleMeaning.isEmpty
-                        ? card.example
-                        : "\(card.example)\n\(card.exampleMeaning)"
+        for (ri, reminder) in reminders.enumerated() {
+            let words = wordSet(for: reminder.target, from: allCards)
+            let dates = reminder.fireDates()
+            for (i, date) in dates.enumerated() {
+                let id = "r\(ri)-\(i)"
+                let content = UNMutableNotificationContent()
+                content.sound = .default
+
+                if reminder.target == .streak {
+                    content.title = "🔥 学習を忘れずに"
+                    content.body = "今日の単語を復習して連続記録を伸ばそう"
+                } else {
+                    guard !words.isEmpty else { continue }
+                    let card = words[i % words.count]
+                    var info: [String: Any] = [cardIDKey: card.id.uuidString]
+
+                    switch reminder.mode {
+                    case .study:
+                        content.title = card.pinyin.isEmpty ? card.hanzi : "\(card.hanzi)　\(card.pinyin)"
+                        content.subtitle = card.meaning
+                        if !card.example.isEmpty {
+                            content.body = card.exampleMeaning.isEmpty
+                                ? card.example : "\(card.example)\n\(card.exampleMeaning)"
+                        }
+                        content.categoryIdentifier = reviewCategoryID
+                    case .recall:
+                        content.title = "\(card.hanzi)　って何だっけ？"
+                        content.body = "ピンイン: \(card.pinyin)　▶︎ タップで答え"
+                        content.categoryIdentifier = reviewCategoryID
+                    case .quiz:
+                        let quiz = buildQuiz(card: card, allCards: allCards, salt: id)
+                        categories.insert(quiz.category)
+                        content.title = card.pinyin.isEmpty ? card.hanzi : "\(card.hanzi)　\(card.pinyin)"
+                        content.body = "意味はどれ？"
+                        content.categoryIdentifier = quiz.categoryID
+                        info[quizCorrectKey] = quiz.correctIndex
+                    }
+                    content.userInfo = info
                 }
-            } else {
-                // 思い出しモード: 答えは隠して「思い出す」きっかけにする。
-                content.title = "\(card.hanzi)　って何だっけ？"
-                content.body = "ピンイン: \(card.pinyin)　▶︎ タップで答え"
-            }
-            content.sound = .default
-            content.categoryIdentifier = categoryID
-            content.userInfo = [cardIDKey: card.id.uuidString]
 
-            let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
-            let request = UNNotificationRequest(identifier: "review-\(index)", content: content, trigger: trigger)
-            try? await center.add(request)
+                let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
+                requests.append(UNNotificationRequest(identifier: id, content: content, trigger: trigger))
+            }
+        }
+
+        center.setNotificationCategories(categories)
+        for req in requests { try? await center.add(req) }
+    }
+
+    /// 対象に応じた単語の集合。
+    private func wordSet(for target: ReminderTarget, from cards: [Card]) -> [Card] {
+        switch target {
+        case .allDue:
+            let now = Date.now
+            let due = cards.filter { $0.isDue(asOf: now) }
+            return due.isEmpty ? cards : due
+        case .favorites:
+            return cards.filter { $0.isFavorite }
+        case .weak:
+            return cards.filter { $0.lapses >= 1 }.sorted { $0.lapses > $1.lapses }
+        case .streak:
+            return []
         }
     }
 
-    /// 復習期限が近い順にカードを取得（なければ新規カード）。
-    private func upcomingCards(container: ModelContainer, limit: Int) -> [Card] {
-        let context = ModelContext(container)
-        var descriptor = FetchDescriptor<Card>(sortBy: [SortDescriptor(\.dueDate, order: .forward)])
-        descriptor.fetchLimit = max(limit, 1)
-        return (try? context.fetch(descriptor)) ?? []
+    /// 1問分のクイズ用カテゴリを作る（4択の選択肢をアクションにする）。
+    private func buildQuiz(card: Card, allCards: [Card], salt: String)
+        -> (categoryID: String, category: UNNotificationCategory, correctIndex: Int) {
+        var distractors = Array(Set(allCards.map(\.meaning))).filter { $0 != card.meaning }.shuffled()
+        distractors = Array(distractors.prefix(3))
+        var options = distractors + [card.meaning]
+        options.shuffle()
+        let correctIndex = options.firstIndex(of: card.meaning) ?? 0
+        let actions = options.enumerated().map { idx, text in
+            UNNotificationAction(identifier: "OPT\(idx)", title: text, options: [])
+        }
+        let categoryID = "QUIZ-\(salt)"
+        let category = UNNotificationCategory(identifier: categoryID, actions: actions,
+                                              intentIdentifiers: [], options: [])
+        return (categoryID, category, correctIndex)
     }
 
     // MARK: - UNUserNotificationCenterDelegate
 
-    /// フォアグラウンドでも通知を表示する。
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification
@@ -100,24 +152,30 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         [.banner, .sound, .list]
     }
 
-    /// 通知のボタン（覚えてた／忘れた）やタップを処理する。
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse
     ) async {
-        defer { /* 何もしない */ }
         guard let container else { return }
         let info = response.notification.request.content.userInfo
-        guard let idString = info[cardIDKey] as? String, !idString.isEmpty else { return }
-
-        let grade: Grade?
-        switch response.actionIdentifier {
-        case actionGood: grade = .good
-        case actionForgot: grade = .forgot
-        default: grade = nil // 本体タップ：アプリを開くだけ
+        guard let idString = info[cardIDKey] as? String, let uuid = UUID(uuidString: idString) else {
+            return
         }
 
-        if let grade, let uuid = UUID(uuidString: idString) {
+        let action = response.actionIdentifier
+        var grade: Grade?
+        if action == actionGood {
+            grade = .good
+        } else if action == actionForgot {
+            grade = .forgot
+        } else if action.hasPrefix("OPT") {
+            // クイズの回答：選んだ選択肢が正解かどうか。
+            let chosen = Int(action.dropFirst(3)) ?? -1
+            let correct = info[quizCorrectKey] as? Int ?? -2
+            grade = (chosen == correct) ? .good : .forgot
+        }
+
+        if let grade {
             let context = ModelContext(container)
             var descriptor = FetchDescriptor<Card>(predicate: #Predicate { $0.id == uuid })
             descriptor.fetchLimit = 1
@@ -128,75 +186,5 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         }
 
         await reschedule(container: container)
-    }
-}
-
-/// 通知の設定。UserDefaults に保存する軽量な構造体。
-struct NotificationSettings {
-    var enabled: Bool
-    var remindersPerDay: Int
-    var startHour: Int
-    var endHour: Int
-    /// 通知に意味・例文も載せる（勉強モード）。false なら答えを隠す思い出しモード。
-    var showAnswer: Bool
-
-    static let defaults = NotificationSettings(enabled: true, remindersPerDay: 6, startHour: 9, endHour: 21, showAnswer: true)
-
-    private enum Keys {
-        static let enabled = "notif.enabled"
-        static let count = "notif.count"
-        static let start = "notif.start"
-        static let end = "notif.end"
-        static let showAnswer = "notif.showAnswer"
-        static let initialized = "notif.initialized"
-    }
-
-    static func load() -> NotificationSettings {
-        let d = UserDefaults.standard
-        guard d.bool(forKey: Keys.initialized) else { return defaults }
-        return NotificationSettings(
-            enabled: d.bool(forKey: Keys.enabled),
-            remindersPerDay: max(1, d.integer(forKey: Keys.count)),
-            startHour: d.integer(forKey: Keys.start),
-            endHour: d.integer(forKey: Keys.end),
-            showAnswer: d.object(forKey: Keys.showAnswer) as? Bool ?? true
-        )
-    }
-
-    func save() {
-        let d = UserDefaults.standard
-        d.set(enabled, forKey: Keys.enabled)
-        d.set(remindersPerDay, forKey: Keys.count)
-        d.set(startHour, forKey: Keys.start)
-        d.set(endHour, forKey: Keys.end)
-        d.set(showAnswer, forKey: Keys.showAnswer)
-        d.set(true, forKey: Keys.initialized)
-    }
-
-    /// 開始〜終了時刻のあいだに、今日以降の通知時刻を等間隔で生成する。
-    func upcomingFireDates(count: Int, now: Date = .now, calendar: Calendar = .current) -> [Date] {
-        guard count > 0, endHour > startHour else { return [] }
-        let span = endHour - startHour
-        var dates: [Date] = []
-        var dayOffset = 0
-        while dates.count < count {
-            for i in 0..<remindersPerDay {
-                // その日の通知時刻を等間隔に配置。
-                let fraction = remindersPerDay == 1 ? 0.5 : Double(i) / Double(remindersPerDay - 1)
-                let hourFloat = Double(startHour) + fraction * Double(span)
-                let hour = Int(hourFloat)
-                let minute = Int((hourFloat - Double(hour)) * 60)
-                var comps = calendar.dateComponents([.year, .month, .day], from: calendar.date(byAdding: .day, value: dayOffset, to: now) ?? now)
-                comps.hour = hour
-                comps.minute = minute
-                if let date = calendar.date(from: comps), date > now {
-                    dates.append(date)
-                    if dates.count >= count { break }
-                }
-            }
-            dayOffset += 1
-            if dayOffset > 14 { break } // 安全弁
-        }
-        return dates
     }
 }

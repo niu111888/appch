@@ -9,6 +9,7 @@ struct HomeView: View {
     @State private var showStudy = false
     @State private var showQuiz = false
     @State private var showAdd = false
+    @State private var showImport = false
 
     /// 選択中のレッスン（"すべて" or デッキ名）。端末に保存。
     @AppStorage("selectedDeck") private var selectedDeck = Decks.all
@@ -18,15 +19,22 @@ struct HomeView: View {
         cards.filter { $0.lapses >= 1 }
     }
 
-    /// 苦手レッスンを選んでいるか。
-    private var isWeakSelected: Bool { selectedDeck == Decks.weak }
+    /// お気に入りの単語。
+    private var favoriteCards: [Card] {
+        cards.filter { $0.isFavorite }
+    }
 
-    /// 選べるレッスン一覧（先頭に「すべて」、苦手があれば2番目に「苦手」）。
+    /// 苦手/お気に入りレッスンを選んでいるか。
+    private var isWeakSelected: Bool { selectedDeck == Decks.weak }
+    private var isFavoritesSelected: Bool { selectedDeck == Decks.favorites }
+    /// 期限に関係なく全部を集中復習するレッスンか。
+    private var isFocusLesson: Bool { isWeakSelected || isFavoritesSelected }
+
+    /// 選べるレッスン一覧（すべて / 苦手 / お気に入り / 各レッスン…）。
     private var availableDecks: [String] {
         var list = Decks.available(from: Set(cards.map(\.deck)))
-        if !weakCards.isEmpty {
-            list.insert(Decks.weak, at: 1)
-        }
+        if !favoriteCards.isEmpty { list.insert(Decks.favorites, at: 1) }
+        if !weakCards.isEmpty { list.insert(Decks.weak, at: 1) }
         return list
     }
 
@@ -35,13 +43,14 @@ struct HomeView: View {
         switch selectedDeck {
         case Decks.all: return cards
         case Decks.weak: return weakCards.sorted { $0.lapses > $1.lapses }
+        case Decks.favorites: return favoriteCards
         default: return cards.filter { $0.deck == selectedDeck }
         }
     }
 
-    /// 復習対象。通常は期限切れ、苦手レッスンでは期限に関係なく全部。
+    /// 復習対象。通常は期限切れ、苦手/お気に入りでは期限に関係なく全部。
     private var dueCards: [Card] {
-        if isWeakSelected { return deckCards }
+        if isFocusLesson { return deckCards }
         let now = Date.now
         return deckCards.filter { $0.isDue(asOf: now) }
     }
@@ -90,8 +99,9 @@ struct HomeView: View {
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showAdd = true
+                    Menu {
+                        Button { showAdd = true } label: { Label("1語追加", systemImage: "plus") }
+                        Button { showImport = true } label: { Label("まとめてインポート", systemImage: "square.and.arrow.down") }
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -99,6 +109,9 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showAdd) {
                 AddWordView()
+            }
+            .sheet(isPresented: $showImport) {
+                ImportView()
             }
             .fullScreenCover(isPresented: $showStudy) {
                 StudyView(cards: dueCards)
@@ -117,11 +130,14 @@ struct HomeView: View {
                 ForEach(availableDecks, id: \.self) { deck in
                     let selected = deck == selectedDeck
                     let isWeak = deck == Decks.weak
+                    let isFav = deck == Decks.favorites
+                    let chipColor: Color = isWeak ? .orange : (isFav ? Color(red: 0.82, green: 0.6, blue: 0.13) : .accentColor)
                     Button {
                         withAnimation(.easeInOut(duration: 0.15)) { selectedDeck = deck }
                     } label: {
                         HStack(spacing: 4) {
                             if isWeak { Image(systemName: "exclamationmark.triangle.fill").font(.caption2) }
+                            if isFav { Image(systemName: "star.fill").font(.caption2) }
                             Text(deck)
                         }
                         .font(.subheadline.weight(selected ? .bold : .regular))
@@ -129,12 +145,11 @@ struct HomeView: View {
                         .padding(.vertical, 8)
                         .background(
                             Capsule().fill(
-                                selected
-                                    ? (isWeak ? Color.orange : Color.accentColor)
-                                    : (isWeak ? Color.orange.opacity(0.18) : Color.gray.opacity(0.15))
+                                selected ? chipColor
+                                    : (isWeak || isFav ? chipColor.opacity(0.18) : Color.gray.opacity(0.15))
                             )
                         )
-                        .foregroundStyle(selected ? .white : (isWeak ? Color.orange : Color.primary))
+                        .foregroundStyle(selected ? .white : (isWeak || isFav ? chipColor : Color.primary))
                     }
                     .buttonStyle(.plain)
                 }
@@ -147,7 +162,7 @@ struct HomeView: View {
 
     private var dueCard: some View {
         VStack(spacing: 16) {
-            Text(isWeakSelected ? "苦手を集中復習" : "今日の復習")
+            Text(isWeakSelected ? "苦手を集中復習" : isFavoritesSelected ? "お気に入りを復習" : "今日の復習")
                 .font(.serif(18))
                 .foregroundStyle(.secondary)
             Text("\(dueCards.count)")
@@ -161,14 +176,14 @@ struct HomeView: View {
                 showStudy = true
             } label: {
                 Text(dueCards.isEmpty
-                     ? (isWeakSelected ? "苦手はありません！🎉" : "今日は完了！🎉")
-                     : (isWeakSelected ? "苦手を復習" : "学習を始める"))
+                     ? (isFocusLesson ? "なし！🎉" : "今日は完了！🎉")
+                     : (isWeakSelected ? "苦手を復習" : isFavoritesSelected ? "お気に入りを復習" : "学習を始める"))
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()
             }
             .buttonStyle(.borderedProminent)
-            .tint(isWeakSelected ? .orange : .accentColor)
+            .tint(isWeakSelected ? .orange : isFavoritesSelected ? .yellow : .accentColor)
             .disabled(dueCards.isEmpty)
 
             Button {
@@ -234,6 +249,15 @@ struct HomeView: View {
                     Text(card.meaning)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                    Button {
+                        card.isFavorite.toggle()
+                        try? context.save()
+                    } label: {
+                        Image(systemName: card.isFavorite ? "star.fill" : "star")
+                            .foregroundStyle(card.isFavorite ? Color(red: 0.82, green: 0.6, blue: 0.13) : .secondary)
+                    }
+                    .buttonStyle(.borderless)
                     Button {
                         Speaker.shared.speak(card.hanzi)
                     } label: {

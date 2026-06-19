@@ -2,6 +2,9 @@ import SwiftUI
 import UIKit
 
 struct RootView: View {
+    /// テーマ設定（"system" / "light" / "dark"）。
+    @AppStorage("themeMode") private var themeMode = "system"
+
     init() {
         configureAppearance()
     }
@@ -16,7 +19,15 @@ struct RootView: View {
                 .tabItem { Label("設定", systemImage: "gearshape.fill") }
         }
         .tint(.appAccent)
-        .preferredColorScheme(.light) // クリーム＆ミントはライト基調で固定
+        .preferredColorScheme(colorScheme)
+    }
+
+    private var colorScheme: ColorScheme? {
+        switch themeMode {
+        case "light": return .light
+        case "dark": return .dark
+        default: return nil // システムに従う
+        }
     }
 
     /// ナビゲーション/タブバーをクリーム背景＋セリフ見出しに整える。

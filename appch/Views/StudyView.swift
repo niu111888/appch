@@ -35,6 +35,17 @@ struct StudyView: View {
             .navigationTitle("学習")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    if let card = current {
+                        Button {
+                            card.isFavorite.toggle()
+                            try? context.save()
+                        } label: {
+                            Image(systemName: card.isFavorite ? "star.fill" : "star")
+                                .foregroundStyle(card.isFavorite ? Color(red: 0.82, green: 0.6, blue: 0.13) : .secondary)
+                        }
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("閉じる") { finish() }
                 }

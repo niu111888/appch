@@ -1,17 +1,26 @@
 import SwiftUI
+import UIKit
 
-/// アプリ全体の配色（ミント＆クリーム）。
+/// ライト/ダークで切り替わる動的カラーを作る。
+private func dynamicColor(light: (CGFloat, CGFloat, CGFloat), dark: (CGFloat, CGFloat, CGFloat)) -> Color {
+    Color(uiColor: UIColor { trait in
+        let c = trait.userInterfaceStyle == .dark ? dark : light
+        return UIColor(red: c.0, green: c.1, blue: c.2, alpha: 1)
+    })
+}
+
+/// アプリ全体の配色（ミント＆クリーム / ダーク対応）。
 extension Color {
-    /// 温かいクリームの背景。
-    static let appBackground = Color(red: 0.957, green: 0.941, blue: 0.902)
-    /// カードの面（オフホワイト）。
-    static let appCard = Color(red: 1.0, green: 0.996, blue: 0.988)
-    /// ミントのアクセント（AccentColor と合わせる）。
+    /// 背景：クリーム（ライト）／チャコール（ダーク）。
+    static let appBackground = dynamicColor(light: (0.957, 0.941, 0.902), dark: (0.10, 0.11, 0.105))
+    /// カードの面：オフホワイト（ライト）／ダークグレー（ダーク）。
+    static let appCard = dynamicColor(light: (1.0, 0.996, 0.988), dark: (0.16, 0.17, 0.165))
+    /// ミントのアクセント（両モード共通・AccentColor と合わせる）。
     static let appAccent = Color(red: 0.18, green: 0.66, blue: 0.56)
     /// アクセントの淡い面。
     static let appAccentSoft = Color(red: 0.18, green: 0.66, blue: 0.56).opacity(0.16)
-    /// 墨色のテキスト。
-    static let appInk = Color(red: 0.13, green: 0.14, blue: 0.13)
+    /// 主要テキスト：墨（ライト）／オフホワイト（ダーク）。
+    static let appInk = dynamicColor(light: (0.13, 0.14, 0.13), dark: (0.93, 0.93, 0.92))
     /// やわらかいコーラル（差し色）。
     static let appCoral = Color(red: 0.95, green: 0.58, blue: 0.50)
 }

@@ -8,6 +8,8 @@ final class Card {
     @Attribute(.unique) var id: UUID
     /// 所属レッスン（デッキ）。例: "HSK1" / "旅行" / "マイ単語"
     var deck: String = "HSK1"
+    /// お気に入り。
+    var isFavorite: Bool = false
     /// 漢字（簡体字）。例: 苹果
     var hanzi: String
     /// ピンイン（声調記号つき）。例: píngguǒ

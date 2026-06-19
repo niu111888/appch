@@ -6,6 +6,8 @@ enum Decks {
     static let all = "すべて"
     /// 仮想の「苦手」（間違えた単語を横断抽出）。
     static let weak = "苦手"
+    /// 仮想の「お気に入り」。
+    static let favorites = "お気に入り"
     /// 自分で追加した単語・知らない単語の保管先。
     static let myWords = "マイ単語"
 
