@@ -68,6 +68,7 @@ struct AddWordView: View {
                     }
                 }
             }
+            .screenBackground()
             .navigationTitle("単語を追加")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

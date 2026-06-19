@@ -57,13 +57,23 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         for (index, date) in fireDates.enumerated() {
             let card = cards[index % cards.count]
             let content = UNMutableNotificationContent()
-            // 答えは隠して「思い出す」きっかけにする。
-            content.title = "\(card.hanzi)　って何だっけ？"
-            content.body = "ピンイン: \(card.pinyin)　▶︎ タップで答え"
+            if settings.showAnswer {
+                // 勉強モード: 単語・ピンイン・意味・例文を通知に全部のせる（見るだけで学べる）。
+                content.title = card.pinyin.isEmpty ? card.hanzi : "\(card.hanzi)　\(card.pinyin)"
+                content.subtitle = card.meaning
+                if !card.example.isEmpty {
+                    content.body = card.exampleMeaning.isEmpty
+                        ? card.example
+                        : "\(card.example)\n\(card.exampleMeaning)"
+                }
+            } else {
+                // 思い出しモード: 答えは隠して「思い出す」きっかけにする。
+                content.title = "\(card.hanzi)　って何だっけ？"
+                content.body = "ピンイン: \(card.pinyin)　▶︎ タップで答え"
+            }
             content.sound = .default
             content.categoryIdentifier = categoryID
             content.userInfo = [cardIDKey: card.id.uuidString]
-            // 意味はロック画面に出さない（思い出すきっかけにするため）。
 
             let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
@@ -127,14 +137,17 @@ struct NotificationSettings {
     var remindersPerDay: Int
     var startHour: Int
     var endHour: Int
+    /// 通知に意味・例文も載せる（勉強モード）。false なら答えを隠す思い出しモード。
+    var showAnswer: Bool
 
-    static let defaults = NotificationSettings(enabled: true, remindersPerDay: 6, startHour: 9, endHour: 21)
+    static let defaults = NotificationSettings(enabled: true, remindersPerDay: 6, startHour: 9, endHour: 21, showAnswer: true)
 
     private enum Keys {
         static let enabled = "notif.enabled"
         static let count = "notif.count"
         static let start = "notif.start"
         static let end = "notif.end"
+        static let showAnswer = "notif.showAnswer"
         static let initialized = "notif.initialized"
     }
 
@@ -145,7 +158,8 @@ struct NotificationSettings {
             enabled: d.bool(forKey: Keys.enabled),
             remindersPerDay: max(1, d.integer(forKey: Keys.count)),
             startHour: d.integer(forKey: Keys.start),
-            endHour: d.integer(forKey: Keys.end)
+            endHour: d.integer(forKey: Keys.end),
+            showAnswer: d.object(forKey: Keys.showAnswer) as? Bool ?? true
         )
     }
 
@@ -155,6 +169,7 @@ struct NotificationSettings {
         d.set(remindersPerDay, forKey: Keys.count)
         d.set(startHour, forKey: Keys.start)
         d.set(endHour, forKey: Keys.end)
+        d.set(showAnswer, forKey: Keys.showAnswer)
         d.set(true, forKey: Keys.initialized)
     }
 

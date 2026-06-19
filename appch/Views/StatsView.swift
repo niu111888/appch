@@ -24,6 +24,7 @@ struct StatsView: View {
                 }
                 .padding()
             }
+            .screenBackground()
             .navigationTitle("記録")
         }
     }
@@ -44,7 +45,7 @@ struct StatsView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 28)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .cardBackground(24)
     }
 
     private var totals: some View {
@@ -62,7 +63,7 @@ struct StatsView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
+        .cardBackground(16)
     }
 }
 
@@ -106,7 +107,7 @@ struct HeatmapView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("学習ヒートマップ")
-                .font(.headline)
+                .font(.serif(18))
             HStack(alignment: .top, spacing: 3) {
                 ForEach(Array(gridColumns.enumerated()), id: \.offset) { _, column in
                     VStack(spacing: 3) {
@@ -129,7 +130,7 @@ struct HeatmapView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
+        .cardBackground(20)
     }
 
     /// 回答数 → 濃さ。

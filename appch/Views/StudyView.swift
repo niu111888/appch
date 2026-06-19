@@ -31,6 +31,7 @@ struct StudyView: View {
                 }
             }
             .padding()
+            .screenBackground()
             .navigationTitle("学習")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -77,7 +78,7 @@ struct StudyView: View {
         }
         .frame(maxWidth: .infinity, minHeight: 320)
         .padding()
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .cardBackground(24)
         .contentShape(Rectangle())
         .onTapGesture {
             if !revealed { Speaker.shared.speak(card.hanzi) }

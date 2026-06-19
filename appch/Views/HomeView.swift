@@ -72,6 +72,7 @@ struct HomeView: View {
                 }
                 .padding()
             }
+            .screenBackground()
             .navigationTitle("中国語")
             .onAppear {
                 // 選択レッスンが消えていたら「すべて」に戻す。
@@ -147,7 +148,7 @@ struct HomeView: View {
     private var dueCard: some View {
         VStack(spacing: 16) {
             Text(isWeakSelected ? "苦手を集中復習" : "今日の復習")
-                .font(.headline)
+                .font(.serif(18))
                 .foregroundStyle(.secondary)
             Text("\(dueCards.count)")
                 .font(.system(size: 72, weight: .bold, design: .rounded))
@@ -183,7 +184,7 @@ struct HomeView: View {
         }
         .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .cardBackground(24)
     }
 
     private var statsRow: some View {
@@ -201,13 +202,13 @@ struct HomeView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16))
+        .cardBackground(16)
     }
 
     private var wordList: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("単語一覧")
-                .font(.headline)
+                .font(.serif(20))
                 .padding(.leading, 4)
             ForEach(deckCards) { card in
                 HStack {
@@ -236,7 +237,7 @@ struct HomeView: View {
                 }
                 .padding(.vertical, 8)
                 .padding(.horizontal, 12)
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
+                .cardBackground(12)
             }
         }
     }

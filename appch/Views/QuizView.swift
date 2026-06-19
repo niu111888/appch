@@ -36,6 +36,7 @@ struct QuizView: View {
                 }
             }
             .padding()
+            .screenBackground()
             .navigationTitle("クイズ")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -63,7 +64,7 @@ struct QuizView: View {
         }
         .frame(maxWidth: .infinity, minHeight: 200)
         .padding()
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .cardBackground(24)
     }
 
     // MARK: - 選択肢
