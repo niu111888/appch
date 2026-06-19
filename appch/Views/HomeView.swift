@@ -206,10 +206,16 @@ struct HomeView: View {
     }
 
     private var wordList: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("単語一覧")
-                .font(.serif(20))
-                .padding(.leading, 4)
+        LazyVStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("単語一覧")
+                    .font(.serif(20))
+                Spacer()
+                Text("\(deckCards.count)語")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.horizontal, 4)
             ForEach(deckCards) { card in
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {

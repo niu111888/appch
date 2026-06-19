@@ -12,6 +12,10 @@
 - **通知で学習**：漢字＋ピンインだけをロック画面に出し、意味は隠す。通知のボタンから「覚えてた / 忘れた」をその場で回答 → SRSに反映
 - **中国語TTS**：単語・例文の発音を再生
 
+## データ出典
+
+HSK1〜6の語彙リスト（簡体字・ピンイン・級）は [drkameleon/complete-hsk-vocabulary](https://github.com/drkameleon/complete-hsk-vocabulary)（オープンソース）を利用。日本語の意味・例文はAI（Claude）で独自生成しています。
+
 ## 環境構築・引き継ぎ
 
 別のMacへ移して開発を続けるときは **[SETUP.md](SETUP.md)** を参照（ツール一覧・新デバイスでの再開手順・Xcodeバージョン問題の回避策をまとめた引き継ぎ書）。

@@ -20,8 +20,7 @@ enum SeedLoader {
         let count = (try? context.fetchCount(FetchDescriptor<Card>())) ?? 0
         guard count == 0 else { return }
 
-        // HSK1（deck 指定なし → "HSK1"）と、目的別レッスン（各語に deck あり）を投入。
-        load(file: "hsk1_seed", defaultDeck: "HSK1", into: context)
+        // すべてのレッスンを 1 ファイル（各語に deck あり）から投入。
         load(file: "lessons_seed", defaultDeck: Decks.myWords, into: context)
         try? context.save()
     }
