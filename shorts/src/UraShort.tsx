@@ -147,6 +147,24 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         </AbsoluteFill>
       ) : null}
 
+      {/* キャラ帯（ロゴの3匹だけを切り出して下部に。ふわふわ揺れる） */}
+      {frame < W.outroStart ? (
+        <div style={{ position: "absolute", bottom: 450, width: "100%", display: "flex", justifyContent: "center", transform: `translateY(${(Math.sin((frame / fps) * Math.PI * 2 * 0.5) * 6).toFixed(2)}px)` }}>
+          <div
+            style={{
+              width: 1080,
+              height: 320,
+              backgroundImage: `url(${staticFile("character/logo.png")})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "1460px",
+              backgroundPosition: "center -88px",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent)",
+              maskImage: "linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent)",
+            }}
+          />
+        </div>
+      ) : null}
+
       {/* BGM（オルゴール風・全編ループ・低音量） */}
       <Audio src={staticFile("sfx/bgm.wav")} loop volume={0.13} />
 
