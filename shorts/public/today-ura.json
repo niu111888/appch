@@ -1,0 +1,41 @@
+{
+  "category": "かわいい",
+  "front": {
+    "hanzi": "很可爱",
+    "pinyin": "hěn kě ài",
+    "meaning": "かわいい",
+    "audio": "audio/u_front.mp3",
+    "dur": 1.758
+  },
+  "backs": [
+    {
+      "hanzi": "好萌",
+      "pinyin": "hǎo méng",
+      "meaning": "萌え〜",
+      "example": "这只猫好萌！",
+      "exampleMeaning": "この猫萌え〜！",
+      "audio": "audio/u_back0.mp3",
+      "dur": 1.591
+    },
+    {
+      "hanzi": "啊我死了",
+      "pinyin": "ā wǒ sǐ le",
+      "meaning": "可愛すぎて死ぬ",
+      "example": "看到爱豆，啊我死了。",
+      "exampleMeaning": "推し見て、尊死。",
+      "tag": "awsl",
+      "audio": "audio/u_back1.mp3",
+      "dur": 1.952
+    },
+    {
+      "hanzi": "可爱炸了",
+      "pinyin": "kě ài zhà le",
+      "meaning": "可愛さ爆発",
+      "example": "这表情可爱炸了！",
+      "exampleMeaning": "この表情、可愛さ爆発！",
+      "audio": "audio/u_back2.mp3",
+      "dur": 1.911
+    }
+  ],
+  "index": 11
+}

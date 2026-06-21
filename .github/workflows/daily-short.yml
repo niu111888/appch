@@ -33,20 +33,20 @@ jobs:
       - name: 依存をインストール
         run: npm ci
 
-      - name: 台本＋音声を生成
+      - name: 効果音＋台本＋音声を生成（裏・中国語 表/裏）
         env:
           EDGE_TTS: edge-tts
-        run: npm run build
+        run: npm run sfx && npm run build:ura
 
       - name: 動画をレンダリング
-        run: npm run render
+        run: npm run render:ura
 
       - name: Instagram 用に動画を公開（Release にアップロード）
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create daily-latest --notes "auto-generated daily short" || true
-          gh release upload daily-latest out/video.mp4 --clobber
+          gh release upload daily-latest out/ura.mp4 --clobber
 
       - name: YouTube / Instagram に投稿
         env:
@@ -57,5 +57,5 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          PUBLIC_VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/daily-latest/video.mp4
+          PUBLIC_VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/daily-latest/ura.mp4
         run: npm run upload

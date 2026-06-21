@@ -28,3 +28,24 @@ export function buildCaption(s) {
 
   return { title, youtubeDescription, instagramCaption, tags: dedupe(ig).map((t) => t.replace("#", "")).slice(0, 15) };
 }
+
+/** 裏・中国語（表/裏フォーマット）用のキャプション。today-ura.json から組む。 */
+export function buildUraCaption(s) {
+  const net = HASHTAGS.categories.find((c) => c.name === "ネットスラング");
+  const extra = ["#裏中国語", "#リアル中国語", "#中国語スラング", "#ネイティブ中国語"];
+  const ig = dedupe([...HASHTAGS.common.instagram, ...(net?.instagram || []), ...extra]).slice(0, 30);
+  const yt = dedupe([...HASHTAGS.common.youtube, ...(net?.youtube || []), "#裏中国語", "#リアル中国語", "#中国語スラング"]);
+
+  const title = `「${s.front.meaning}」の裏の顔｜裏・中国語 #shorts`;
+  const lines = s.backs
+    .map((b) => `🔥 ${b.hanzi}（${b.pinyin}）= ${b.meaning}\n　例: ${b.example}（${b.exampleMeaning}）`)
+    .join("\n\n");
+  const body =
+    `教科書では「${s.front.hanzi}」(${s.front.meaning})。\nでも、リアルはこっち👇\n\n` +
+    lines +
+    `\n\n教科書にないリアルな中国語は「裏・中国語」で！\nプロフのURLからアプリへ📲 保存して使ってね🐼🐰🐷`;
+
+  const youtubeDescription = `${body}\n\n${yt.join(" ")}`;
+  const instagramCaption = `${body}\n.\n.\n.\n${ig.join(" ")}`;
+  return { title, youtubeDescription, instagramCaption, tags: dedupe(ig).map((t) => t.replace("#", "")).slice(0, 15) };
+}

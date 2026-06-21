@@ -178,7 +178,7 @@ export const PhraseShort: React.FC<{ scene?: Scene }> = ({ scene }) => {
       </div>
 
       {/* 単語ブロック（白カード：ふりがな式hanzi+pinyin / 意味 / 声調凡例） */}
-      <Block enterAt={fWordStart} exit={{ at: fExampleStart, type: "recede", dur: 0.33 }} containerStyle={{ position: "absolute", top: 660, left: "8%", width: "84%" }}>
+      <Block enterAt={fWordStart} exit={{ at: fExampleStart, type: "recede", dur: 0.33 }} containerStyle={{ position: "absolute", top: 640, left: "9%", width: "82%" }}>
         <div style={{ background: C.card, borderRadius: 48, padding: "44px 40px 36px", boxShadow: "0 24px 60px -22px rgba(110,50,25,0.22)", textAlign: "center" }}>
           <Speaking startFrame={hanziSpeakStart} durFrames={s2f(s.hanziDur)}>
             <FuriganaWord hanzi={s.hanzi} pinyin={s.pinyin} />
@@ -190,7 +190,7 @@ export const PhraseShort: React.FC<{ scene?: Scene }> = ({ scene }) => {
       </Block>
 
       {/* 例文ブロック（ふりがな式ピンインつき） */}
-      <Block enterAt={fExampleStart} exit={{ at: fCtaStart, type: "up", dur: 0.27 }} containerStyle={{ position: "absolute", top: 1290, left: "6%", width: "88%" }}>
+      <Block enterAt={fExampleStart} exit={{ at: fCtaStart, type: "up", dur: 0.27 }} containerStyle={{ position: "absolute", top: 1230, left: "9%", width: "82%" }}>
         <div style={{ textAlign: "center", borderTop: `3px solid ${C.line}`, paddingTop: 40 }}>
           <Speaking startFrame={exSpeakStart} durFrames={s2f(s.exampleDur)}>
             <ExampleLine example={s.example} items={s.examplePinyin} />
@@ -202,7 +202,7 @@ export const PhraseShort: React.FC<{ scene?: Scene }> = ({ scene }) => {
       </Block>
 
       {/* CTA（下部・安全圏） */}
-      <Block enterAt={fCtaStart} containerStyle={{ position: "absolute", bottom: 300, width: "100%", display: "flex", justifyContent: "center" }}>
+      <Block enterAt={fCtaStart} containerStyle={{ position: "absolute", bottom: 380, width: "100%", display: "flex", justifyContent: "center" }}>
         <Cta startFrame={fCtaStart} />
       </Block>
 

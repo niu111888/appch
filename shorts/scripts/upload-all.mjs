@@ -1,18 +1,30 @@
 import { readFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildCaption } from "./caption.mjs";
+import { buildCaption, buildUraCaption } from "./caption.mjs";
 import { uploadYouTube } from "./upload-youtube.mjs";
 import { uploadInstagramReel } from "./upload-instagram.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
-const scene = JSON.parse(await readFile(path.join(ROOT, "public", "today.json"), "utf8"));
-const videoPath = path.join(ROOT, "out", "video.mp4");
-const caption = buildCaption(scene);
+// 裏・中国語(表/裏)があればそれを優先。無ければ従来のフレーズ動画。
+const uraPath = path.join(ROOT, "public", "today-ura.json");
+let scene, caption, videoPath, label;
+if (existsSync(uraPath)) {
+  scene = JSON.parse(await readFile(uraPath, "utf8"));
+  caption = buildUraCaption(scene);
+  videoPath = path.join(ROOT, "out", "ura.mp4");
+  label = `${scene.front.hanzi} → ${scene.backs.map((b) => b.hanzi).join("/")}`;
+} else {
+  scene = JSON.parse(await readFile(path.join(ROOT, "public", "today.json"), "utf8"));
+  caption = buildCaption(scene);
+  videoPath = path.join(ROOT, "out", "video.mp4");
+  label = `${scene.hanzi}（${scene.pinyin}）${scene.meaning}`;
+}
 
-console.log(`投稿: ${scene.hanzi}（${scene.pinyin}）${scene.meaning}`);
+console.log(`投稿: ${label}`);
 
 const results = {};
 try {

@@ -1,61 +1,57 @@
 {
-  "hanzi": "磕到了",
-  "pinyin": "kē dào le",
-  "meaning": "尊い・カプ萌え",
-  "example": "这两个人互动我磕到了！",
-  "exampleMeaning": "この二人の絡み、尊すぎて萌えた！",
-  "hook": "中国語で「尊い・カプ萌え」は？",
+  "hanzi": "绝了",
+  "pinyin": "jué le",
+  "meaning": "最高・ヤバい",
+  "example": "这家奶茶也太绝了吧！",
+  "exampleMeaning": "このタピオカ、マジで最高すぎ！",
+  "hook": "中国語で「最高・ヤバい」は？",
   "examplePinyin": [
     {
       "c": "这",
       "p": "zhè"
     },
     {
-      "c": "两",
-      "p": "liǎng"
+      "c": "家",
+      "p": "jiā"
     },
     {
-      "c": "个",
-      "p": "gè"
+      "c": "奶",
+      "p": "nǎi"
     },
     {
-      "c": "人",
-      "p": "rén"
+      "c": "茶",
+      "p": "chá"
     },
     {
-      "c": "互",
-      "p": "hù"
+      "c": "也",
+      "p": "yě"
     },
     {
-      "c": "动",
-      "p": "dòng"
+      "c": "太",
+      "p": "tài"
     },
     {
-      "c": "我",
-      "p": "wǒ"
-    },
-    {
-      "c": "磕",
-      "p": "kē"
-    },
-    {
-      "c": "到",
-      "p": "dào"
+      "c": "绝",
+      "p": "jué"
     },
     {
       "c": "了",
       "p": "le"
     },
     {
+      "c": "吧",
+      "p": "ba"
+    },
+    {
       "c": "！",
       "p": ""
     }
   ],
-  "category": "推し活",
-  "note": "カップリングや関係性に萌える瞬間。「磕CP」から。",
+  "category": "ネットスラング",
+  "note": "称賛が基本だが呆れにも。「太绝了」でも。",
   "hanziAudio": "audio/hanzi.mp3",
   "exampleAudio": "audio/example.mp3",
-  "hanziDur": 1.758,
-  "exampleDur": 3.091,
-  "index": 91
+  "hanziDur": 1.605,
+  "exampleDur": 3.077,
+  "index": 21
 }

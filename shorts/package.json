@@ -8,6 +8,10 @@
     "build": "node scripts/build-today.mjs",
     "render": "node scripts/render.mjs",
     "today": "node scripts/build-today.mjs && node scripts/render.mjs",
+    "build:ura": "node scripts/build-ura.mjs",
+    "render:ura": "node scripts/render-ura.mjs",
+    "today:ura": "node scripts/gen-sfx.mjs && node scripts/build-ura.mjs && node scripts/render-ura.mjs",
+    "sfx": "node scripts/gen-sfx.mjs",
     "studio": "remotion studio",
     "upload": "node scripts/upload-all.mjs"
   },
