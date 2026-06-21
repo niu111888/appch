@@ -6,6 +6,9 @@ out/
 # 生成される音声（毎回作り直すのでコミットしない）
 public/audio/
 
+# キャラ切り抜きの中間ファイル（再生成可能）
+public/character/cut/
+
 # Remotion
 .remotion/
 

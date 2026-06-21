@@ -79,6 +79,20 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
   const W = backWindows(s, fps);
   const f = s2f(0.18);
 
+  // 場面ごとに登場するキャラ＆表情（表＝真面目パンダ / 裏＝わくわく・ジョイ・ブタをローテ）
+  const ROT = ["panda_excited", "rabbit_joy", "pig_hat"];
+  let charSrc: string | null = null;
+  let charAppear = 0;
+  if (frame < W.xStart) {
+    charSrc = "panda_studious";
+  } else {
+    const bi = W.wins.findIndex((w) => frame >= w.start && frame < w.end);
+    if (bi >= 0) {
+      charSrc = ROT[bi % ROT.length];
+      charAppear = W.wins[bi].start;
+    }
+  }
+
   // 表→裏で背景色をふわっと切替（裏に入ると少し温かいクリームへ）
   const bgMix = interpolate(frame, [W.xEnd, W.uraStart + s2f(0.3)], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const bg = bgMix < 0.5 ? "#EEE9DA" : "#F7F0DD";
@@ -147,15 +161,8 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         </AbsoluteFill>
       ) : null}
 
-      {/* 切り抜いた3匹（透過）を下部に。ふわふわ揺れる */}
-      {frame < W.outroStart ? (
-        <div style={{ position: "absolute", bottom: 220, width: "100%", display: "flex", justifyContent: "center" }}>
-          <Img
-            src={staticFile("character/trio.png")}
-            style={{ width: 560, transform: `translateY(${(Math.sin((frame / fps) * Math.PI * 2 * 0.5) * 7).toFixed(2)}px)`, filter: "drop-shadow(0 10px 14px rgba(120,80,40,0.18))" }}
-          />
-        </div>
-      ) : null}
+      {/* 場面ごとの表情キャラ（下部・登場でぴょこっと＋ふわ揺れ） */}
+      {charSrc && frame < W.outroStart ? <CharFooter src={charSrc} appearAt={charAppear} /> : null}
 
       {/* BGM（オルゴール風・全編ループ・低音量） */}
       <Audio src={staticFile("sfx/bgm.wav")} loop volume={0.13} />
@@ -173,6 +180,24 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         <Sequence key={`p${i}`} from={W.wins[i].start}><Audio src={staticFile("sfx/pop.wav")} volume={0.55} /></Sequence>
       ))}
     </AbsoluteFill>
+  );
+};
+
+/** 場面ごとの表情キャラを下部に表示（登場でぴょこっと＋ふわ揺れ）。 */
+const CharFooter: React.FC<{ src: string; appearAt: number }> = ({ src, appearAt }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = spring({ frame: frame - appearAt, fps, config: { damping: 12, stiffness: 180 }, durationInFrames: Math.round(fps * 0.5) });
+  const sc = interpolate(p, [0, 1], [0.55, 1]);
+  const dy0 = interpolate(p, [0, 1], [44, 0]);
+  const bob = Math.sin((frame / fps) * Math.PI * 2 * 0.5) * 7;
+  return (
+    <div style={{ position: "absolute", bottom: 200, width: "100%", display: "flex", justifyContent: "center" }}>
+      <Img
+        src={staticFile(`character/${src}.png`)}
+        style={{ height: 430, transform: `translateY(${(dy0 + bob).toFixed(2)}px) scale(${sc.toFixed(3)})`, transformOrigin: "center bottom", filter: "drop-shadow(0 10px 14px rgba(120,80,40,0.2))" }}
+      />
+    </div>
   );
 };
 
