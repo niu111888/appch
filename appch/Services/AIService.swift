@@ -25,10 +25,24 @@ enum AIServiceError: LocalizedError {
 
 /// Claude API を呼び出して、漢字からピンイン・意味・例文を補完する。
 struct AIService {
-    /// APIキーは UserDefaults に保存（プロトタイプ用。製品版は Keychain 推奨）。
+    /// APIキーは Keychain に保存（秘密情報は UserDefaults に置かない）。
+    /// 旧バージョンで UserDefaults に保存していた場合は初回アクセス時に自動移行する。
+    private static let apiKeyAccount = "claude.apiKey"
     static var apiKey: String {
-        get { UserDefaults.standard.string(forKey: "claude.apiKey") ?? "" }
-        set { UserDefaults.standard.set(newValue, forKey: "claude.apiKey") }
+        get {
+            if let k = Keychain.get(apiKeyAccount), !k.isEmpty { return k }
+            // 旧 UserDefaults からの移行
+            let legacy = UserDefaults.standard.string(forKey: apiKeyAccount) ?? ""
+            if !legacy.isEmpty {
+                Keychain.set(legacy, for: apiKeyAccount)
+                UserDefaults.standard.removeObject(forKey: apiKeyAccount)
+            }
+            return legacy
+        }
+        set {
+            Keychain.set(newValue, for: apiKeyAccount)
+            UserDefaults.standard.removeObject(forKey: apiKeyAccount)
+        }
     }
 
     /// 補完に使うモデル。安価で速い Haiku を既定にする。

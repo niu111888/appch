@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# 秘密情報のコミットを自動ブロックするガード。
+# 有効化: git config core.hooksPath .githooks
+#
+# 検出パターン: Anthropic(sk-ant) / Google OAuth secret(GOCSPX) / AWS(AKIA) /
+#               Google refresh token(1//0…) / Facebook long-lived token(EAA…)
+patterns='sk-ant-[A-Za-z0-9_-]{20,}|GOCSPX-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|1//0[A-Za-z0-9_-]{30,}|EAA[A-Za-z0-9]{80,}'
+
+hits=$(git diff --cached -U0 --no-color | grep -E '^\+' | grep -nE "$patterns")
+if [ -n "$hits" ]; then
+  echo "⛔ 秘密情報らしき文字列が検出されました。コミットを中止します:"
+  echo "$hits" | sed -E 's/(.{1,16}).*/  \1…（マスク）/'
+  echo ""
+  echo "→ APIキー・トークンはコミットしないでください（.env や GitHub Secrets を使う）。"
+  echo "  誤検出で続行したい場合のみ: git commit --no-verify"
+  exit 1
+fi
+exit 0
