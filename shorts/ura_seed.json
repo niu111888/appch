@@ -1,110 +1,780 @@
 [
   {
     "category": "称賛",
-    "front": { "hanzi": "很厉害", "pinyin": "hěn lì hai", "meaning": "すごい" },
+    "front": {
+      "hanzi": "很厉害",
+      "pinyin": "hěn lì hai",
+      "meaning": "すごい"
+    },
     "backs": [
-      { "hanzi": "绝了", "pinyin": "jué le", "meaning": "神・ヤバい", "example": "这家奶茶绝了！", "exampleMeaning": "このタピオカ絶品！" },
-      { "hanzi": "太牛了", "pinyin": "tài niú le", "meaning": "すごすぎ", "example": "你一个人做完的？太牛了！", "exampleMeaning": "一人で全部やったの？すごすぎ！" },
-      { "hanzi": "永远的神", "pinyin": "yǒng yuǎn de shén", "meaning": "永遠の神＝最強", "example": "周杰伦永远的神！", "exampleMeaning": "ジェイ・チョウは神！", "tag": "yyds" }
+      {
+        "hanzi": "绝了",
+        "pinyin": "jué le",
+        "meaning": "神・ヤバい",
+        "example": "这家奶茶绝了！",
+        "exampleMeaning": "このタピオカ絶品！"
+      },
+      {
+        "hanzi": "太牛了",
+        "pinyin": "tài niú le",
+        "meaning": "すごすぎ",
+        "example": "你一个人做完的？太牛了！",
+        "exampleMeaning": "一人で全部やったの？すごすぎ！"
+      },
+      {
+        "hanzi": "永远的神",
+        "pinyin": "yǒng yuǎn de shén",
+        "meaning": "永遠の神＝最強",
+        "example": "周杰伦永远的神！",
+        "exampleMeaning": "ジェイ・チョウは神！",
+        "tag": "yyds"
+      }
     ]
   },
   {
     "category": "驚き",
-    "front": { "hanzi": "真的吗", "pinyin": "zhēn de ma", "meaning": "本当ですか" },
+    "front": {
+      "hanzi": "真的吗",
+      "pinyin": "zhēn de ma",
+      "meaning": "本当ですか"
+    },
     "backs": [
-      { "hanzi": "真的假的", "pinyin": "zhēn de jiǎ de", "meaning": "マジで？", "example": "他结婚了？真的假的！", "exampleMeaning": "彼結婚したの？マジで！" },
-      { "hanzi": "不会吧", "pinyin": "bù huì ba", "meaning": "うそでしょ", "example": "又涨价了？不会吧。", "exampleMeaning": "また値上げ？うそでしょ。" },
-      { "hanzi": "我裂开了", "pinyin": "wǒ liè kāi le", "meaning": "メンタル崩壊", "example": "考试又挂了，我裂开了。", "exampleMeaning": "試験また落ちた、崩壊した。" }
+      {
+        "hanzi": "真的假的",
+        "pinyin": "zhēn de jiǎ de",
+        "meaning": "マジで？",
+        "example": "他结婚了？真的假的！",
+        "exampleMeaning": "彼結婚したの？マジで！"
+      },
+      {
+        "hanzi": "不会吧",
+        "pinyin": "bù huì ba",
+        "meaning": "うそでしょ",
+        "example": "又涨价了？不会吧。",
+        "exampleMeaning": "また値上げ？うそでしょ。"
+      },
+      {
+        "hanzi": "我裂开了",
+        "pinyin": "wǒ liè kāi le",
+        "meaning": "メンタル崩壊",
+        "example": "考试又挂了，我裂开了。",
+        "exampleMeaning": "試験また落ちた、崩壊した。"
+      }
     ]
   },
   {
     "category": "了解",
-    "front": { "hanzi": "我知道了", "pinyin": "wǒ zhī dào le", "meaning": "了解しました" },
+    "front": {
+      "hanzi": "我知道了",
+      "pinyin": "wǒ zhī dào le",
+      "meaning": "了解しました"
+    },
     "backs": [
-      { "hanzi": "收到", "pinyin": "shōu dào", "meaning": "りょ・承知", "example": "明天九点，收到！", "exampleMeaning": "明日9時ね、りょ！" },
-      { "hanzi": "安排", "pinyin": "ān pái", "meaning": "やっとくね", "example": "这事交给我，安排！", "exampleMeaning": "これ任せて、やっとく！" },
-      { "hanzi": "好嘞", "pinyin": "hǎo lei", "meaning": "あいよ！", "example": "帮我带杯咖啡。好嘞！", "exampleMeaning": "コーヒー買ってきて。あいよ！" }
+      {
+        "hanzi": "收到",
+        "pinyin": "shōu dào",
+        "meaning": "りょ・承知",
+        "example": "明天九点，收到！",
+        "exampleMeaning": "明日9時ね、りょ！"
+      },
+      {
+        "hanzi": "安排",
+        "pinyin": "ān pái",
+        "meaning": "やっとくね",
+        "example": "这事交给我，安排！",
+        "exampleMeaning": "これ任せて、やっとく！"
+      },
+      {
+        "hanzi": "好嘞",
+        "pinyin": "hǎo lei",
+        "meaning": "あいよ！",
+        "example": "帮我带杯咖啡。好嘞！",
+        "exampleMeaning": "コーヒー買ってきて。あいよ！"
+      }
     ]
   },
   {
     "category": "恋愛",
-    "front": { "hanzi": "我喜欢你", "pinyin": "wǒ xǐ huan nǐ", "meaning": "あなたが好きです" },
+    "front": {
+      "hanzi": "我喜欢你",
+      "pinyin": "wǒ xǐ huan nǐ",
+      "meaning": "あなたが好きです"
+    },
     "backs": [
-      { "hanzi": "上头了", "pinyin": "shàng tóu le", "meaning": "沼・ハマった", "example": "看他一眼就上头了。", "exampleMeaning": "一目見ただけで沼った。" },
-      { "hanzi": "磕到了", "pinyin": "kē dào le", "meaning": "尊い・カプ萌え", "example": "这两个人我磕到了！", "exampleMeaning": "この二人、尊すぎ！" },
-      { "hanzi": "心动了", "pinyin": "xīn dòng le", "meaning": "ときめいた", "example": "他笑起来我就心动了。", "exampleMeaning": "彼の笑顔にときめいた。" }
+      {
+        "hanzi": "上头了",
+        "pinyin": "shàng tóu le",
+        "meaning": "沼・ハマった",
+        "example": "看他一眼就上头了。",
+        "exampleMeaning": "一目見ただけで沼った。"
+      },
+      {
+        "hanzi": "磕到了",
+        "pinyin": "kē dào le",
+        "meaning": "尊い・カプ萌え",
+        "example": "这两个人我磕到了！",
+        "exampleMeaning": "この二人、尊すぎ！"
+      },
+      {
+        "hanzi": "心动了",
+        "pinyin": "xīn dòng le",
+        "meaning": "ときめいた",
+        "example": "他笑起来我就心动了。",
+        "exampleMeaning": "彼の笑顔にときめいた。"
+      }
     ]
   },
   {
     "category": "だるい",
-    "front": { "hanzi": "我很累", "pinyin": "wǒ hěn lèi", "meaning": "疲れました" },
+    "front": {
+      "hanzi": "我很累",
+      "pinyin": "wǒ hěn lèi",
+      "meaning": "疲れました"
+    },
     "backs": [
-      { "hanzi": "摆烂", "pinyin": "bǎi làn", "meaning": "もう投げやり", "example": "不想努力了，直接摆烂。", "exampleMeaning": "頑張るの無理、もう投げやり。" },
-      { "hanzi": "躺平", "pinyin": "tǎng píng", "meaning": "ゆるく生きる", "example": "卷不动了，我躺平。", "exampleMeaning": "競争疲れた、寝そべって生きる。" },
-      { "hanzi": "烦死了", "pinyin": "fán sǐ le", "meaning": "もうウンザリ", "example": "又加班，烦死了。", "exampleMeaning": "また残業、ウンザリ。" }
+      {
+        "hanzi": "摆烂",
+        "pinyin": "bǎi làn",
+        "meaning": "もう投げやり",
+        "example": "不想努力了，直接摆烂。",
+        "exampleMeaning": "頑張るの無理、もう投げやり。"
+      },
+      {
+        "hanzi": "躺平",
+        "pinyin": "tǎng píng",
+        "meaning": "ゆるく生きる",
+        "example": "卷不动了，我躺平。",
+        "exampleMeaning": "競争疲れた、寝そべって生きる。"
+      },
+      {
+        "hanzi": "烦死了",
+        "pinyin": "fán sǐ le",
+        "meaning": "もうウンザリ",
+        "example": "又加班，烦死了。",
+        "exampleMeaning": "また残業、ウンザリ。"
+      }
     ]
   },
   {
     "category": "ありがとう",
-    "front": { "hanzi": "谢谢", "pinyin": "xiè xie", "meaning": "ありがとう" },
+    "front": {
+      "hanzi": "谢谢",
+      "pinyin": "xiè xie",
+      "meaning": "ありがとう"
+    },
     "backs": [
-      { "hanzi": "谢啦", "pinyin": "xiè la", "meaning": "ありがと〜（軽い）", "example": "帮大忙了，谢啦！", "exampleMeaning": "助かった、ありがと〜！" },
-      { "hanzi": "多谢", "pinyin": "duō xiè", "meaning": "どうも", "example": "多谢老铁！", "exampleMeaning": "あざっす相棒！" },
-      { "hanzi": "蟹蟹", "pinyin": "xiè xie", "meaning": "あざ〜す（ネット）", "example": "礼物收到啦，蟹蟹！", "exampleMeaning": "プレゼント届いた、あざ〜す！" }
+      {
+        "hanzi": "谢啦",
+        "pinyin": "xiè la",
+        "meaning": "ありがと〜（軽い）",
+        "example": "帮大忙了，谢啦！",
+        "exampleMeaning": "助かった、ありがと〜！"
+      },
+      {
+        "hanzi": "多谢",
+        "pinyin": "duō xiè",
+        "meaning": "どうも",
+        "example": "多谢老铁！",
+        "exampleMeaning": "あざっす相棒！"
+      },
+      {
+        "hanzi": "蟹蟹",
+        "pinyin": "xiè xie",
+        "meaning": "あざ〜す（ネット）",
+        "example": "礼物收到啦，蟹蟹！",
+        "exampleMeaning": "プレゼント届いた、あざ〜す！"
+      }
     ]
   },
   {
     "category": "グルメ",
-    "front": { "hanzi": "很好吃", "pinyin": "hěn hǎo chī", "meaning": "おいしい" },
+    "front": {
+      "hanzi": "很好吃",
+      "pinyin": "hěn hǎo chī",
+      "meaning": "おいしい"
+    },
     "backs": [
-      { "hanzi": "绝绝子", "pinyin": "jué jué zǐ", "meaning": "美味しすぎ・最高", "example": "这蛋糕绝绝子！", "exampleMeaning": "このケーキ美味しすぎ！" },
-      { "hanzi": "太香了", "pinyin": "tài xiāng le", "meaning": "最高にうまい", "example": "螺蛳粉太香了！", "exampleMeaning": "ルーシーフン最高！" },
-      { "hanzi": "封神", "pinyin": "fēng shén", "meaning": "殿堂入りの旨さ", "example": "这家店直接封神。", "exampleMeaning": "この店は殿堂入り。" }
+      {
+        "hanzi": "绝绝子",
+        "pinyin": "jué jué zǐ",
+        "meaning": "美味しすぎ・最高",
+        "example": "这蛋糕绝绝子！",
+        "exampleMeaning": "このケーキ美味しすぎ！"
+      },
+      {
+        "hanzi": "太香了",
+        "pinyin": "tài xiāng le",
+        "meaning": "最高にうまい",
+        "example": "螺蛳粉太香了！",
+        "exampleMeaning": "ルーシーフン最高！"
+      },
+      {
+        "hanzi": "封神",
+        "pinyin": "fēng shén",
+        "meaning": "殿堂入りの旨さ",
+        "example": "这家店直接封神。",
+        "exampleMeaning": "この店は殿堂入り。"
+      }
     ]
   },
   {
     "category": "賛成",
-    "front": { "hanzi": "我同意", "pinyin": "wǒ tóng yì", "meaning": "賛成です" },
+    "front": {
+      "hanzi": "我同意",
+      "pinyin": "wǒ tóng yì",
+      "meaning": "賛成です"
+    },
     "backs": [
-      { "hanzi": "必须的", "pinyin": "bì xū de", "meaning": "もちろん（当然）", "example": "去吗？必须的！", "exampleMeaning": "行く？もちろん！" },
-      { "hanzi": "666", "pinyin": "liù liù liù", "meaning": "神・うまい（褒め）", "example": "这操作666！", "exampleMeaning": "このプレイ神！", "tag": "666" },
-      { "hanzi": "支持", "pinyin": "zhī chí", "meaning": "推す・賛成", "example": "你的决定我支持。", "exampleMeaning": "その決断、推すよ。" }
+      {
+        "hanzi": "必须的",
+        "pinyin": "bì xū de",
+        "meaning": "もちろん（当然）",
+        "example": "去吗？必须的！",
+        "exampleMeaning": "行く？もちろん！"
+      },
+      {
+        "hanzi": "666",
+        "pinyin": "liù liù liù",
+        "meaning": "神・うまい（褒め）",
+        "example": "这操作666！",
+        "exampleMeaning": "このプレイ神！",
+        "tag": "666"
+      },
+      {
+        "hanzi": "支持",
+        "pinyin": "zhī chí",
+        "meaning": "推す・賛成",
+        "example": "你的决定我支持。",
+        "exampleMeaning": "その決断、推すよ。"
+      }
     ]
   },
   {
     "category": "笑える",
-    "front": { "hanzi": "很好笑", "pinyin": "hěn hǎo xiào", "meaning": "面白い・笑える" },
+    "front": {
+      "hanzi": "很好笑",
+      "pinyin": "hěn hǎo xiào",
+      "meaning": "面白い・笑える"
+    },
     "backs": [
-      { "hanzi": "笑死", "pinyin": "xiào sǐ", "meaning": "草・ウケる", "example": "这个梗笑死。", "exampleMeaning": "このネタ草。" },
-      { "hanzi": "绷不住了", "pinyin": "bēng bú zhù le", "meaning": "吹いた", "example": "他一开口我绷不住了。", "exampleMeaning": "彼が喋った瞬間吹いた。" },
-      { "hanzi": "笑不活了", "pinyin": "xiào bù huó le", "meaning": "笑い死ぬ", "example": "太好笑，笑不活了。", "exampleMeaning": "面白すぎて笑い死ぬ。" }
+      {
+        "hanzi": "笑死",
+        "pinyin": "xiào sǐ",
+        "meaning": "草・ウケる",
+        "example": "这个梗笑死。",
+        "exampleMeaning": "このネタ草。"
+      },
+      {
+        "hanzi": "绷不住了",
+        "pinyin": "bēng bú zhù le",
+        "meaning": "吹いた",
+        "example": "他一开口我绷不住了。",
+        "exampleMeaning": "彼が喋った瞬間吹いた。"
+      },
+      {
+        "hanzi": "笑不活了",
+        "pinyin": "xiào bù huó le",
+        "meaning": "笑い死ぬ",
+        "example": "太好笑，笑不活了。",
+        "exampleMeaning": "面白すぎて笑い死ぬ。"
+      }
     ]
   },
   {
     "category": "別れ",
-    "front": { "hanzi": "再见", "pinyin": "zài jiàn", "meaning": "さようなら" },
+    "front": {
+      "hanzi": "再见",
+      "pinyin": "zài jiàn",
+      "meaning": "さようなら"
+    },
     "backs": [
-      { "hanzi": "拜拜", "pinyin": "bài bài", "meaning": "バイバイ", "example": "先走了，拜拜！", "exampleMeaning": "お先に、バイバイ！" },
-      { "hanzi": "溜了", "pinyin": "liū le", "meaning": "ずらかる・抜ける", "example": "我先溜了。", "exampleMeaning": "お先にずらかるわ。" },
-      { "hanzi": "撤了", "pinyin": "chè le", "meaning": "退散する", "example": "没意思，撤了。", "exampleMeaning": "つまんない、退散。" }
+      {
+        "hanzi": "拜拜",
+        "pinyin": "bài bài",
+        "meaning": "バイバイ",
+        "example": "先走了，拜拜！",
+        "exampleMeaning": "お先に、バイバイ！"
+      },
+      {
+        "hanzi": "溜了",
+        "pinyin": "liū le",
+        "meaning": "ずらかる・抜ける",
+        "example": "我先溜了。",
+        "exampleMeaning": "お先にずらかるわ。"
+      },
+      {
+        "hanzi": "撤了",
+        "pinyin": "chè le",
+        "meaning": "退散する",
+        "example": "没意思，撤了。",
+        "exampleMeaning": "つまんない、退散。"
+      }
     ]
   },
   {
     "category": "応援",
-    "front": { "hanzi": "加油", "pinyin": "jiā yóu", "meaning": "頑張って" },
+    "front": {
+      "hanzi": "加油",
+      "pinyin": "jiā yóu",
+      "meaning": "頑張って"
+    },
     "backs": [
-      { "hanzi": "冲", "pinyin": "chōng", "meaning": "行け・突っ込め", "example": "别犹豫，冲！", "exampleMeaning": "迷うな、行け！" },
-      { "hanzi": "奥利给", "pinyin": "ào lì gěi", "meaning": "気合だ・いくぞ", "example": "兄弟们，奥利给！", "exampleMeaning": "みんな、いくぞ！" },
-      { "hanzi": "你可以的", "pinyin": "nǐ kě yǐ de", "meaning": "君ならできる", "example": "别怕，你可以的！", "exampleMeaning": "怖がるな、君ならできる！" }
+      {
+        "hanzi": "冲",
+        "pinyin": "chōng",
+        "meaning": "行け・突っ込め",
+        "example": "别犹豫，冲！",
+        "exampleMeaning": "迷うな、行け！"
+      },
+      {
+        "hanzi": "奥利给",
+        "pinyin": "ào lì gěi",
+        "meaning": "気合だ・いくぞ",
+        "example": "兄弟们，奥利给！",
+        "exampleMeaning": "みんな、いくぞ！"
+      },
+      {
+        "hanzi": "你可以的",
+        "pinyin": "nǐ kě yǐ de",
+        "meaning": "君ならできる",
+        "example": "别怕，你可以的！",
+        "exampleMeaning": "怖がるな、君ならできる！"
+      }
     ]
   },
   {
     "category": "かわいい",
-    "front": { "hanzi": "很可爱", "pinyin": "hěn kě ài", "meaning": "かわいい" },
+    "front": {
+      "hanzi": "很可爱",
+      "pinyin": "hěn kě ài",
+      "meaning": "かわいい"
+    },
     "backs": [
-      { "hanzi": "好萌", "pinyin": "hǎo méng", "meaning": "萌え〜", "example": "这只猫好萌！", "exampleMeaning": "この猫萌え〜！" },
-      { "hanzi": "啊我死了", "pinyin": "ā wǒ sǐ le", "meaning": "可愛すぎて死ぬ", "example": "看到爱豆，啊我死了。", "exampleMeaning": "推し見て、尊死。", "tag": "awsl" },
-      { "hanzi": "可爱炸了", "pinyin": "kě ài zhà le", "meaning": "可愛さ爆発", "example": "这表情可爱炸了！", "exampleMeaning": "この表情、可愛さ爆発！" }
+      {
+        "hanzi": "好萌",
+        "pinyin": "hǎo méng",
+        "meaning": "萌え〜",
+        "example": "这只猫好萌！",
+        "exampleMeaning": "この猫萌え〜！"
+      },
+      {
+        "hanzi": "啊我死了",
+        "pinyin": "ā wǒ sǐ le",
+        "meaning": "可愛すぎて死ぬ",
+        "example": "看到爱豆，啊我死了。",
+        "exampleMeaning": "推し見て、尊死。",
+        "tag": "awsl"
+      },
+      {
+        "hanzi": "可爱炸了",
+        "pinyin": "kě ài zhà le",
+        "meaning": "可愛さ爆発",
+        "example": "这表情可爱炸了！",
+        "exampleMeaning": "この表情、可愛さ爆発！"
+      }
+    ]
+  },
+  {
+    "category": "残業・激務",
+    "front": {
+      "hanzi": "加班",
+      "pinyin": "jiā bān",
+      "meaning": "残業する"
+    },
+    "backs": [
+      {
+        "hanzi": "爆肝",
+        "pinyin": "bào gān",
+        "meaning": "命削って激務",
+        "example": "为了赶项目，连续爆肝一周。",
+        "exampleMeaning": "納期のために一週間ぶっ通しで命削って働いた。"
+      },
+      {
+        "hanzi": "福报",
+        "pinyin": "fú bào",
+        "meaning": "激務という名の「恵み」(皮肉)",
+        "example": "天天加班，这就是福报呗。",
+        "exampleMeaning": "毎日残業、これが噂の「恵み」ってやつね。"
+      },
+      {
+        "hanzi": "大小周",
+        "pinyin": "dà xiǎo zhōu",
+        "meaning": "隔週6日勤務",
+        "example": "我们公司还在上大小周。",
+        "exampleMeaning": "うちの会社まだ隔週6勤やってるんだよ。"
+      }
+    ]
+  },
+  {
+    "category": "サボる",
+    "front": {
+      "hanzi": "偷懒",
+      "pinyin": "tōu lǎn",
+      "meaning": "サボる・手を抜く"
+    },
+    "backs": [
+      {
+        "hanzi": "摸鱼",
+        "pinyin": "mō yú",
+        "meaning": "仕事中にサボる",
+        "example": "老板不在就摸鱼。",
+        "exampleMeaning": "上司がいない隙にサボる。"
+      },
+      {
+        "hanzi": "划水",
+        "pinyin": "huá shuǐ",
+        "meaning": "適当に流す・手を抜く",
+        "example": "今天没人管，我全程划水。",
+        "exampleMeaning": "今日は誰も見てないし、一日中テキトーに流した。"
+      },
+      {
+        "hanzi": "装忙",
+        "pinyin": "zhuāng máng",
+        "meaning": "忙しいフリ",
+        "example": "领导一过来我就装忙。",
+        "exampleMeaning": "上司が来た瞬間に忙しいフリするんだ。"
+      }
+    ]
+  },
+  {
+    "category": "社畜・打工人",
+    "front": {
+      "hanzi": "上班族",
+      "pinyin": "shàng bān zú",
+      "meaning": "会社員・勤め人"
+    },
+    "backs": [
+      {
+        "hanzi": "牛马",
+        "pinyin": "niú mǎ",
+        "meaning": "こき使われる労働者(自虐)",
+        "example": "我们就是公司的牛马。",
+        "exampleMeaning": "俺たちなんて会社のこき使われ要員さ。"
+      },
+      {
+        "hanzi": "社畜",
+        "pinyin": "shè chù",
+        "meaning": "社畜",
+        "example": "当了三年社畜，人都麻了。",
+        "exampleMeaning": "社畜歴三年、もう感覚が麻痺してる。"
+      },
+      {
+        "hanzi": "螺丝钉",
+        "pinyin": "luó sī dīng",
+        "meaning": "替えのきく歯車",
+        "example": "在大厂里我就是颗螺丝钉。",
+        "exampleMeaning": "大企業じゃ俺なんてただの一本のネジさ。"
+      }
+    ]
+  },
+  {
+    "category": "ヤバい(終わった)",
+    "front": {
+      "hanzi": "完了",
+      "pinyin": "wán le",
+      "meaning": "終わった・おしまいだ"
+    },
+    "backs": [
+      {
+        "hanzi": "寄了",
+        "pinyin": "jì le",
+        "meaning": "終わった・オワタ",
+        "example": "这次考试我寄了。",
+        "exampleMeaning": "今回のテスト、俺もうオワタわ。"
+      },
+      {
+        "hanzi": "完蛋了",
+        "pinyin": "wán dàn le",
+        "meaning": "もう完全にダメだ",
+        "example": "手机掉水里，完蛋了。",
+        "exampleMeaning": "スマホ水に落とした、完全に終わった。"
+      },
+      {
+        "hanzi": "凉了",
+        "pinyin": "liáng le",
+        "meaning": "ご臨終・もう望み薄",
+        "example": "面试没回复，估计凉了。",
+        "exampleMeaning": "面接、返事ないしたぶんもうダメだわ。"
+      }
+    ]
+  },
+  {
+    "category": "やらかし・大失敗",
+    "front": {
+      "hanzi": "出丑",
+      "pinyin": "chū chǒu",
+      "meaning": "失敗して恥をかく"
+    },
+    "backs": [
+      {
+        "hanzi": "翻车",
+        "pinyin": "fān chē",
+        "meaning": "やらかす・大コケする",
+        "example": "直播翻车，太尴尬了。",
+        "exampleMeaning": "生配信でやらかした、気まずすぎ。"
+      },
+      {
+        "hanzi": "掉链子",
+        "pinyin": "diào liàn zi",
+        "meaning": "肝心な所でドジる",
+        "example": "关键时刻怎么又掉链子了。",
+        "exampleMeaning": "肝心な時にまたやらかすなんて。"
+      },
+      {
+        "hanzi": "拉胯",
+        "pinyin": "lā kuà",
+        "meaning": "肝心な所でしくじる",
+        "example": "关键时刻你别拉胯。",
+        "exampleMeaning": "ここぞって時にコケんなよ。"
+      }
+    ]
+  },
+  {
+    "category": "焦る",
+    "front": {
+      "hanzi": "着急",
+      "pinyin": "zháo jí",
+      "meaning": "焦る・気が急く"
+    },
+    "backs": [
+      {
+        "hanzi": "蕉绿",
+        "pinyin": "jiāo lǜ",
+        "meaning": "(焦虑のもじり)不安で焦る",
+        "example": "deadline快到了，好蕉绿。",
+        "exampleMeaning": "締め切り近くてマジで焦るわ。"
+      },
+      {
+        "hanzi": "慌了",
+        "pinyin": "huāng le",
+        "meaning": "テンパる・慌てる",
+        "example": "找不到票，我直接慌了。",
+        "exampleMeaning": "チケット見つからなくて一気にテンパった。"
+      },
+      {
+        "hanzi": "心态崩了",
+        "pinyin": "xīn tài bēng le",
+        "meaning": "メンタル崩壊・もうムリ",
+        "example": "又加班，我心态崩了。",
+        "exampleMeaning": "また残業、メンタル崩壊したわ。"
+      }
+    ]
+  },
+  {
+    "category": "呆れる・無言",
+    "front": {
+      "hanzi": "我无话可说",
+      "pinyin": "wǒ wú huà kě shuō",
+      "meaning": "もう言うことがない"
+    },
+    "backs": [
+      {
+        "hanzi": "我真的会谢",
+        "pinyin": "wǒ zhēn de huì xiè",
+        "meaning": "もう呆れて感謝(皮肉)",
+        "example": "就这操作我真的会谢。",
+        "exampleMeaning": "このやり方、もう呆れて笑うわ。"
+      },
+      {
+        "hanzi": "我直接无语",
+        "pinyin": "wǒ zhí jiē wú yǔ",
+        "meaning": "もう絶句・言葉も出ない",
+        "example": "看完聊天记录我直接无语。",
+        "exampleMeaning": "チャット履歴を見て一気に言葉を失った。"
+      },
+      {
+        "hanzi": "离谱",
+        "pinyin": "lí pǔ",
+        "meaning": "ありえない・呆れるほど",
+        "example": "这操作太离谱了。",
+        "exampleMeaning": "このやり方、ありえなさすぎ。"
+      }
+    ]
+  },
+  {
+    "category": "布教・おすすめ",
+    "front": {
+      "hanzi": "推荐给你",
+      "pinyin": "tuī jiàn gěi nǐ",
+      "meaning": "あなたにおすすめします"
+    },
+    "backs": [
+      {
+        "hanzi": "姐妹快去看",
+        "pinyin": "jiě mèi kuài qù kàn",
+        "meaning": "ねえ早く見て(布教の呼びかけ)",
+        "example": "姐妹快去看这部剧真的绝。",
+        "exampleMeaning": "ねえ早くこのドラマ見て、マジで最高だから。"
+      },
+      {
+        "hanzi": "我先磕为敬",
+        "pinyin": "wǒ xiān kē wèi jìng",
+        "meaning": "まず私が推し布教の先陣を",
+        "example": "这对cp我先磕为敬。",
+        "exampleMeaning": "このカプ、まず私が全力で推すから。"
+      },
+      {
+        "hanzi": "强烈安利给你",
+        "pinyin": "qiáng liè ān lì gěi nǐ",
+        "meaning": "全力でおすすめ・布教する",
+        "example": "这首歌我强烈安利给你。",
+        "exampleMeaning": "この曲、全力で布教するから聴いて。"
+      }
+    ]
+  },
+  {
+    "category": "金欠・貧乏",
+    "front": {
+      "hanzi": "我没钱了",
+      "pinyin": "wǒ méi qián le",
+      "meaning": "お金がない"
+    },
+    "backs": [
+      {
+        "hanzi": "吃土",
+        "pinyin": "chī tǔ",
+        "meaning": "金欠でカツカツ",
+        "example": "这个月剁手太狠，要吃土了。",
+        "exampleMeaning": "今月は買いすぎて、もう極貧レベル。"
+      },
+      {
+        "hanzi": "钱包空空",
+        "pinyin": "qián bāo kōng kōng",
+        "meaning": "財布スッカラカン",
+        "example": "发工资前钱包空空。",
+        "exampleMeaning": "給料日前は財布スッカラカン。"
+      },
+      {
+        "hanzi": "穷得叮当响",
+        "pinyin": "qióng de dīng dāng xiǎng",
+        "meaning": "ド貧乏",
+        "example": "月底穷得叮当响，只能宅家。",
+        "exampleMeaning": "月末はド貧乏で、家に引きこもるしかない。"
+      }
+    ]
+  },
+  {
+    "category": "節約・お得",
+    "front": {
+      "hanzi": "省钱",
+      "pinyin": "shěng qián",
+      "meaning": "お金を節約する"
+    },
+    "backs": [
+      {
+        "hanzi": "薅羊毛",
+        "pinyin": "hāo yáng máo",
+        "meaning": "クーポン等でうまく得する",
+        "example": "我专门薅羊毛，从不原价买。",
+        "exampleMeaning": "私はもっぱらお得取りで、定価では買わない。"
+      },
+      {
+        "hanzi": "捡漏",
+        "pinyin": "jiǎn lòu",
+        "meaning": "掘り出し物を安くゲット",
+        "example": "这双鞋打折，被我捡漏了。",
+        "exampleMeaning": "この靴セールで、掘り出し物としてゲット。"
+      },
+      {
+        "hanzi": "性价比拉满",
+        "pinyin": "xìng jià bǐ lā mǎn",
+        "meaning": "コスパ最強",
+        "example": "这家店性价比拉满。",
+        "exampleMeaning": "この店はコスパ最強。"
+      }
+    ]
+  },
+  {
+    "category": "かっこいい",
+    "front": {
+      "hanzi": "帅",
+      "pinyin": "shuài",
+      "meaning": "かっこいい"
+    },
+    "backs": [
+      {
+        "hanzi": "帅炸了",
+        "pinyin": "shuài zhà le",
+        "meaning": "イケすぎ",
+        "example": "你今天这身帅炸了！",
+        "exampleMeaning": "今日のその格好、イケすぎでしょ！"
+      },
+      {
+        "hanzi": "太飒了",
+        "pinyin": "tài sà le",
+        "meaning": "めちゃ颯爽",
+        "example": "她短发造型太飒了。",
+        "exampleMeaning": "彼女のショートヘア、めっちゃ颯爽。"
+      },
+      {
+        "hanzi": "帅到犯规",
+        "pinyin": "shuài dào fàn guī",
+        "meaning": "反則級にイケメン",
+        "example": "这个角度帅到犯规了吧。",
+        "exampleMeaning": "このアングル、反則級にかっこよくない？"
+      }
+    ]
+  },
+  {
+    "category": "美人・綺麗",
+    "front": {
+      "hanzi": "漂亮",
+      "pinyin": "piào liang",
+      "meaning": "綺麗・美人"
+    },
+    "backs": [
+      {
+        "hanzi": "神颜",
+        "pinyin": "shén yán",
+        "meaning": "神レベルの顔",
+        "example": "这位姐姐真的是神颜。",
+        "exampleMeaning": "このお姉さん、マジで神顔だわ。"
+      },
+      {
+        "hanzi": "颜值天花板",
+        "pinyin": "yán zhí tiān huā bǎn",
+        "meaning": "ビジュ最強",
+        "example": "她是我们班颜值天花板。",
+        "exampleMeaning": "彼女、うちのクラスでビジュ最強。"
+      },
+      {
+        "hanzi": "美哭了",
+        "pinyin": "měi kū le",
+        "meaning": "美しすぎて泣ける",
+        "example": "这妆容也太美哭了吧。",
+        "exampleMeaning": "このメイク、美しすぎて泣ける。"
+      }
+    ]
+  },
+  {
+    "category": "オシャレ・センス",
+    "front": {
+      "hanzi": "时尚",
+      "pinyin": "shí shàng",
+      "meaning": "オシャレ・センスがいい"
+    },
+    "backs": [
+      {
+        "hanzi": "太会穿了",
+        "pinyin": "tài huì chuān le",
+        "meaning": "着こなし上手すぎ",
+        "example": "博主太会穿了，照着抄。",
+        "exampleMeaning": "このブロガー着こなし上手すぎ、真似しよ。"
+      },
+      {
+        "hanzi": "有内味了",
+        "pinyin": "yǒu nèi wèi le",
+        "meaning": "その雰囲気出てる",
+        "example": "加个帽子瞬间有内味了。",
+        "exampleMeaning": "帽子足したら一気にそれっぽい雰囲気。"
+      },
+      {
+        "hanzi": "时髦精",
+        "pinyin": "shí máo jīng",
+        "meaning": "オシャレの権化",
+        "example": "我同事就是个时髦精。",
+        "exampleMeaning": "私の同僚、まさにオシャレの権化。"
+      }
     ]
   }
 ]

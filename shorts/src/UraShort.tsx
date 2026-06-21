@@ -74,6 +74,20 @@ const CHAR_BY_CAT: Record<string, string[]> = {
   別れ: ["panda_modern", "rabbit_fashion", "pig_hat"],
   応援: ["panda_excited", "rabbit_joy", "pig_hat"],
   かわいい: ["rabbit_fashion", "pig_hat", "rabbit_joy"],
+  // 新カテゴリ（職場/ピンチ/呆れ/布教/お金/ビジュ）
+  "残業・激務": ["pig_tired", "panda_basic", "rabbit_read"],
+  サボる: ["panda_modern", "rabbit_fashion", "pig_tired"],
+  "社畜・打工人": ["pig_tired", "panda_studious", "rabbit_read"],
+  "ヤバい(終わった)": ["pig_tired", "rabbit_joy", "panda_excited"],
+  "やらかし・大失敗": ["pig_tired", "rabbit_joy", "panda_excited"],
+  焦る: ["panda_excited", "pig_tired", "rabbit_joy"],
+  "呆れる・無言": ["pig_tired", "panda_basic", "rabbit_read"],
+  "布教・おすすめ": ["panda_excited", "rabbit_joy", "pig_hat"],
+  "金欠・貧乏": ["pig_tired", "panda_modern", "rabbit_read"],
+  "節約・お得": ["panda_modern", "rabbit_fashion", "pig_hat"],
+  かっこいい: ["panda_modern", "rabbit_fashion", "panda_excited"],
+  "美人・綺麗": ["rabbit_fashion", "rabbit_joy", "panda_modern"],
+  "オシャレ・センス": ["rabbit_fashion", "panda_modern", "pig_art"],
 };
 
 const sizeFor = (hanzi: string, big = true) => {
