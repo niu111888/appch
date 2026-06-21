@@ -62,11 +62,53 @@ comps = [c for c in comps if c[0] > 700]
 comps.sort(reverse=True)
 comps = comps[:14]
 
+# 切り出した枠内で「本体(最大の連結塊)＋それに触れている持ち物だけ」を残し、
+# 隣のセルからはみ出た離れた断片を透明化する。
+def keep_main(crop, gap=6, athresh=40):
+    a = np.array(crop)
+    Hh, Ww = a.shape[:2]
+    fg = a[:, :, 3] > athresh
+    if not fg.any():
+        return crop
+    labels = -np.ones((Hh, Ww), np.int32)
+    visited = np.zeros((Hh, Ww), bool)
+    comps2 = []
+    lab = 0
+    for (y, x) in np.argwhere(fg):
+        if visited[y, x]:
+            continue
+        q = deque([(y, x)]); visited[y, x] = True; area = 0
+        while q:
+            cy, cx = q.popleft(); labels[cy, cx] = lab; area += 1
+            for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                ny, nx = cy+dy, cx+dx
+                if 0 <= ny < Hh and 0 <= nx < Ww and fg[ny, nx] and not visited[ny, nx]:
+                    visited[ny, nx] = True; q.append((ny, nx))
+        comps2.append((area, lab)); lab += 1
+    comps2.sort(reverse=True)
+    main = labels == comps2[0][1]
+    # 本体を gap px 膨張させ、触れている塊(持ち物)も残す
+    dil = main.copy()
+    for _ in range(gap):
+        d = dil.copy()
+        d[1:, :] |= dil[:-1, :]; d[:-1, :] |= dil[1:, :]
+        d[:, 1:] |= dil[:, :-1]; d[:, :-1] |= dil[:, 1:]
+        dil = d
+    keep = main.copy()
+    for _, l in comps2[1:]:
+        m = labels == l
+        if (m & dil).any():
+            keep |= m
+    a[~keep, 3] = 0
+    return Image.fromarray(a, "RGBA")
+
+
 cells = []
 for i, (area, x0, y0, x1, y1) in enumerate(comps):
-    pad = 8
+    pad = 3
     bx = (max(0, x0-pad), max(0, y0-pad), min(W, x1+pad), min(H, y1+pad))
     c = cut_full.crop(bx)
+    c = keep_main(c)
     bb = c.getbbox()
     if bb:
         c = c.crop(bb)
