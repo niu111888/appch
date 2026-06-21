@@ -64,7 +64,27 @@ function sparkle() {
   return out;
 }
 
+// BGM（優しいオルゴール風のループ。低音量で全編に敷く想定）
+function bgm() {
+  const step = 0.3, steps = 16, dur = step * steps, n = Math.floor(SR * dur), out = new Float32Array(n);
+  const mel = [659, 880, 1047, 880, 784, 659, 587, 659, 523, 659, 784, 880, 784, 659, 587, 523];
+  const pad = [220, 175, 262, 196];
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    const si = Math.floor(t / step) % steps;
+    const lt = t - Math.floor(t / step) * step;
+    const f = mel[si];
+    const env = Math.exp(-lt * 5.5);
+    let v = (Math.sin(2 * Math.PI * f * lt) * 0.7 + Math.sin(2 * Math.PI * f * 2 * lt) * 0.25) * env * 0.16;
+    const pf = pad[Math.floor(t / step / 4) % 4];
+    v += (Math.sin(2 * Math.PI * pf * t) * 0.5 + Math.sin(2 * Math.PI * pf * 1.5 * t) * 0.2) * 0.05;
+    out[i] = v;
+  }
+  return out;
+}
+
 writeWav(path.join(OUT, "buzzer.wav"), buzzer());
 writeWav(path.join(OUT, "pop.wav"), pop());
 writeWav(path.join(OUT, "sparkle.wav"), sparkle());
-console.log("SFX生成: buzzer.wav / pop.wav / sparkle.wav");
+writeWav(path.join(OUT, "bgm.wav"), bgm());
+console.log("SFX生成: buzzer.wav / pop.wav / sparkle.wav / bgm.wav");

@@ -147,6 +147,9 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         </AbsoluteFill>
       ) : null}
 
+      {/* BGM（オルゴール風・全編ループ・低音量） */}
+      <Audio src={staticFile("sfx/bgm.wav")} loop volume={0.13} />
+
       {/* 音声（読み上げ） */}
       <Sequence from={W.frontRead}><Audio src={staticFile(s.front.audio)} /></Sequence>
       {s.backs.map((b, i) => (
