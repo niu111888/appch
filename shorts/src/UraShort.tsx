@@ -147,20 +147,12 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         </AbsoluteFill>
       ) : null}
 
-      {/* キャラ帯（ロゴの3匹だけを切り出して下部に。ふわふわ揺れる） */}
+      {/* 切り抜いた3匹（透過）を下部に。ふわふわ揺れる */}
       {frame < W.outroStart ? (
-        <div style={{ position: "absolute", bottom: 450, width: "100%", display: "flex", justifyContent: "center", transform: `translateY(${(Math.sin((frame / fps) * Math.PI * 2 * 0.5) * 6).toFixed(2)}px)` }}>
-          <div
-            style={{
-              width: 1080,
-              height: 320,
-              backgroundImage: `url(${staticFile("character/logo.png")})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "1460px",
-              backgroundPosition: "center -88px",
-              WebkitMaskImage: "linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent)",
-              maskImage: "linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent)",
-            }}
+        <div style={{ position: "absolute", bottom: 220, width: "100%", display: "flex", justifyContent: "center" }}>
+          <Img
+            src={staticFile("character/trio.png")}
+            style={{ width: 560, transform: `translateY(${(Math.sin((frame / fps) * Math.PI * 2 * 0.5) * 7).toFixed(2)}px)`, filter: "drop-shadow(0 10px 14px rgba(120,80,40,0.18))" }}
           />
         </div>
       ) : null}
