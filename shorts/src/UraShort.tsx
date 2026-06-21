@@ -85,16 +85,16 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: bg, fontFamily: jpFont, overflow: "hidden" }}>
-      {/* カテゴリ＆裏ラベル（裏セグメント中だけ） */}
+      {/* カテゴリ＆裏ラベル（裏セグメント中だけ・中央寄りで見やすく） */}
       {frame >= W.uraStart && frame < W.outroStart ? (
-        <div style={{ position: "absolute", top: 70, width: "100%", display: "flex", justifyContent: "center", opacity: fadeWin(frame, W.uraStart, W.outroStart, f) }}>
-          <div style={{ background: C.accent, color: "#fff", fontSize: 34, fontWeight: 700, padding: "8px 26px", borderRadius: 999 }}>裏：{s.category}のリアル</div>
+        <div style={{ position: "absolute", top: 360, width: "100%", display: "flex", justifyContent: "center", opacity: fadeWin(frame, W.uraStart, W.outroStart, f) }}>
+          <div style={{ background: C.accent, color: "#fff", fontSize: 40, fontWeight: 700, padding: "12px 34px", borderRadius: 999, boxShadow: "0 10px 24px -10px rgba(180,80,100,0.5)" }}>裏：{s.category}のリアル</div>
         </div>
       ) : null}
 
       {/* 表（教科書・グレー） */}
       <Segment visible={frame < W.xStart} start={0} fadeOutAt={W.xStart} f={f}>
-        <div style={{ width: "78%", left: "11%", position: "absolute", top: 540, background: C.frontCard, borderRadius: 44, padding: "48px 40px", textAlign: "center" }}>
+        <div style={{ width: "80%", left: "10%", position: "absolute", top: 540, background: C.frontCard, borderRadius: 44, padding: "48px 40px", textAlign: "center" }}>
           <div style={{ fontSize: 36, color: C.frontInk, fontWeight: 700, letterSpacing: 2 }}>教科書では…</div>
           <div style={{ fontFamily: scFont, fontSize: sizeFor(s.front.hanzi), fontWeight: 700, color: C.frontInk, marginTop: 16 }}>{s.front.hanzi}</div>
           <div style={{ fontFamily: scFont, fontSize: 56, color: "#B3AB9C", marginTop: 6 }}>{s.front.pinyin}</div>
@@ -115,7 +115,7 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
         const speaking = frame >= w.readAt && frame < w.readAt + s2f(b.dur);
         return (
           <AbsoluteFill key={i} style={{ opacity: op }}>
-            <div style={{ position: "absolute", top: 470, left: "9%", width: "82%", transform: `scale(${sc})`, transformOrigin: "center", textAlign: "center" }}>
+            <div style={{ position: "absolute", top: 470, left: "10%", width: "80%", transform: `scale(${sc})`, transformOrigin: "center", textAlign: "center" }}>
               <div style={{ display: "flex", justifyContent: "center", gap: 14, marginBottom: 10 }}>
                 <span style={{ background: "#fff", color: C.accent, border: `2px solid ${C.accent}`, fontSize: 30, fontWeight: 700, padding: "4px 18px", borderRadius: 999 }}>{i + 1} / {s.backs.length}</span>
                 {b.tag ? <span style={{ background: C.accent, color: "#fff", fontSize: 30, fontWeight: 700, padding: "4px 18px", borderRadius: 999 }}>{b.tag}</span> : null}
