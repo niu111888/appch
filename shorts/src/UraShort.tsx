@@ -59,6 +59,23 @@ const FALLBACK: UraScene = {
   backs: [{ hanzi: "绝了", pinyin: "jué le", meaning: "神・ヤバい", example: "这家奶茶绝了！", exampleMeaning: "このタピオカ絶品！", audio: "audio/u_back0.mp3", dur: 1 }],
 };
 
+// カテゴリの気分に合わせた「裏」の登場キャラ（3つの裏カードに順に対応）
+const DEFAULT_ROT = ["panda_excited", "rabbit_joy", "pig_hat"];
+const CHAR_BY_CAT: Record<string, string[]> = {
+  称賛: ["panda_excited", "rabbit_joy", "pig_hat"],
+  驚き: ["rabbit_joy", "panda_excited", "pig_tired"],
+  了解: ["panda_modern", "rabbit_fashion", "pig_hat"],
+  恋愛: ["rabbit_fashion", "rabbit_joy", "panda_excited"],
+  だるい: ["pig_tired", "panda_modern", "rabbit_fashion"],
+  ありがとう: ["panda_excited", "rabbit_joy", "pig_hat"],
+  グルメ: ["panda_modern", "pig_hat", "pig_art"],
+  賛成: ["panda_excited", "pig_hat", "rabbit_joy"],
+  笑える: ["rabbit_joy", "panda_excited", "pig_hat"],
+  別れ: ["panda_modern", "rabbit_fashion", "pig_hat"],
+  応援: ["panda_excited", "rabbit_joy", "pig_hat"],
+  かわいい: ["rabbit_fashion", "pig_hat", "rabbit_joy"],
+};
+
 const sizeFor = (hanzi: string, big = true) => {
   const n = [...hanzi].length;
   if (big) return n <= 2 ? 170 : n === 3 ? 140 : 116;
@@ -79,8 +96,8 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
   const W = backWindows(s, fps);
   const f = s2f(0.18);
 
-  // 場面ごとに登場するキャラ＆表情（表＝真面目パンダ / 裏＝わくわく・ジョイ・ブタをローテ）
-  const ROT = ["panda_excited", "rabbit_joy", "pig_hat"];
+  // 場面ごとの表情キャラ（表＝真面目パンダ / 裏＝カテゴリの気分に合わせて出し分け）
+  const rot = CHAR_BY_CAT[s.category] ?? DEFAULT_ROT;
   let charSrc: string | null = null;
   let charAppear = 0;
   if (frame < W.xStart) {
@@ -88,7 +105,7 @@ export const UraShort: React.FC<{ scene?: UraScene }> = ({ scene }) => {
   } else {
     const bi = W.wins.findIndex((w) => frame >= w.start && frame < w.end);
     if (bi >= 0) {
-      charSrc = ROT[bi % ROT.length];
+      charSrc = rot[bi % rot.length];
       charAppear = W.wins[bi].start;
     }
   }
