@@ -50,8 +50,8 @@ jobs:
 
       - name: YouTube / Instagram に投稿
         env:
-          # 当面は限定公開で様子見。公開運用に切り替えるときは public に。
-          YT_PRIVACY: unlisted
+          # 公開運用。限定公開に戻すときは unlisted に。
+          YT_PRIVACY: public
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
