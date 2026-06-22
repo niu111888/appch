@@ -10,11 +10,15 @@ import { buildUraCaption } from "./caption.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
-const OUTDIR = path.join(process.env.HOME, "Desktop", "裏中国語_投稿用");
+const OUTDIR = process.env.OUTDIR || path.join(process.env.HOME, "Desktop", "裏中国語_投稿用");
 mkdirSync(OUTDIR, { recursive: true });
 
-// 既定: 気分と表情がバラけるように1週間分を厳選
-const indices = (process.argv[2] || "0,1,3,4,6,8,11").split(",").map((x) => x.trim());
+// 引数: "all"=全エントリ / "0,1,3"=任意のWORD_INDEX / 省略=既定7本
+const arg = (process.argv[2] || "0,1,3,4,6,8,11").trim();
+const seedLen = JSON.parse(readFileSync(path.join(ROOT, "ura_seed.json"), "utf8")).length;
+const indices = arg === "all"
+  ? Array.from({ length: seedLen }, (_, i) => String(i))
+  : arg.split(",").map((x) => x.trim());
 
 const run = (cmd, args, env = {}) =>
   execFileSync(cmd, args, { cwd: ROOT, stdio: "inherit", env: { ...process.env, ...env } });
