@@ -776,5 +776,286 @@
         "exampleMeaning": "私の同僚、まさにオシャレの権化。"
       }
     ]
+  },
+  {
+    "category": "ブチギレ",
+    "front": {
+      "hanzi": "我生气了",
+      "pinyin": "wǒ shēng qì le",
+      "meaning": "怒った"
+    },
+    "backs": [
+      {
+        "hanzi": "炸裂",
+        "pinyin": "zhà liè",
+        "meaning": "怒り爆発・ブチギレ",
+        "example": "他一句话我直接炸裂。",
+        "exampleMeaning": "彼の一言で一気にブチギレた。"
+      },
+      {
+        "hanzi": "红温",
+        "pinyin": "hóng wēn",
+        "meaning": "カッとなる(怒りで赤くなる)",
+        "example": "看到这种操作我直接红温。",
+        "exampleMeaning": "こういうやり方見ると一気にカッとなる。"
+      },
+      {
+        "hanzi": "气死我了",
+        "pinyin": "qì sǐ wǒ le",
+        "meaning": "死ぬほどムカつく",
+        "example": "又迟到，气死我了！",
+        "exampleMeaning": "また遅刻、マジでムカつく！"
+      }
+    ]
+  },
+  {
+    "category": "絶望・詰んだ",
+    "front": {
+      "hanzi": "很难过",
+      "pinyin": "hěn nán guò",
+      "meaning": "とても悲しい"
+    },
+    "backs": [
+      {
+        "hanzi": "心累",
+        "pinyin": "xīn lèi",
+        "meaning": "心が疲れ果てた",
+        "example": "天天加班，真的心累。",
+        "exampleMeaning": "毎日残業、ほんと心が折れる。"
+      },
+      {
+        "hanzi": "破防了",
+        "pinyin": "pò fáng le",
+        "meaning": "刺さって涙腺崩壊・打ちのめされた",
+        "example": "看到这一幕我破防了。",
+        "exampleMeaning": "このシーン見て涙腺崩壊した。"
+      },
+      {
+        "hanzi": "蚌埠住了",
+        "pinyin": "bèng bù zhù le",
+        "meaning": "もう抑えられない(绷不住の語呂)",
+        "example": "太难了，我蚌埠住了。",
+        "exampleMeaning": "つらすぎて、もう抑えられない。"
+      }
+    ]
+  },
+  {
+    "category": "空気読めない",
+    "front": {
+      "hanzi": "不懂气氛的人",
+      "pinyin": "bù dǒng qì fēn de rén",
+      "meaning": "空気が読めない人"
+    },
+    "backs": [
+      {
+        "hanzi": "低情商",
+        "pinyin": "dī qíng shāng",
+        "meaning": "EQが低い",
+        "example": "这么说话也太低情商了。",
+        "exampleMeaning": "その言い方、EQ低すぎ。"
+      },
+      {
+        "hanzi": "没眼力见",
+        "pinyin": "méi yǎn lì jiàn",
+        "meaning": "目端が利かない・気が利かない",
+        "example": "大家在忙，他真没眼力见。",
+        "exampleMeaning": "みんな忙しいのに、ほんと気が利かない。"
+      },
+      {
+        "hanzi": "不识趣",
+        "pinyin": "bù shí qù",
+        "meaning": "空気を読まない・無粋",
+        "example": "人家想独处，你别不识趣。",
+        "exampleMeaning": "一人になりたいんだから、無粋なことするな。"
+      }
+    ]
+  },
+  {
+    "category": "マウント・盛る",
+    "front": {
+      "hanzi": "炫耀",
+      "pinyin": "xuàn yào",
+      "meaning": "見せびらかす"
+    },
+    "backs": [
+      {
+        "hanzi": "凡尔赛",
+        "pinyin": "fán ěr sài",
+        "meaning": "さりげない自慢(ベルサイユ)",
+        "example": "她又在凡尔赛她男朋友。",
+        "exampleMeaning": "彼女また彼氏のことさりげなく自慢してる。"
+      },
+      {
+        "hanzi": "加戏",
+        "pinyin": "jiā xì",
+        "meaning": "話を盛る・大げさに振る舞う",
+        "example": "这点小事别加戏了。",
+        "exampleMeaning": "こんな小さい事で大げさにするな。"
+      },
+      {
+        "hanzi": "拉踩",
+        "pinyin": "lā cǎi",
+        "meaning": "他を下げて自分を上げる",
+        "example": "夸他可以，别拉踩别人。",
+        "exampleMeaning": "褒めるのはいいけど他人を下げるな。"
+      }
+    ]
+  },
+  {
+    "category": "あきれ・お手上げ",
+    "front": {
+      "hanzi": "我没办法",
+      "pinyin": "wǒ méi bàn fǎ",
+      "meaning": "もうお手上げ"
+    },
+    "backs": [
+      {
+        "hanzi": "无语",
+        "pinyin": "wú yǔ",
+        "meaning": "呆れて言葉が出ない",
+        "example": "你这操作真的让我无语。",
+        "exampleMeaning": "あんたのそれ、ほんと呆れるわ。"
+      },
+      {
+        "hanzi": "服了",
+        "pinyin": "fú le",
+        "meaning": "(酷さ/凄さに)降参だ",
+        "example": "行行行，我服了你了。",
+        "exampleMeaning": "はいはい、もうあんたには参った。"
+      },
+      {
+        "hanzi": "无力吐槽",
+        "pinyin": "wú lì tǔ cáo",
+        "meaning": "ツッコミする気力もない",
+        "example": "这结局我真是无力吐槽。",
+        "exampleMeaning": "このオチ、もうツッコミする気力もない。"
+      }
+    ]
+  },
+  {
+    "category": "陰キャ・陽キャ",
+    "front": {
+      "hanzi": "内向",
+      "pinyin": "nèi xiàng",
+      "meaning": "内向的(陰キャ)"
+    },
+    "backs": [
+      {
+        "hanzi": "社恐",
+        "pinyin": "shè kǒng",
+        "meaning": "陰キャ・人見知り",
+        "example": "我社恐，不敢一个人去聚会。",
+        "exampleMeaning": "私、陰キャだから一人で集まりとか無理。"
+      },
+      {
+        "hanzi": "社牛",
+        "pinyin": "shè niú",
+        "meaning": "陽キャ・超社交的",
+        "example": "他社牛，跟谁都能聊起来。",
+        "exampleMeaning": "あいつ陽キャで、誰とでも話せちゃう。"
+      },
+      {
+        "hanzi": "社交牛杂症",
+        "pinyin": "shè jiāo niú zá zhèng",
+        "meaning": "陰陽行ったり来たり",
+        "example": "我属于社交牛杂症，时社牛时社恐。",
+        "exampleMeaning": "私は陰陽混合型、社牛になったり社恐になったり。"
+      }
+    ]
+  },
+  {
+    "category": "告白・好き",
+    "front": {
+      "hanzi": "我爱你",
+      "pinyin": "wǒ ài nǐ",
+      "meaning": "愛してる"
+    },
+    "backs": [
+      {
+        "hanzi": "五二零",
+        "pinyin": "wǔ èr líng",
+        "meaning": "愛してる(520の語呂)",
+        "example": "今天五二零，我想跟你说我爱你。",
+        "exampleMeaning": "今日は520(告白の日)、愛してるって言いたい。",
+        "tag": "520"
+      },
+      {
+        "hanzi": "一生一世",
+        "pinyin": "yī shēng yī shì",
+        "meaning": "一生一緒に(1314)",
+        "example": "我要一生一世跟你在一起。",
+        "exampleMeaning": "一生一緒に君といたい(1314)。",
+        "tag": "1314"
+      },
+      {
+        "hanzi": "处对象吗",
+        "pinyin": "chǔ duì xiàng ma",
+        "meaning": "付き合わない?",
+        "example": "我喜欢你很久了，处对象吗？",
+        "exampleMeaning": "前からずっと好き、付き合わない？"
+      }
+    ]
+  },
+  {
+    "category": "直訳厳禁の罠",
+    "front": {
+      "hanzi": "别照字面理解",
+      "pinyin": "bié zhào zì miàn lǐ jiě",
+      "meaning": "字面通りに取らないで"
+    },
+    "backs": [
+      {
+        "hanzi": "吃醋",
+        "pinyin": "chī cù",
+        "meaning": "字面=酢を飲む/実際=ヤキモチ",
+        "example": "你跟别人聊天，他就吃醋了。",
+        "exampleMeaning": "あなたが他の人と話すと、彼はすぐヤキモチを焼く。"
+      },
+      {
+        "hanzi": "吃瓜",
+        "pinyin": "chī guā",
+        "meaning": "字面=ウリを食べる/実際=野次馬",
+        "example": "我不参与，就在旁边吃瓜。",
+        "exampleMeaning": "私は関わらない、横で野次馬してるだけ。"
+      },
+      {
+        "hanzi": "呵呵",
+        "pinyin": "hē hē",
+        "meaning": "字面=ハハと笑う/実際=冷笑・しらけ",
+        "example": "他这话我只想回一句呵呵。",
+        "exampleMeaning": "彼のこの言い分には、ただ「ハイハイ」と返したい。"
+      }
+    ]
+  },
+  {
+    "category": "日本語と意味が違う罠",
+    "front": {
+      "hanzi": "小心中文陷阱",
+      "pinyin": "xiǎo xīn zhōng wén xiàn jǐng",
+      "meaning": "中国語の落とし穴に注意"
+    },
+    "backs": [
+      {
+        "hanzi": "爱人",
+        "pinyin": "ài rén",
+        "meaning": "日=不倫相手/中=配偶者(夫や妻)",
+        "example": "这是我爱人，我们结婚十年了。",
+        "exampleMeaning": "こちらは私の配偶者、結婚して十年になります。"
+      },
+      {
+        "hanzi": "手纸",
+        "pinyin": "shǒu zhǐ",
+        "meaning": "日=手紙/中=トイレットペーパー",
+        "example": "厕所没手纸了，快去买一卷。",
+        "exampleMeaning": "トイレにペーパーがない、早く一巻買ってきて。"
+      },
+      {
+        "hanzi": "勉强",
+        "pinyin": "miǎn qiǎng",
+        "meaning": "日=勉強/中=無理強い・しぶしぶ",
+        "example": "你不愿意就别勉强自己了。",
+        "exampleMeaning": "気が進まないなら、無理しなくていいよ。"
+      }
+    ]
   }
 ]

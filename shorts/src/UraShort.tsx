@@ -88,6 +88,16 @@ const CHAR_BY_CAT: Record<string, string[]> = {
   かっこいい: ["panda_modern", "rabbit_fashion", "panda_excited"],
   "美人・綺麗": ["rabbit_fashion", "rabbit_joy", "panda_modern"],
   "オシャレ・センス": ["rabbit_fashion", "panda_modern", "pig_art"],
+  // ユーザー提供ネタ（感情/人間関係/罠/トレンド）
+  ブチギレ: ["pig_tired", "panda_excited", "rabbit_joy"],
+  "あきれ・お手上げ": ["pig_tired", "panda_basic", "rabbit_read"],
+  "絶望・詰んだ": ["pig_tired", "rabbit_read", "panda_basic"],
+  空気読めない: ["panda_basic", "rabbit_read", "pig_tired"],
+  "陰キャ・陽キャ": ["rabbit_read", "pig_hat", "panda_excited"],
+  "告白・好き": ["rabbit_fashion", "rabbit_joy", "panda_excited"],
+  直訳厳禁の罠: ["panda_studious", "rabbit_read", "pig_art"],
+  日本語と意味が違う罠: ["panda_studious", "pig_art", "rabbit_read"],
+  "マウント・盛る": ["panda_modern", "rabbit_fashion", "panda_excited"],
 };
 
 const sizeFor = (hanzi: string, big = true) => {
