@@ -1,0 +1,20 @@
+[
+  {
+    "category": "同じ漢字でも意味が違う中国語",
+    "subtitle": "日本語の感覚で読むと事故るやつ",
+    "items": [
+      { "hanzi": "手纸", "pinyin": "shǒu zhǐ", "guessLabel": "日本語だと", "jp": "手紙（レター）", "real": "トイレットペーパー", "example": "厕所没手纸了。", "exampleMeaning": "トイレにペーパーが無い。" },
+      { "hanzi": "爱人", "pinyin": "ài rén", "guessLabel": "日本語だと", "jp": "愛人（不倫相手）", "real": "配偶者（夫・妻）", "example": "这是我爱人。", "exampleMeaning": "こちら私の配偶者です。" },
+      { "hanzi": "勉强", "pinyin": "miǎn qiǎng", "guessLabel": "日本語だと", "jp": "勉強（study）", "real": "無理強い・しぶしぶ", "example": "别勉强自己。", "exampleMeaning": "無理しないで。" }
+    ]
+  },
+  {
+    "category": "直訳厳禁！中国語の罠",
+    "subtitle": "そのまま訳すと意味不明になるやつ",
+    "items": [
+      { "hanzi": "吃醋", "pinyin": "chī cù", "guessLabel": "そのまま訳すと", "jp": "お酢を飲む", "real": "ヤキモチを焼く", "example": "他又吃醋了。", "exampleMeaning": "彼またヤキモチ焼いてる。" },
+      { "hanzi": "吃瓜", "pinyin": "chī guā", "guessLabel": "そのまま訳すと", "jp": "ウリを食べる", "real": "野次馬・観戦する", "example": "我在旁边吃瓜。", "exampleMeaning": "横で野次馬してるだけ。" },
+      { "hanzi": "呵呵", "pinyin": "hē hē", "guessLabel": "そのまま訳すと", "jp": "ハハと笑う声", "real": "冷笑・しらけた反応", "example": "对此我只想呵呵。", "exampleMeaning": "それには冷笑しか出ない。" }
+    ]
+  }
+]
