@@ -1,0 +1,14 @@
+{
+  "note": "YouTube自動投稿の記録。nextUra=次に投稿する表/裏のindex(ura_seed)。毎日の自動投稿で追記＆コミットされる。",
+  "nextUra": 0,
+  "posts": [
+    {
+      "date": "2026-06-22",
+      "type": "テスト(順番外)",
+      "category": "驚き",
+      "front": "真的吗",
+      "meaning": "本当ですか",
+      "youtube": "https://youtube.com/shorts/Gac0GdikrZg"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { synthesize } from "./tts.mjs";
@@ -9,10 +10,16 @@ const AUDIO = path.join(ROOT, "public", "audio");
 const round = (n) => Math.round(n * 1000) / 1000;
 
 function pickIndex(count) {
+  // 手動/バッチは WORD_INDEX を優先（カウンターに影響しない）
   if (process.env.WORD_INDEX != null && process.env.WORD_INDEX !== "") {
     return ((Number(process.env.WORD_INDEX) % count) + count) % count;
   }
-  return Math.floor(Date.now() / 86400000) % count;
+  // 毎日の自動投稿は posted-log.json の連番カウンターでカタログ順を厳守
+  try {
+    const log = JSON.parse(readFileSync(path.join(ROOT, "posted-log.json"), "utf8"));
+    if (Number.isInteger(log.nextUra)) return ((log.nextUra % count) + count) % count;
+  } catch {}
+  return Math.floor(Date.now() / 86400000) % count; // フォールバック
 }
 
 const config = JSON.parse(await readFile(path.join(ROOT, "config.json"), "utf8"));
