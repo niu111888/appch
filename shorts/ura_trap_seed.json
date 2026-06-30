@@ -3,18 +3,462 @@
     "category": "同じ漢字でも意味が違う中国語",
     "subtitle": "日本語の感覚で読むと事故るやつ",
     "items": [
-      { "hanzi": "手纸", "pinyin": "shǒu zhǐ", "guessLabel": "日本語だと", "jp": "手紙（レター）", "real": "トイレットペーパー", "example": "厕所没手纸了。", "exampleMeaning": "トイレにペーパーが無い。" },
-      { "hanzi": "爱人", "pinyin": "ài rén", "guessLabel": "日本語だと", "jp": "愛人（不倫相手）", "real": "配偶者（夫・妻）", "example": "这是我爱人。", "exampleMeaning": "こちら私の配偶者です。" },
-      { "hanzi": "勉强", "pinyin": "miǎn qiǎng", "guessLabel": "日本語だと", "jp": "勉強（study）", "real": "無理強い・しぶしぶ", "example": "别勉强自己。", "exampleMeaning": "無理しないで。" }
+      {
+        "hanzi": "手纸",
+        "pinyin": "shǒu zhǐ",
+        "guessLabel": "日本語だと",
+        "jp": "手紙（レター）",
+        "real": "トイレットペーパー",
+        "example": "厕所没手纸了。",
+        "exampleMeaning": "トイレにペーパーが無い。"
+      },
+      {
+        "hanzi": "爱人",
+        "pinyin": "ài rén",
+        "guessLabel": "日本語だと",
+        "jp": "愛人（不倫相手）",
+        "real": "配偶者（夫・妻）",
+        "example": "这是我爱人。",
+        "exampleMeaning": "こちら私の配偶者です。"
+      },
+      {
+        "hanzi": "勉强",
+        "pinyin": "miǎn qiǎng",
+        "guessLabel": "日本語だと",
+        "jp": "勉強（study）",
+        "real": "無理強い・しぶしぶ",
+        "example": "别勉强自己。",
+        "exampleMeaning": "無理しないで。"
+      }
     ]
   },
   {
     "category": "直訳厳禁！中国語の罠",
     "subtitle": "そのまま訳すと意味不明になるやつ",
     "items": [
-      { "hanzi": "吃醋", "pinyin": "chī cù", "guessLabel": "そのまま訳すと", "jp": "お酢を飲む", "real": "ヤキモチを焼く", "example": "他又吃醋了。", "exampleMeaning": "彼またヤキモチ焼いてる。" },
-      { "hanzi": "吃瓜", "pinyin": "chī guā", "guessLabel": "そのまま訳すと", "jp": "ウリを食べる", "real": "野次馬・観戦する", "example": "我在旁边吃瓜。", "exampleMeaning": "横で野次馬してるだけ。" },
-      { "hanzi": "呵呵", "pinyin": "hē hē", "guessLabel": "そのまま訳すと", "jp": "ハハと笑う声", "real": "冷笑・しらけた反応", "example": "对此我只想呵呵。", "exampleMeaning": "それには冷笑しか出ない。" }
+      {
+        "hanzi": "吃醋",
+        "pinyin": "chī cù",
+        "guessLabel": "そのまま訳すと",
+        "jp": "お酢を飲む",
+        "real": "ヤキモチを焼く",
+        "example": "他又吃醋了。",
+        "exampleMeaning": "彼またヤキモチ焼いてる。"
+      },
+      {
+        "hanzi": "吃瓜",
+        "pinyin": "chī guā",
+        "guessLabel": "そのまま訳すと",
+        "jp": "ウリを食べる",
+        "real": "野次馬・観戦する",
+        "example": "我在旁边吃瓜。",
+        "exampleMeaning": "横で野次馬してるだけ。"
+      },
+      {
+        "hanzi": "呵呵",
+        "pinyin": "hē hē",
+        "guessLabel": "そのまま訳すと",
+        "jp": "ハハと笑う声",
+        "real": "冷笑・しらけた反応",
+        "example": "对此我只想呵呵。",
+        "exampleMeaning": "それには冷笑しか出ない。"
+      }
+    ]
+  },
+  {
+    "category": "人を表す漢字の罠",
+    "subtitle": "家族や人の呼び方が日本と違う",
+    "items": [
+      {
+        "hanzi": "老婆",
+        "pinyin": "lǎo po",
+        "guessLabel": "日本語だと",
+        "jp": "老婆(おばあさん)",
+        "real": "妻・うちの嫁",
+        "example": "我老婆做的菜很好吃。",
+        "exampleMeaning": "うちの妻が作る料理はとても美味しい。"
+      },
+      {
+        "hanzi": "丈夫",
+        "pinyin": "zhàng fu",
+        "guessLabel": "日本語だと",
+        "jp": "丈夫(頑丈・大丈夫)",
+        "real": "夫・旦那",
+        "example": "她丈夫在银行工作。",
+        "exampleMeaning": "彼女の夫は銀行で働いている。"
+      },
+      {
+        "hanzi": "大家",
+        "pinyin": "dà jiā",
+        "guessLabel": "日本語だと",
+        "jp": "大家(おおや・家主)",
+        "real": "みんな・皆さん",
+        "example": "大家一起拍张照吧。",
+        "exampleMeaning": "みんなで一緒に写真を撮ろう。"
+      }
+    ]
+  },
+  {
+    "category": "生活でやらかす罠",
+    "subtitle": "日常語なのに意味がズレる",
+    "items": [
+      {
+        "hanzi": "汽车",
+        "pinyin": "qì chē",
+        "guessLabel": "日本語だと",
+        "jp": "汽車(蒸気機関車)",
+        "real": "自動車・車",
+        "example": "我开汽车送你回家。",
+        "exampleMeaning": "車であなたを家まで送るよ。"
+      },
+      {
+        "hanzi": "走",
+        "pinyin": "zǒu",
+        "guessLabel": "日本語だと",
+        "jp": "走る(ラン)",
+        "real": "歩く・去る",
+        "example": "时间不早了，我们走吧。",
+        "exampleMeaning": "もう遅いから、行こうか。"
+      },
+      {
+        "hanzi": "汤",
+        "pinyin": "tāng",
+        "guessLabel": "日本語だと",
+        "jp": "湯(お湯)",
+        "real": "スープ",
+        "example": "妈妈煮了一锅鸡汤。",
+        "exampleMeaning": "母が鶏のスープを一鍋作った。"
+      }
+    ]
+  },
+  {
+    "category": "定番の偽の友",
+    "subtitle": "知らないと事故る基本語",
+    "items": [
+      {
+        "hanzi": "新闻",
+        "pinyin": "xīn wén",
+        "guessLabel": "日本語だと",
+        "jp": "新聞(紙の新聞)",
+        "real": "ニュース・報道",
+        "example": "晚上我喜欢看新闻。",
+        "exampleMeaning": "夜は私はニュースを見るのが好きだ。"
+      },
+      {
+        "hanzi": "工作",
+        "pinyin": "gōng zuò",
+        "guessLabel": "日本語だと",
+        "jp": "工作(図工・手作業)",
+        "real": "仕事・働く",
+        "example": "他在上海找到了好工作。",
+        "exampleMeaning": "彼は上海でいい仕事を見つけた。"
+      },
+      {
+        "hanzi": "告诉",
+        "pinyin": "gào su",
+        "guessLabel": "日本語だと",
+        "jp": "告訴(提訴・訴える)",
+        "real": "(人に)伝える・教える",
+        "example": "请把你的电话告诉我。",
+        "exampleMeaning": "あなたの電話番号を教えてください。"
+      }
+    ]
+  },
+  {
+    "category": "会話で出る罠",
+    "subtitle": "看板やお願いでよく見る",
+    "items": [
+      {
+        "hanzi": "小心",
+        "pinyin": "xiǎo xīn",
+        "guessLabel": "日本語だと",
+        "jp": "気が小さい・臆病",
+        "real": "気をつけて・注意して",
+        "example": "地上很滑，请小心。",
+        "exampleMeaning": "床が滑りやすいので、気をつけてください。"
+      },
+      {
+        "hanzi": "麻烦",
+        "pinyin": "má fan",
+        "guessLabel": "日本語だと",
+        "jp": "麻煩(ほぼ死語)",
+        "real": "面倒／お手数ですが",
+        "example": "麻烦你帮我开一下门。",
+        "exampleMeaning": "お手数ですが、ドアを開けてもらえますか。"
+      },
+      {
+        "hanzi": "地道",
+        "pinyin": "dì dao",
+        "guessLabel": "日本語だと",
+        "jp": "地下道・地味",
+        "real": "本場の・本格的",
+        "example": "这家店的火锅很地道。",
+        "exampleMeaning": "この店の火鍋はとても本格的だ。"
+      }
+    ]
+  },
+  {
+    "category": "ビジネスの罠",
+    "subtitle": "仕事で誤解すると危ない",
+    "items": [
+      {
+        "hanzi": "合同",
+        "pinyin": "hé tong",
+        "guessLabel": "日本語だと",
+        "jp": "合同(一緒にやる)",
+        "real": "契約(書)",
+        "example": "这份合同明天就要签字了。",
+        "exampleMeaning": "この契約書は明日サインすることになっている。"
+      },
+      {
+        "hanzi": "约束",
+        "pinyin": "yuē shù",
+        "guessLabel": "日本語だと",
+        "jp": "約束(プロミス)",
+        "real": "束縛する・制約する",
+        "example": "公司的规定约束着每个员工。",
+        "exampleMeaning": "会社の規則が社員一人ひとりを縛っている。"
+      },
+      {
+        "hanzi": "工夫",
+        "pinyin": "gōng fu",
+        "guessLabel": "日本語だと",
+        "jp": "工夫(アイデアを練る)",
+        "real": "(かかる)時間・暇",
+        "example": "我没工夫陪你逛街。",
+        "exampleMeaning": "君と買い物に付き合う暇はないよ。"
+      }
+    ]
+  },
+  {
+    "category": "意味が広がる罠",
+    "subtitle": "日本語より意味が増える語",
+    "items": [
+      {
+        "hanzi": "套路",
+        "pinyin": "tào lù",
+        "guessLabel": "日本語だと",
+        "jp": "套路(武術の型)",
+        "real": "手口・常套手段・テンプレ",
+        "example": "这都是骗子的老套路了。",
+        "exampleMeaning": "これは全部詐欺師の使い古された手口だよ。"
+      },
+      {
+        "hanzi": "结实",
+        "pinyin": "jiē shi",
+        "guessLabel": "日本語だと",
+        "jp": "結実(実を結ぶ)",
+        "real": "丈夫・頑丈・がっしり",
+        "example": "这张桌子做得很结实。",
+        "exampleMeaning": "このテーブルはとても頑丈に作られている。"
+      },
+      {
+        "hanzi": "经济",
+        "pinyin": "jīng jì",
+        "guessLabel": "日本語だと",
+        "jp": "経済(エコノミー)",
+        "real": "経済＋お買い得・コスパ",
+        "example": "坐高铁又快又经济。",
+        "exampleMeaning": "高速鉄道は速いしお得だ。"
+      }
+    ]
+  },
+  {
+    "category": "ネット用語の罠",
+    "subtitle": "SNS世代の隠語",
+    "items": [
+      {
+        "hanzi": "潜水",
+        "pinyin": "qián shuǐ",
+        "guessLabel": "日本語だと",
+        "jp": "潜水(ダイビング)",
+        "real": "ROM専・読むだけ潜伏",
+        "example": "他在群里一直潜水不说话。",
+        "exampleMeaning": "彼はグループでずっとROM専で発言しない。"
+      },
+      {
+        "hanzi": "灌水",
+        "pinyin": "guàn shuǐ",
+        "guessLabel": "日本語だと",
+        "jp": "灌水(水を注ぐ)",
+        "real": "中身のない駄文を量産",
+        "example": "别在论坛里灌水刷帖了。",
+        "exampleMeaning": "掲示板で中身のない書き込みを連投するのはやめなよ。"
+      },
+      {
+        "hanzi": "鸽了",
+        "pinyin": "gē le",
+        "guessLabel": "日本語だと",
+        "jp": "ハトにした？(意味不明)",
+        "real": "ドタキャンした",
+        "example": "说好的聚会他又鸽了。",
+        "exampleMeaning": "約束した集まりを彼はまたドタキャンした。"
+      }
+    ]
+  },
+  {
+    "category": "動物が出てくる罠",
+    "subtitle": "動物と無関係な慣用句",
+    "items": [
+      {
+        "hanzi": "吹牛",
+        "pinyin": "chuī niú",
+        "guessLabel": "そのまま訳すと",
+        "jp": "牛を吹く",
+        "real": "ほら・大ぼらを吹く",
+        "example": "他最爱吹牛，别信他。",
+        "exampleMeaning": "彼はほらを吹くのが大好きだから、信じちゃだめだよ。"
+      },
+      {
+        "hanzi": "拍马屁",
+        "pinyin": "pāi mǎ pì",
+        "guessLabel": "そのまま訳すと",
+        "jp": "馬のお尻を叩く",
+        "real": "ゴマすり・こびへつらう",
+        "example": "他天天对老板拍马屁。",
+        "exampleMeaning": "彼は毎日上司にゴマをすっている。"
+      },
+      {
+        "hanzi": "炒鱿鱼",
+        "pinyin": "chǎo yóu yú",
+        "guessLabel": "そのまま訳すと",
+        "jp": "イカを炒める",
+        "real": "クビにする・解雇する",
+        "example": "他上班迟到被老板炒鱿鱼了。",
+        "exampleMeaning": "彼は遅刻して上司にクビにされた。"
+      }
+    ]
+  },
+  {
+    "category": "服装の罠",
+    "subtitle": "帽子や靴の比喩がコワい",
+    "items": [
+      {
+        "hanzi": "戴绿帽",
+        "pinyin": "dài lǜ mào",
+        "guessLabel": "そのまま訳すと",
+        "jp": "緑の帽子をかぶる",
+        "real": "妻に浮気される(寝取られ)",
+        "example": "他老婆出轨了，他被戴绿帽了。",
+        "exampleMeaning": "奥さんが浮気して、彼は寝取られた。"
+      },
+      {
+        "hanzi": "戴高帽",
+        "pinyin": "dài gāo mào",
+        "guessLabel": "そのまま訳すと",
+        "jp": "高い帽子をかぶる",
+        "real": "お世辞でおだてる・ヨイショ",
+        "example": "别给我戴高帽了，我不吃这套。",
+        "exampleMeaning": "おだてないでよ、そんな手には乗らないから。"
+      },
+      {
+        "hanzi": "穿小鞋",
+        "pinyin": "chuān xiǎo xié",
+        "guessLabel": "そのまま訳すと",
+        "jp": "小さい靴を履く",
+        "real": "陰湿に嫌がらせ・冷遇",
+        "example": "得罪了领导，小心给你穿小鞋。",
+        "exampleMeaning": "上司の機嫌を損ねたら、陰で嫌がらせされるよ。"
+      }
+    ]
+  },
+  {
+    "category": "職場の罠",
+    "subtitle": "会社あるあるの裏スラング",
+    "items": [
+      {
+        "hanzi": "走后门",
+        "pinyin": "zǒu hòu mén",
+        "guessLabel": "そのまま訳すと",
+        "jp": "裏口から出入りする",
+        "real": "コネ・賄賂で不正な便宜",
+        "example": "他靠走后门进了这家公司。",
+        "exampleMeaning": "彼はコネを使ってこの会社に入った。"
+      },
+      {
+        "hanzi": "背黑锅",
+        "pinyin": "bēi hēi guō",
+        "guessLabel": "そのまま訳すと",
+        "jp": "黒い鍋を背負う",
+        "real": "他人の罪をかぶる・濡れ衣",
+        "example": "这事不是我干的，我不想背黑锅。",
+        "exampleMeaning": "これは僕がやったんじゃない、濡れ衣はごめんだ。"
+      },
+      {
+        "hanzi": "打酱油",
+        "pinyin": "dǎ jiàng yóu",
+        "guessLabel": "そのまま訳すと",
+        "jp": "醤油を買いに行く",
+        "real": "自分は無関係・通りすがり",
+        "example": "这事跟我没关系，我就是来打酱油的。",
+        "exampleMeaning": "これは僕とは無関係、ただの通りすがりだよ。"
+      }
+    ]
+  },
+  {
+    "category": "若者・SNSの罠",
+    "subtitle": "今どきの口語",
+    "items": [
+      {
+        "hanzi": "种草",
+        "pinyin": "zhòng cǎo",
+        "guessLabel": "そのまま訳すと",
+        "jp": "草を植える",
+        "real": "猛烈に欲しくさせる/欲しくなる",
+        "example": "被博主种草了这支口红，好想买。",
+        "exampleMeaning": "配信者にこの口紅を欲しくさせられた、すごく買いたい。"
+      },
+      {
+        "hanzi": "拔草",
+        "pinyin": "bá cǎo",
+        "guessLabel": "そのまま訳すと",
+        "jp": "草を抜く",
+        "real": "買って満足／買う気が失せる",
+        "example": "看了差评，我果断拔草不买了。",
+        "exampleMeaning": "悪い口コミを見て、きっぱり買う気が失せた。"
+      },
+      {
+        "hanzi": "社死",
+        "pinyin": "shè sǐ",
+        "guessLabel": "そのまま訳すと",
+        "jp": "社が死ぬ？(意味不明)",
+        "real": "公衆の面前で大恥をかく",
+        "example": "当众喊错名字，太社死了。",
+        "exampleMeaning": "みんなの前で名前を呼び間違えて、超恥ずかしかった。"
+      }
+    ]
+  },
+  {
+    "category": "口は災いの罠",
+    "subtitle": "言葉のトラブル系",
+    "items": [
+      {
+        "hanzi": "放屁",
+        "pinyin": "fàng pì",
+        "guessLabel": "そのまま訳すと",
+        "jp": "おならをする",
+        "real": "でたらめ言うな(罵り)",
+        "example": "你别放屁了，根本没这回事。",
+        "exampleMeaning": "でたらめ言うな、そんな事実は全くない。"
+      },
+      {
+        "hanzi": "抬杠",
+        "pinyin": "tái gàng",
+        "guessLabel": "そのまま訳すと",
+        "jp": "棒を持ち上げる",
+        "real": "屁理屈で言い争う・揚げ足取り",
+        "example": "我懒得跟你抬杠，随你怎么说。",
+        "exampleMeaning": "君と屁理屈で言い争う気はない、好きに言えば。"
+      },
+      {
+        "hanzi": "喝西北风",
+        "pinyin": "hē xī běi fēng",
+        "guessLabel": "そのまま訳すと",
+        "jp": "北西の風を飲む",
+        "real": "食う物もなく貧乏で飢える",
+        "example": "再不找工作，你就只能喝西北风了。",
+        "exampleMeaning": "早く仕事を探さないと、食うにも困る羽目になるよ。"
+      }
     ]
   }
 ]
