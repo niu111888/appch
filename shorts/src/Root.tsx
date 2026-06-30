@@ -54,9 +54,12 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         durationInFrames={420}
         defaultProps={{}}
-        calculateMetadata={async () => {
-          const res = await fetch(staticFile("today-trap.json"));
-          const scene = (await res.json()) as TrapScene;
+        calculateMetadata={async ({ props }) => {
+          let scene = (props as { scene?: TrapScene }).scene;
+          if (!scene) {
+            const res = await fetch(staticFile("today-trap.json"));
+            scene = (await res.json()) as TrapScene;
+          }
           return { durationInFrames: sceneToFramesTrap(scene, FPS), props: { scene } };
         }}
       />
