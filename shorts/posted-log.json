@@ -1,6 +1,6 @@
 {
   "note": "YouTube自動投稿の記録。nextUra=次に投稿する表/裏のindex(ura_seed)。毎日の自動投稿で追記＆コミットされる。",
-  "nextUra": 1,
+  "nextUra": 2,
   "posts": [
     {
       "date": "2026-06-22",
@@ -19,6 +19,16 @@
       "meaning": "すごい",
       "backs": "绝了/太牛了/永远的神",
       "youtube": "https://youtube.com/shorts/FHNAJhbIEbc"
+    },
+    {
+      "date": "2026-07-01",
+      "n": 2,
+      "index": 1,
+      "category": "驚き",
+      "front": "真的吗",
+      "meaning": "本当ですか",
+      "backs": "真的假的/不会吧/我裂开了",
+      "youtube": "https://youtube.com/shorts/horeZXbDVY0"
     }
   ]
 }
