@@ -1,6 +1,6 @@
 {
   "note": "YouTube自動投稿の記録。nextUra=次に投稿する表/裏のindex(ura_seed)。毎日の自動投稿で追記＆コミットされる。",
-  "nextUra": 2,
+  "nextUra": 3,
   "posts": [
     {
       "date": "2026-06-22",
@@ -29,6 +29,16 @@
       "meaning": "本当ですか",
       "backs": "真的假的/不会吧/我裂开了",
       "youtube": "https://youtube.com/shorts/horeZXbDVY0"
+    },
+    {
+      "date": "2026-07-02",
+      "n": 3,
+      "index": 2,
+      "category": "了解",
+      "front": "我知道了",
+      "meaning": "了解しました",
+      "backs": "收到/安排/好嘞",
+      "youtube": "https://youtube.com/shorts/kK7gvLv-uak"
     }
   ]
 }
